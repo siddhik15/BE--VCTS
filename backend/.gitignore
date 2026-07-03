@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+db.sqlite3
+backend.zip
+medical.zip
+medical/static_root/
+.env
+venv/
