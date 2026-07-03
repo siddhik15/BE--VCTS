@@ -1,0 +1,231 @@
+{% extends "project_medical/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero" style="background-image: url('{% static "project_medical/images/hasse-lossius-jZCfh0sJyvw-unsplash.jpg" %}');">
+  <div class="hero-overlay">
+    <div class="container hero-inner">
+      <h1>Revolutionizing Medical Research</h1>
+      <p>Welcome to MedSimTrials.org — the virtual clinical trial simulator using synthetic patient data to accelerate breakthroughs and reduce risk.</p>
+
+      <div class="hero-cta">
+        <a class="btn primary" href="#features">Explore Features</a>
+        <a class="btn outline" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Features -->
+<section id="features" class="container features-section">
+
+  <h2>Platform Features</h2>
+
+  <p class="lead">
+    Powerful tools to design, execute and analyze virtual clinical trials with accuracy and speed.
+  </p>
+
+  <div class="cards-grid">
+
+    <!-- Synthetic Patients -->
+    <div class="card" onclick="requireAuthAndRedirect('/synthetic/')">
+      <img src="{% static 'project_medical/images/flask.png' %}" width="48">
+      <h3>Synthetic Patient Generation</h3>
+      <p>Create realistic patient cohorts while protecting real patient privacy.</p>
+    </div>
+
+    <!-- Dynamic Simulation -->
+    <div class="card" onclick="requireAuthAndRedirect('/trial-simulation/')">
+      <img src="{% static 'project_medical/images/research.png' %}" width="48">
+      <h3>Dynamic Trial Simulation</h3>
+      <p>Model protocols, test dosages, and simulate responses over time.</p>
+    </div>
+
+    <!-- Predictive -->
+    <div class="card" onclick="requireAuthAndRedirect('/predictive/')">
+      <img src="{% static 'project_medical/images/efficiency.png' %}" width="48">
+      <h3>Predictive Analytics</h3>
+      <p>Use ML to forecast outcomes and optimize trial designs before real enrollment.</p>
+    </div>
+
+    <!-- Accelerated -->
+    <div class="card" onclick="requireAuthAndRedirect('/accelerated/')">
+      <img src="{% static 'project_medical/images/medical-appointment.png' %}" width="48">
+      <h3>Accelerated Timelines</h3>
+      <p>Reduce time and cost in early phase research using virtual trials.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- About -->
+<section id="about" class="container about-section">
+
+  <div class="about-grid">
+
+    <div class="about-image">
+
+      <img src="{% static 'project_medical/images/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg' %}" alt="about image">
+
+    </div>
+
+    <div class="about-text">
+
+      <h2>About<br>MedSimTrials.org</h2>
+
+      <p>
+        <strong>Our Purpose:</strong> Transform clinical research by enabling safe,
+        fast, and ethical virtual experiments.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-section">
+
+  <div class="container">
+
+    <div class="contact-top" style="text-align:center; margin-bottom:18px">
+
+      <h2 class="section-title">Contact & Support</h2>
+
+      <p class="section-lead">
+        Have questions or need assistance? Our team is here to help.
+      </p>
+
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-left">
+
+        <h3 class="form-title">Send us a Message</h3>
+
+        <div class="contact-form-wrap">
+
+          <form method="post" novalidate>
+
+            {% csrf_token %}
+
+            <label for="id_name">Full Name</label>
+            {{ form.name }}
+
+            <label for="id_email">Email Address</label>
+            {{ form.email }}
+
+            <label for="id_message">Message</label>
+            {{ form.message }}
+
+            <button class="btn primary submit-btn" type="submit">
+              Submit
+            </button>
+
+          </form>
+
+          <p class="email-help" style="text-align:center;margin-top:18px">
+
+            Or email us directly at
+
+            <a href="mailto:support@medsimtrials.org">
+              support@medsimtrials.org
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- FAQ -->
+      <div class="contact-right">
+
+        <h3 class="faq-title">Frequently Asked Questions</h3>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+
+            <button class="faq-q" aria-expanded="false">
+              What is synthetic patient data?
+              <span class="chev"></span>
+            </button>
+
+            <div class="faq-a" hidden>
+
+              <p>
+                Synthetic patient data are artificially generated records
+                that preserve statistical properties of real patients
+                while protecting privacy.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button class="faq-q" aria-expanded="false">
+              Who is this platform for?
+              <span class="chev"></span>
+            </button>
+
+            <div class="faq-a" hidden>
+
+              <p>
+                Researchers, pharmaceutical teams, and academic institutions
+                who want to design and test trials faster and safely.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="faq-item">
+
+            <button class="faq-q" aria-expanded="false">
+              Is the data generated by the simulator reliable?
+              <span class="chev"></span>
+            </button>
+
+            <div class="faq-a" hidden>
+
+              <p>
+                Yes — our simulator uses validated models and statistical
+                techniques to create realistic cohorts and responses for
+                early-stage research planning.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  function requireAuthAndRedirect(url) {
+    if (window.userIsAuthenticated) {
+      window.location.href = url;
+    } else {
+      window.location.href = "{% url 'project_medical:login' %}?next=" + encodeURIComponent(url);
+    }
+  }
+</script>
+
+{% endblock %}

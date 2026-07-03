@@ -1,0 +1,544 @@
+{% extends "project_medical/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="container synthetic-page">
+
+<h1 class="page-title">Synthetic Patient Generator</h1>
+<p class="lead">Generate Synthetic Diabetes Patient Population</p>
+
+<!-- ================= LOADING OVERLAY ================= -->
+<div id="loadingOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.8); z-index:1000; text-align:center; padding-top:200px;">
+    <div style="background:white; padding:30px; border-radius:10px; display:inline-block; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+        <h3>Generating Patients...</h3>
+        <p>This may take a few seconds</p>
+        <div class="spinner"></div>
+    </div>
+</div>
+
+<!-- ================= DATASET TYPE ================= -->
+<div class="card-box">
+    <h3>Dataset Type</h3>
+    <label><input type="radio" name="dataset" value="readymade" checked onchange="toggleCustomFields()"> Readymade Dataset</label>
+    <label style="margin-left:20px;"><input type="radio" name="dataset" value="custom" onchange="toggleCustomFields()"> Custom Dataset</label>
+</div>
+
+<!-- ================= POPULATION PARAMETERS ================= -->
+<div class="card-box">
+    <h3>Population Parameters</h3>
+    <div class="param-grid">
+        <div class="slider-group">
+            <label>Number of Patients</label>
+            <input id="population" type="number" value="10000" min="100" max="50000">
+            
+            <!-- Custom Fields - Only visible for Custom Dataset -->
+            <div id="customFields" style="display:none; margin-top: 20px;">
+                <!-- Age Range -->
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; color: #2c3e50; margin-bottom: 5px; display: block;">Age Range</label>
+                    <div class="range-inputs">
+                        <input type="number" id="ageMin" placeholder="Min" value="30" min="18" max="90">
+                        <input type="number" id="ageMax" placeholder="Max" value="75" min="18" max="90">
+                    </div>
+                </div>
+
+                <!-- BMI Range -->
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; color: #2c3e50; margin-bottom: 5px; display: block;">BMI Range</label>
+                    <div class="range-inputs">
+                        <input type="number" id="bmiMin" placeholder="Min" value="18.5" min="10" max="50" step="0.1">
+                        <input type="number" id="bmiMax" placeholder="Max" value="35" min="10" max="50" step="0.1">
+                    </div>
+                </div>
+
+                <!-- HbA1c Range -->
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; color: #2c3e50; margin-bottom: 5px; display: block;">HbA1c Range</label>
+                    <div class="range-inputs">
+                        <input type="number" id="hba1cMin" placeholder="Min" value="6.5" min="4" max="15" step="0.1">
+                        <input type="number" id="hba1cMax" placeholder="Max" value="9.5" min="4" max="15" step="0.1">
+                    </div>
+                </div>
+
+                <!-- Glucose Range -->
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; color: #2c3e50; margin-bottom: 5px; display: block;">Glucose Range</label>
+                    <div class="range-inputs">
+                        <input type="number" id="glucoseMin" placeholder="Min" value="100" min="70" max="300">
+                        <input type="number" id="glucoseMax" placeholder="Max" value="200" min="70" max="300">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn primary generate-btn" onclick="generatePopulation()" style="margin-top:20px;">
+                Generate Population
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= POPULATION OVERVIEW ================= -->
+<div class="card-box" id="overviewSection" style="display:none">
+    <h3 style="margin-bottom: 20px;">Population Overview</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+        
+        <!-- Age Distribution Table -->
+        <div>
+            <h4 style="margin-bottom: 10px; color: #2c3e50;">Age Distribution</h4>
+            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead style="background: #667eea; color: white;">
+                    <tr>
+                        <th style="padding: 10px; text-align: left;">Range</th>
+                        <th style="padding: 10px; text-align: right;">Patients</th>
+                        <th style="padding: 10px; text-align: right;">%</th>
+                    </tr>
+                </thead>
+                <tbody id="ageDistributionBody">
+                    <tr><td colspan="3" style="padding: 20px; text-align: center; color: #999;">No data</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- BMI Distribution Table -->
+        <div>
+            <h4 style="margin-bottom: 10px; color: #2c3e50;">BMI Distribution</h4>
+            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead style="background: #f093fb; color: white;">
+                    <tr>
+                        <th style="padding: 10px; text-align: left;">Range</th>
+                        <th style="padding: 10px; text-align: right;">Patients</th>
+                        <th style="padding: 10px; text-align: right;">%</th>
+                    </tr>
+                </thead>
+                <tbody id="bmiDistributionBody">
+                    <tr><td colspan="3" style="padding: 20px; text-align: center; color: #999;">No data</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- HbA1c Distribution Table -->
+        <div>
+            <h4 style="margin-bottom: 10px; color: #2c3e50;">HbA1c Distribution</h4>
+            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead style="background: #43e97b; color: white;">
+                    <tr>
+                        <th style="padding: 10px; text-align: left;">Range</th>
+                        <th style="padding: 10px; text-align: right;">Patients</th>
+                        <th style="padding: 10px; text-align: right;">%</th>
+                    </tr>
+                </thead>
+                <tbody id="hba1cDistributionBody">
+                    <tr><td colspan="3" style="padding: 20px; text-align: center; color: #999;">No data</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Glucose Distribution Table -->
+        <div>
+            <h4 style="margin-bottom: 10px; color: #2c3e50;">Glucose Distribution</h4>
+            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead style="background: #fa709a; color: white;">
+                    <tr>
+                        <th style="padding: 10px; text-align: left;">Range</th>
+                        <th style="padding: 10px; text-align: right;">Patients</th>
+                        <th style="padding: 10px; text-align: right;">%</th>
+                    </tr>
+                </thead>
+                <tbody id="glucoseDistributionBody">
+                    <tr><td colspan="3" style="padding: 20px; text-align: center; color: #999;">No data</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Medical Validation -->
+    <div id="validationSummary" style="margin-top: 25px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745; display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span id="validationText" style="font-weight: 500;"></span>
+            <span id="validationBadge" style="background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold;"></span>
+        </div>
+    </div>
+</div>
+
+<!-- ================= DATASET PREVIEW ================= -->
+<div class="card-box" id="previewSection" style="display:none">
+    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Preview (First 10 Records)</h3>
+    
+    <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px; background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1);">
+            <thead style="background: #f0f0f0; border-bottom: 2px solid #ddd;">
+                <tr>
+                    <th style="padding: 8px; text-align: left;">Patient ID</th>
+                    <th style="padding: 8px; text-align: left;">Age</th>
+                    <th style="padding: 8px; text-align: left;">BMI</th>
+                    <th style="padding: 8px; text-align: left;">HbA1c</th>
+                    <th style="padding: 8px; text-align: left;">Glucose</th>
+                    <th style="padding: 8px; text-align: left;">Drug</th>
+                    <th style="padding: 8px; text-align: left;">Dose</th>
+                    <th style="padding: 8px; text-align: left;">Treatment</th>
+                </tr>
+            </thead>
+            <tbody id="previewTableBody">
+                <tr><td colspan="8" style="padding: 20px; text-align: center; color: #999;">No data</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-end;">
+        <button class="btn primary" style="padding: 6px 16px; font-size: 13px;" onclick="downloadCSV()">Download CSV</button>
+        <button class="btn outline" style="padding: 6px 16px; font-size: 13px;" onclick="runTrialSimulation()">Run Simulation</button>
+    </div>
+</div>
+
+</section>
+
+<style>
+    .spinner { border:4px solid #f3f3f3; border-top:4px solid #3498db; border-radius:50%; width:40px; height:40px; animation:spin 1s linear infinite; margin:20px auto; }
+    @keyframes spin { 0%{transform:rotate(0);} 100%{transform:rotate(360deg);} }
+    .range-inputs { display:flex; gap:10px; }
+    .range-inputs input { flex:1; padding:8px; border:1px solid #ddd; border-radius:4px; }
+    .btn { padding:10px 25px; border:none; border-radius:5px; cursor:pointer; }
+    .btn.primary { background:#007bff; color:white; }
+    .btn.outline { background:transparent; border:1px solid #ddd; }
+    .btn:disabled { opacity:0.5; cursor:not-allowed; }
+    .card-box { background:white; border-radius:10px; padding:20px; margin-bottom:20px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+    table td { padding: 10px; border-bottom: 1px solid #eee; }
+</style>
+
+<script>
+const API_BASE_URL = 'http://127.0.0.1:5000';
+let currentPatientData = null;
+
+function persistGeneratedDataForAccelerated(patients) {
+    if (!patients || !patients.length) return;
+
+    sessionStorage.setItem('acceleratedDataCount', patients.length);
+
+    saveToIndexedDB(patients, function(success, sessionId) {
+        if (success && sessionId) {
+            sessionStorage.setItem('acceleratedDataSessionId', sessionId);
+            sessionStorage.setItem('acceleratedDataSource', 'indexeddb');
+            console.log(`Saved ${patients.length} patients for Accelerated Timelines`);
+            return;
+        }
+
+        try {
+            const fallbackPatients = patients.slice(0, 500);
+            localStorage.setItem('acceleratedPatients', JSON.stringify(fallbackPatients));
+            sessionStorage.setItem('acceleratedDataSource', 'localStorage');
+            console.warn('IndexedDB unavailable. Saved 500 patients for Accelerated Timelines.');
+        } catch (error) {
+            console.error('Unable to save generated patients for Accelerated Timelines:', error);
+        }
+    });
+}
+
+// Columns needed for Feature 2
+const REQUIRED_COLUMNS = [
+    'patient_id', 'age', 'bmi_baseline', 'baseline_hba1c', 'baseline_glucose',
+    'drug_name', 'dose_mg', 'treatment_group', 'hba1c_6m', 'hba1c_12m', 
+    'hba1c_24m', 'hba1c_36m'
+];
+
+function toggleCustomFields() {
+    const isCustom = document.querySelector('input[name="dataset"]:checked').value === 'custom';
+    const customFields = document.getElementById('customFields');
+    
+    if (customFields) {
+        customFields.style.display = isCustom ? 'block' : 'none';
+    }
+}
+
+async function generatePopulation() {
+    document.getElementById('loadingOverlay').style.display = 'block';
+    
+    const datasetType = document.querySelector('input[name="dataset"]:checked').value;
+    const req = {
+        dataset_type: datasetType,
+        population_params: { num_patients: parseInt(document.getElementById('population').value) }
+    };
+    
+    if (datasetType === 'custom') {
+        req.population_params.age_range = { 
+            min: parseInt(document.getElementById('ageMin').value), 
+            max: parseInt(document.getElementById('ageMax').value) 
+        };
+        req.population_params.bmi_range = { 
+            min: parseFloat(document.getElementById('bmiMin').value), 
+            max: parseFloat(document.getElementById('bmiMax').value) 
+        };
+        req.population_params.hba1c_range = { 
+            min: parseFloat(document.getElementById('hba1cMin').value), 
+            max: parseFloat(document.getElementById('hba1cMax').value) 
+        };
+        req.population_params.glucose_range = { 
+            min: parseInt(document.getElementById('glucoseMin').value), 
+            max: parseInt(document.getElementById('glucoseMax').value) 
+        };
+    }
+    
+    try {
+        const res = await fetch(`${API_BASE_URL}/generate`, {
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(req)
+        });
+        const result = await res.json();
+        
+        if (result.success) {
+            currentPatientData = result;
+            persistGeneratedDataForAccelerated(currentPatientData.data);
+            console.log("✅ Data stored in currentPatientData:", currentPatientData);
+            console.log("✅ Patient count:", currentPatientData.data.length);
+            
+            // DEBUG: Log the first patient to see available fields
+            if (result.data && result.data.length > 0) {
+                console.log("🔍 FIRST PATIENT DATA:", result.data[0]);
+                console.log("🔍 AVAILABLE FIELDS:", Object.keys(result.data[0]));
+            }
+            
+            showPreview(result);
+        } else {
+            alert('Error: ' + result.error);
+        }
+    } catch (error) {
+        alert('Failed to connect to backend. Make sure Flask is running on port 5000');
+        console.error(error);
+    } finally {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
+}
+
+function showPreview(result) {
+    document.getElementById("overviewSection").style.display = "block";
+    document.getElementById("previewSection").style.display = "block";
+    
+    if (result.data && result.data.length > 0) {
+        const firstPatient = result.data[0];
+        const fields = Object.keys(firstPatient);
+        console.log("📊 Available fields for tables:", fields);
+        
+        // Try to identify which fields to use for distributions
+        let drugField = fields.find(f => f.toLowerCase().includes('drug')) || 'drug_name';
+        let doseField = fields.find(f => f.toLowerCase().includes('dose')) || 'dose_mg';
+        let treatmentField = fields.find(f => f.toLowerCase().includes('treatment')) || 'treatment_group';
+        let ageField = fields.find(f => f.toLowerCase().includes('age')) || 'age';
+        let bmiField = fields.find(f => f.toLowerCase().includes('bmi')) || 'bmi_baseline';
+        let hba1cField = fields.find(f => f.toLowerCase().includes('hba1c') || f.toLowerCase().includes('hbA1c')) || 'baseline_hba1c';
+        let glucoseField = fields.find(f => f.toLowerCase().includes('glucose')) || 'baseline_glucose';
+        let patientIdField =fields.find(f => f.toLowerCase() === 'patient_id') ||fields.find(f => f.toLowerCase() === 'id') ||'patient_id';
+        
+        
+        console.log("Using fields:", {ageField, bmiField, hba1cField, glucoseField, patientIdField, drugField, doseField, treatmentField});
+        
+        // Update distributions with the correct field names
+        updateDistribution('age', result.data, [20, 30, 40, 50, 60, 70, 80, 90], ageField);
+        updateDistribution('bmi', result.data, [15, 18.5, 25, 30, 35, 40, 45, 50], bmiField);
+        updateDistribution('hba1c', result.data, [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], hba1cField);
+        updateDistribution('glucose', result.data, [70, 100, 130, 160, 190, 220, 250, 280, 310], glucoseField);
+        
+        // Preview table - use actual field names from the data
+        let previewHtml = '';
+        for (let i = 0; i < Math.min(10, result.data.length); i++) {
+            const p = result.data[i];
+            
+            // Safely access fields with fallbacks
+            previewHtml += `<tr>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[patientIdField] || p.id || 'N/A'}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[ageField] !== undefined ? p[ageField] : ''}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[bmiField] !== undefined ? (typeof p[bmiField] === 'number' ? p[bmiField].toFixed(1) : p[bmiField]) : ''}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[hba1cField] !== undefined ? (typeof p[hba1cField] === 'number' ? p[hba1cField].toFixed(1) : p[hba1cField]) : ''}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[glucoseField] !== undefined ? p[glucoseField] : ''}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[drugField] || p.drug || ''}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[doseField] !== undefined ? p[doseField] : ''}</td>
+                <td style="padding: 6px 8px; border-bottom: 1px solid #eee;">${p[treatmentField] || p.group || ''}</td>
+            </tr>`;
+        }
+        document.getElementById('previewTableBody').innerHTML = previewHtml;
+        
+        console.log("✅ Preview table updated with", Math.min(10, result.data.length), "records");
+    }
+    
+    if (result.medical_validation) {
+        document.getElementById("validationSummary").style.display = "block";
+        const pct = result.medical_validation.meets_criteria_percent;
+        document.getElementById("validationText").innerHTML = 
+            `${result.medical_validation.valid_patients} out of ${result.medical_validation.total_patients} meet criteria`;
+        const badge = document.getElementById("validationBadge");
+        badge.textContent = pct + '%';
+        badge.style.background = pct >= 80 ? '#28a745' : pct >= 60 ? '#ffc107' : '#dc3545';
+    }
+}
+
+function updateDistribution(type, data, bins, field) {
+    const values = data.map(p => p[field]).filter(v => v !== null && v !== undefined && !isNaN(parseFloat(v)));
+    const total = data.length;
+    let html = '';
+    
+    console.log(`Distribution for ${type} (${field}):`, {
+        totalValues: values.length,
+        sampleValues: values.slice(0, 5),
+        allValues: values.slice(0, 10)
+    });
+    
+    if (values.length === 0) {
+        document.getElementById(`${type}DistributionBody`).innerHTML = 
+            '<tr><td colspan="3" style="padding:20px; text-align:center; color:#999;">No data available for this field</td></tr>';
+        return;
+    }
+    
+    for (let i = 0; i < bins.length - 1; i++) {
+        const count = values.filter(v => parseFloat(v) >= bins[i] && parseFloat(v) < bins[i+1]).length;
+        if (count > 0) {
+            const pct = ((count / total) * 100).toFixed(1);
+            html += `<tr>
+                <td style="padding:8px 10px; border-bottom:1px solid #eee;">${bins[i]}–${bins[i+1]}</td>
+                <td style="padding:8px 10px; border-bottom:1px solid #eee; text-align:right;">${count}</td>
+                <td style="padding:8px 10px; border-bottom:1px solid #eee; text-align:right;">${pct}%</td>
+            </tr>`;
+        }
+    }
+    
+    const lastCount = values.filter(v => parseFloat(v) >= bins[bins.length-1]).length;
+    if (lastCount > 0) {
+        const pct = ((lastCount / total) * 100).toFixed(1);
+        html += `<tr>
+            <td style="padding:8px 10px;">${bins[bins.length-1]}+</td>
+            <td style="padding:8px 10px; text-align:right;">${lastCount}</td>
+            <td style="padding:8px 10px; text-align:right;">${pct}%</td>
+        </tr>`;
+    }
+    
+    document.getElementById(`${type}DistributionBody`).innerHTML = html || 
+        '<tr><td colspan="3" style="padding:20px; text-align:center;">No data in ranges</td></tr>';
+}
+
+function downloadCSV() {
+    if (!currentPatientData) return alert('Generate patients first.');
+    const patients = currentPatientData.data;
+    const csv = [Object.keys(patients[0]).join(','), 
+                 ...patients.map(p => Object.values(p).join(','))].join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+    a.download = `patients_${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+}
+
+// FIXED: Handle large datasets to avoid QuotaExceededError
+// IndexedDB helper functions
+// IndexedDB storage function
+function saveToIndexedDB(data, callback) {
+    const request = indexedDB.open('TrialDataDB', 1);
+    
+    request.onerror = function(event) {
+        console.error("IndexedDB error:", event);
+        callback(false, null);
+    };
+    
+    request.onupgradeneeded = function(event) {
+        const db = event.target.result;
+        if (!db.objectStoreNames.contains('patients')) {
+            db.createObjectStore('patients', { keyPath: 'sessionId' });
+        }
+    };
+    
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        const sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        const transaction = db.transaction(['patients'], 'readwrite');
+        const store = transaction.objectStore('patients');
+        
+        const patientData = {
+            sessionId: sessionId,
+            data: data,
+            timestamp: Date.now(),
+            count: data.length
+        };
+        
+        const putRequest = store.put(patientData);
+        
+        putRequest.onsuccess = function() {
+            console.log(`✅ Stored ALL ${data.length} patients in IndexedDB with session: ${sessionId}`);
+            callback(true, sessionId);
+        };
+        
+        putRequest.onerror = function() {
+            console.error("Failed to store in IndexedDB");
+            callback(false, null);
+        };
+        
+        transaction.oncomplete = function() {
+            db.close();
+        };
+    };
+}
+
+function runTrialSimulation() {
+    if (!currentPatientData) {
+        alert('Generate patients first.');
+        return;
+    }
+
+    const patientCount = currentPatientData.data.length;
+    console.log(`📊 Running simulation with ${patientCount} patients`);
+    
+    // Show loading indicator
+    const overlay = document.getElementById('loadingOverlay');
+    if (overlay) overlay.style.display = 'block';
+    
+    // ALWAYS use IndexedDB for ALL datasets (handles 10,000+ patients easily)
+    saveToIndexedDB(currentPatientData.data, function(success, sessionId) {
+        if (overlay) overlay.style.display = 'none';
+        
+        if (success && sessionId) {
+            // Store just the session ID in sessionStorage
+            sessionStorage.setItem('trialDataSessionId', sessionId);
+            sessionStorage.setItem('trialDataSource', 'indexeddb');
+            sessionStorage.setItem('trialDataCount', patientCount);
+            
+            // Clear any old data from localStorage/sessionStorage to avoid confusion
+            sessionStorage.removeItem('trialData');
+            localStorage.removeItem('generatedPatients');
+            
+            console.log(`✅✅✅ ALL ${patientCount} patients stored in IndexedDB ✅✅✅`);
+            console.log(`📌 Session ID: ${sessionId}`);
+            
+            // Navigate to trial simulation page
+            window.location.href = '/trial-simulation/?source=generated';
+        } else {
+            // Fallback: if IndexedDB fails, use sessionStorage with truncation
+            console.warn("IndexedDB failed, falling back to sessionStorage with truncation");
+            try {
+                const truncatedData = currentPatientData.data.slice(0, 500);
+                const dataToStore = {
+                    data: truncatedData,
+                    source: 'generated',
+                    timestamp: Date.now(),
+                    count: patientCount,
+                    isTruncated: true,
+                    originalCount: patientCount
+                };
+                sessionStorage.setItem('trialData', JSON.stringify(dataToStore));
+                localStorage.setItem('generatedPatients', JSON.stringify(truncatedData));
+                
+                alert(`⚠️ Using ${truncatedData.length} of ${patientCount} patients (browser storage limit). For full dataset, ensure IndexedDB is enabled.`);
+                window.location.href = '/trial-simulation/?source=generated';
+            } catch (e) {
+                alert(`Unable to process ${patientCount} patients. Please try generating fewer patients.`);
+            }
+        }
+    });
+}
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    toggleCustomFields();
+    const radios = document.querySelectorAll('input[name="dataset"]');
+    if (radios.length > 0) {
+        radios.forEach(r => r.addEventListener('change', toggleCustomFields));
+    }
+});
+</script>
+
+{% endblock %}

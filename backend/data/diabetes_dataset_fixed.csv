@@ -1,0 +1,1001 @@
+patient_id,age,gender,bmi,treatment_group,drug_name,dose_mg,diet_adherence,medication_adherence,lifestyle_activity,hba1c_baseline,hba1c_3_months,hba1c_6_months,hba1c_12_months,hba1c_24_months,hba1c_36_months,responder_status,adverse_event,diabetes_risk_probability_3m,diabetes_risk_probability_6m,diabetes_risk_probability_12m,diabetes_risk_probability_24m,diabetes_risk_probability_36m,fasting_glucose_mg_dl,postprandial_glucose_mg_dl,cholesterol_mg_dl,triglycerides_mg_dl,systolic_bp,diastolic_bp
+P00001,48,Male,22.4,Control,None,0,Poor,Good,Moderate,8.3,8.4,8.4,8.3,8.3,8.2,Minimal Responder,None,0.679,0.679,0.661,0.661,0.642,199,285,177,155,132,82
+P00002,32,Female,26.4,Treatment,Sitagliptin,100,Moderate,Moderate,Active,10.3,10.2,9.8,9.5,9.3,9.4,Partial Responder,None,0.905,0.872,0.841,0.818,0.83,250,362,247,78,146,87
+P00003,39,Female,25.2,Treatment,Sitagliptin,50,Moderate,Poor,Active,8.0,7.9,8.0,7.8,7.7,7.9,Minimal Responder,Mild,0.583,0.603,0.562,0.542,0.583,191,297,199,217,102,85
+P00004,60,Male,25.8,Control,None,0,Good,Poor,Active,7.0,6.8,6.6,6.4,6.5,6.4,Partial Responder,None,0.358,0.321,0.286,0.303,0.286,150,227,217,138,125,83
+P00005,66,Female,24.4,Treatment,Metformin,1000,Good,Good,Moderate,8.5,8.1,7.7,7.1,6.9,6.8,Good Responder,GI Issues,0.622,0.542,0.417,0.378,0.358,190,275,214,184,125,80
+P00006,33,Male,33.4,Control,None,0,Poor,Good,Sedentary,8.3,8.4,8.4,8.7,8.6,8.4,Non-Responder,None,0.679,0.679,0.731,0.714,0.679,200,275,148,162,141,76
+P00007,38,Male,27.5,Treatment,Metformin,1500,Moderate,Moderate,Sedentary,8.8,8.6,8.6,8.0,7.9,7.9,Partial Responder,None,0.714,0.714,0.603,0.583,0.583,197,308,185,137,117,90
+P00008,56,Female,39.7,Treatment,Sitagliptin,100,Good,Moderate,Sedentary,8.4,8.3,8.0,7.7,7.8,7.9,Partial Responder,None,0.661,0.603,0.542,0.562,0.583,201,296,196,205,138,80
+P00009,65,Male,23.4,Treatment,Metformin,500,Good,Moderate,Moderate,9.4,9.1,9.1,8.7,8.8,8.8,Partial Responder,None,0.791,0.791,0.731,0.747,0.747,223,305,210,273,135,73
+P00010,74,Male,25.8,Treatment,Sitagliptin,100,Good,Good,Moderate,10.3,10.0,9.6,9.1,9.1,8.9,Good Responder,None,0.889,0.852,0.791,0.791,0.763,226,312,243,208,127,78
+P00011,48,Female,36.8,Treatment,Sitagliptin,100,Moderate,Moderate,Sedentary,10.9,10.8,10.6,10.4,10.4,10.2,Partial Responder,Headache,0.94,0.93,0.918,0.918,0.905,260,401,182,240,138,107
+P00012,62,Male,39.9,Treatment,Metformin,1000,Moderate,Good,Active,8.8,8.2,8.0,7.5,6.9,6.9,Good Responder,None,0.642,0.603,0.5,0.378,0.378,209,274,191,169,122,73
+P00013,76,Female,23.0,Treatment,Empagliflozin,25,Moderate,Moderate,Sedentary,10.2,10.0,10.0,9.7,9.5,9.4,Partial Responder,None,0.889,0.889,0.862,0.841,0.83,242,387,168,89,137,64
+P00014,31,Female,27.7,Treatment,Metformin,500,Good,Poor,Active,10.3,10.2,10.2,10.0,9.8,9.6,Minimal Responder,GI Issues,0.905,0.905,0.889,0.872,0.852,223,299,133,228,122,92
+P00015,78,Female,25.4,Control,None,0,Poor,Moderate,Moderate,6.9,6.9,6.7,7.1,6.9,6.9,Non-Responder,None,0.378,0.339,0.417,0.378,0.378,165,254,239,163,125,83
+P00016,60,Male,28.1,Treatment,Metformin,500,Poor,Moderate,Sedentary,7.6,7.6,7.4,7.2,7.2,7.3,Minimal Responder,None,0.521,0.479,0.438,0.438,0.458,173,245,222,285,122,76
+P00017,77,Female,26.5,Treatment,Empagliflozin,25,Poor,Good,Moderate,10.1,9.9,9.8,9.4,9.3,9.1,Partial Responder,Hypoglycemia,0.881,0.872,0.83,0.818,0.791,248,359,224,205,145,73
+P00018,62,Male,36.7,Treatment,Empagliflozin,10,Moderate,Moderate,Moderate,10.7,10.5,10.3,10.1,10.3,10.2,Partial Responder,None,0.924,0.912,0.897,0.912,0.905,256,400,174,182,137,96
+P00019,73,Female,37.0,Treatment,Sitagliptin,25,Moderate,Moderate,Moderate,8.5,8.5,8.4,8.3,8.1,8.2,Minimal Responder,None,0.697,0.679,0.661,0.622,0.642,203,289,164,199,128,77
+P00020,57,Male,34.7,Control,None,0,Moderate,Good,Sedentary,7.5,7.7,7.6,7.5,7.7,7.6,Minimal Responder,None,0.542,0.521,0.5,0.542,0.521,187,273,243,164,142,86
+P00021,34,Male,23.5,Treatment,Empagliflozin,25,Good,Good,Active,9.8,9.3,9.0,8.5,8.3,8.1,Good Responder,None,0.818,0.777,0.697,0.661,0.622,227,298,183,195,152,88
+P00022,32,Female,35.0,Control,None,0,Moderate,Good,Moderate,8.0,8.0,7.8,7.8,7.8,7.8,Minimal Responder,None,0.603,0.562,0.562,0.562,0.562,200,260,188,51,147,61
+P00023,38,Male,33.5,Treatment,Sitagliptin,50,Good,Moderate,Active,10.8,10.5,10.3,10.1,10.1,9.9,Partial Responder,Headache,0.924,0.912,0.897,0.897,0.881,267,367,171,164,118,84
+P00024,52,Male,30.0,Treatment,Empagliflozin,25,Poor,Moderate,Sedentary,10.7,10.4,10.2,10.3,10.1,10.1,Minimal Responder,None,0.918,0.905,0.912,0.897,0.897,252,379,138,187,145,76
+P00025,71,Male,36.5,Treatment,Metformin,500,Good,Poor,Sedentary,8.7,8.6,8.6,8.5,8.3,8.1,Minimal Responder,None,0.714,0.714,0.697,0.661,0.622,225,301,195,259,139,73
+P00026,40,Male,32.9,Treatment,Metformin,850,Good,Moderate,Moderate,7.5,7.1,7.2,6.8,6.6,6.6,Partial Responder,None,0.417,0.438,0.358,0.321,0.321,172,229,266,249,124,91
+P00027,57,Male,37.9,Treatment,Sitagliptin,100,Good,Moderate,Moderate,10.7,10.4,10.3,9.9,9.8,9.8,Partial Responder,None,0.918,0.912,0.881,0.872,0.872,267,380,188,199,129,59
+P00028,39,Female,27.4,Control,None,0,Good,Good,Active,7.1,6.9,6.8,6.8,6.7,6.6,Minimal Responder,None,0.378,0.358,0.358,0.339,0.321,154,230,221,168,128,96
+P00029,46,Female,35.7,Treatment,Metformin,1000,Moderate,Good,Sedentary,10.0,9.4,9.2,9.0,9.0,8.8,Good Responder,None,0.83,0.805,0.777,0.777,0.747,232,351,207,152,111,103
+P00030,74,Female,34.6,Treatment,Empagliflozin,25,Moderate,Good,Sedentary,7.9,7.6,7.5,7.5,7.1,7.0,Minimal Responder,None,0.521,0.5,0.5,0.417,0.397,182,246,157,264,143,79
+P00031,51,Male,26.6,Treatment,Empagliflozin,25,Good,Good,Moderate,9.0,8.5,8.3,7.9,7.8,7.8,Good Responder,Mild,0.697,0.661,0.583,0.562,0.562,227,301,182,157,120,76
+P00032,35,Female,30.9,Control,None,0,Moderate,Poor,Active,9.6,9.5,9.3,9.3,9.2,9.2,Minimal Responder,None,0.841,0.818,0.818,0.805,0.805,226,358,214,92,169,75
+P00033,68,Female,31.0,Treatment,Metformin,1000,Moderate,Good,Moderate,8.7,8.1,7.9,7.7,7.5,7.1,Partial Responder,None,0.622,0.583,0.542,0.5,0.417,203,280,196,150,133,79
+P00034,76,Male,38.7,Treatment,Metformin,1500,Good,Good,Sedentary,7.0,6.4,6.2,5.7,5.6,5.3,Good Responder,None,0.286,0.253,0.182,0.17,0.138,169,263,180,207,145,57
+P00035,48,Male,31.9,Treatment,Metformin,500,Moderate,Moderate,Active,8.7,8.6,8.3,8.3,8.0,7.8,Minimal Responder,GI Issues,0.714,0.661,0.661,0.603,0.562,200,312,213,106,147,83
+P00036,45,Male,35.2,Treatment,Metformin,850,Moderate,Good,Active,10.1,9.6,9.3,8.8,8.6,8.4,Good Responder,GI Issues,0.852,0.818,0.747,0.714,0.679,248,380,160,157,135,87
+P00037,47,Male,39.1,Treatment,Metformin,850,Moderate,Good,Sedentary,8.5,8.2,7.9,7.6,7.6,7.4,Partial Responder,None,0.642,0.583,0.521,0.521,0.479,206,278,191,269,138,82
+P00038,66,Female,36.6,Control,None,0,Poor,Poor,Sedentary,6.9,6.8,7.1,6.8,7.1,7.3,Minimal Responder,None,0.358,0.417,0.358,0.417,0.458,149,230,218,127,119,64
+P00039,35,Female,30.1,Control,None,0,Good,Moderate,Moderate,8.3,8.5,8.3,8.1,8.2,7.9,Minimal Responder,None,0.697,0.661,0.622,0.642,0.583,195,299,144,167,125,60
+P00040,30,Male,29.6,Control,None,0,Good,Moderate,Moderate,8.7,8.9,8.6,8.3,8.6,8.3,Minimal Responder,None,0.763,0.714,0.661,0.714,0.661,210,311,162,136,105,93
+P00041,71,Male,28.2,Control,None,0,Moderate,Moderate,Moderate,8.0,8.1,8.0,7.8,8.0,7.6,Minimal Responder,None,0.622,0.603,0.562,0.603,0.521,179,251,196,194,126,78
+P00042,37,Female,37.1,Treatment,Sitagliptin,100,Poor,Moderate,Moderate,6.5,6.4,6.4,6.0,5.9,5.9,Partial Responder,None,0.286,0.286,0.223,0.209,0.209,148,204,204,118,140,77
+P00043,63,Male,27.2,Treatment,Metformin,850,Poor,Poor,Sedentary,6.9,6.8,6.6,6.6,6.4,6.8,Minimal Responder,None,0.358,0.321,0.321,0.286,0.358,146,195,242,117,117,93
+P00044,51,Female,23.2,Control,None,0,Moderate,Good,Sedentary,10.9,11.0,10.8,11.1,11.1,11.1,Non-Responder,None,0.949,0.94,0.95,0.95,0.95,259,376,186,293,88,88
+P00045,36,Male,22.2,Treatment,Metformin,850,Moderate,Good,Active,7.2,6.8,6.6,6.1,5.7,5.8,Good Responder,None,0.358,0.321,0.237,0.182,0.195,145,214,112,151,134,75
+P00046,54,Female,38.2,Treatment,Metformin,850,Good,Moderate,Moderate,6.9,6.5,6.7,6.3,6.1,5.9,Partial Responder,None,0.303,0.339,0.269,0.237,0.209,146,206,183,221,128,87
+P00047,56,Male,31.3,Treatment,Metformin,2000,Moderate,Poor,Moderate,7.7,7.4,7.4,7.4,7.3,6.8,Minimal Responder,None,0.479,0.479,0.479,0.458,0.358,166,239,136,218,154,72
+P00048,56,Female,30.2,Control,None,0,Good,Good,Active,9.5,9.2,9.4,8.9,8.9,8.8,Partial Responder,None,0.805,0.83,0.763,0.763,0.747,222,313,208,103,129,88
+P00049,72,Female,29.7,Treatment,Sitagliptin,100,Good,Good,Moderate,8.7,8.2,8.1,7.7,7.5,7.5,Partial Responder,None,0.642,0.622,0.542,0.5,0.5,209,312,151,246,134,100
+P00050,50,Male,37.2,Treatment,Empagliflozin,10,Poor,Moderate,Active,7.1,7.1,6.8,6.8,6.6,6.4,Minimal Responder,None,0.417,0.358,0.358,0.321,0.286,140,220,173,99,138,71
+P00051,72,Female,23.5,Treatment,Metformin,500,Poor,Poor,Moderate,10.8,10.7,10.6,10.7,10.4,10.4,Minimal Responder,None,0.935,0.93,0.935,0.918,0.918,244,329,214,193,130,82
+P00052,41,Male,29.5,Treatment,Metformin,850,Good,Poor,Active,10.0,9.8,9.8,9.6,9.3,9.3,Minimal Responder,None,0.872,0.872,0.852,0.818,0.818,233,330,207,305,137,63
+P00053,67,Male,31.2,Treatment,Metformin,500,Moderate,Moderate,Sedentary,6.7,6.6,6.4,6.2,6.3,6.1,Partial Responder,None,0.321,0.286,0.253,0.269,0.237,150,201,183,134,144,77
+P00054,75,Male,26.0,Treatment,Sitagliptin,25,Good,Good,Moderate,7.2,6.9,6.9,6.8,6.6,6.4,Minimal Responder,None,0.378,0.378,0.358,0.321,0.286,163,242,181,121,118,70
+P00055,30,Female,36.4,Treatment,Metformin,2000,Good,Good,Active,7.3,6.6,6.3,5.3,5.0,4.7,Excellent Responder,None,0.321,0.269,0.138,0.111,0.088,155,235,254,164,133,82
+P00056,35,Female,22.2,Control,None,0,Good,Good,Sedentary,9.5,9.7,9.5,9.6,9.9,9.5,Non-Responder,None,0.862,0.841,0.852,0.881,0.841,238,376,188,281,118,62
+P00057,77,Male,28.2,Treatment,Sitagliptin,25,Good,Moderate,Active,7.2,7.1,7.1,6.8,6.8,6.8,Minimal Responder,None,0.417,0.417,0.358,0.358,0.358,153,212,197,162,153,68
+P00058,58,Female,28.7,Control,None,0,Good,Poor,Active,9.9,10.0,9.5,9.1,9.2,9.2,Partial Responder,None,0.889,0.841,0.791,0.805,0.805,242,384,208,132,134,92
+P00059,51,Female,23.3,Treatment,Sitagliptin,25,Moderate,Moderate,Active,8.3,8.1,8.1,8.0,8.0,7.9,Minimal Responder,None,0.622,0.622,0.603,0.603,0.583,188,248,117,100,141,87
+P00060,65,Female,35.2,Control,None,0,Good,Poor,Moderate,6.7,6.9,6.4,6.1,6.2,6.6,Partial Responder,None,0.378,0.286,0.237,0.253,0.321,137,203,222,211,115,83
+P00061,76,Female,33.9,Control,None,0,Poor,Moderate,Active,10.5,10.3,10.4,10.2,10.1,10.3,Minimal Responder,None,0.912,0.918,0.905,0.897,0.912,249,328,195,283,119,97
+P00062,78,Female,34.5,Control,None,0,Poor,Moderate,Sedentary,6.6,6.5,6.9,6.8,6.8,6.8,Non-Responder,None,0.303,0.378,0.358,0.358,0.358,150,235,225,155,176,78
+P00063,38,Male,34.1,Control,None,0,Moderate,Moderate,Moderate,10.9,10.8,10.8,10.6,10.7,10.8,Minimal Responder,None,0.94,0.94,0.93,0.935,0.94,270,394,250,174,156,63
+P00064,61,Male,23.6,Control,None,0,Good,Moderate,Moderate,7.9,8.1,7.9,7.5,7.5,7.5,Minimal Responder,None,0.622,0.583,0.5,0.5,0.5,190,285,201,174,118,78
+P00065,62,Male,39.3,Treatment,Sitagliptin,100,Moderate,Good,Moderate,7.2,6.9,6.6,6.5,6.3,6.1,Partial Responder,Headache,0.378,0.321,0.303,0.269,0.237,164,254,181,84,120,99
+P00066,47,Female,26.0,Control,None,0,Good,Good,Moderate,10.0,9.8,9.9,9.8,9.8,9.8,Minimal Responder,None,0.872,0.881,0.872,0.872,0.872,224,301,197,167,127,79
+P00067,45,Male,31.1,Treatment,Metformin,850,Good,Good,Sedentary,9.2,8.6,8.5,8.2,8.1,7.9,Good Responder,GI Issues,0.714,0.697,0.642,0.622,0.583,238,312,222,74,174,71
+P00068,73,Female,24.0,Treatment,Empagliflozin,10,Good,Good,Moderate,10.3,9.9,9.8,9.6,9.3,9.3,Partial Responder,None,0.881,0.872,0.852,0.818,0.818,253,396,192,189,136,69
+P00069,79,Female,25.3,Control,None,0,Poor,Good,Active,7.4,7.1,7.3,7.0,7.1,7.1,Minimal Responder,None,0.417,0.458,0.397,0.417,0.417,171,238,166,225,127,76
+P00070,46,Male,26.4,Treatment,Sitagliptin,25,Moderate,Moderate,Sedentary,7.1,6.9,7.0,6.8,6.9,6.8,Minimal Responder,Headache,0.378,0.397,0.358,0.378,0.358,153,205,168,234,153,57
+P00071,49,Female,29.8,Treatment,Metformin,1000,Good,Good,Active,10.8,10.3,9.6,9.2,8.6,8.5,Excellent Responder,GI Issues,0.912,0.852,0.805,0.714,0.697,274,395,201,170,138,79
+P00072,45,Female,33.9,Treatment,Empagliflozin,25,Good,Poor,Sedentary,6.9,6.9,6.6,6.7,6.4,6.4,Minimal Responder,None,0.378,0.321,0.339,0.286,0.286,140,207,196,188,115,93
+P00073,60,Female,29.6,Treatment,Sitagliptin,100,Good,Good,Moderate,10.5,10.1,9.8,9.4,9.4,9.2,Good Responder,None,0.897,0.872,0.83,0.83,0.805,261,342,169,144,143,77
+P00074,59,Male,23.6,Control,None,0,Poor,Moderate,Moderate,7.6,7.5,7.6,7.5,7.8,7.9,Minimal Responder,None,0.5,0.521,0.5,0.562,0.583,151,209,170,113,141,74
+P00075,52,Male,33.9,Treatment,Empagliflozin,25,Moderate,Good,Moderate,10.5,10.1,9.9,9.7,9.3,9.2,Partial Responder,None,0.897,0.881,0.862,0.818,0.805,261,342,216,236,155,63
+P00076,63,Female,23.5,Treatment,Empagliflozin,25,Moderate,Good,Sedentary,7.0,6.9,6.6,6.1,6.1,6.0,Partial Responder,Hypoglycemia,0.378,0.321,0.237,0.237,0.223,143,204,174,82,120,71
+P00077,51,Male,34.8,Treatment,Sitagliptin,100,Moderate,Good,Sedentary,6.8,6.6,6.3,6.1,5.9,5.9,Partial Responder,Headache,0.321,0.269,0.237,0.209,0.209,151,237,194,295,135,81
+P00078,45,Female,25.8,Treatment,Metformin,500,Moderate,Good,Moderate,8.2,8.0,7.6,7.6,7.4,7.3,Partial Responder,None,0.603,0.521,0.521,0.479,0.458,202,322,264,179,142,80
+P00079,69,Female,36.1,Treatment,Metformin,1000,Good,Good,Moderate,9.2,8.6,8.6,8.1,7.8,7.6,Good Responder,None,0.714,0.714,0.622,0.562,0.521,226,337,195,303,125,73
+P00080,33,Female,29.4,Treatment,Metformin,1500,Moderate,Good,Moderate,8.5,8.0,7.5,7.2,7.0,6.7,Good Responder,None,0.603,0.5,0.438,0.397,0.339,209,282,185,119,138,95
+P00081,79,Male,22.2,Treatment,Sitagliptin,50,Poor,Poor,Moderate,8.5,8.5,8.5,8.4,8.4,8.2,Minimal Responder,None,0.697,0.697,0.679,0.679,0.642,208,327,217,204,164,69
+P00082,71,Male,26.8,Control,None,0,Moderate,Moderate,Sedentary,10.0,10.1,10.1,10.1,10.2,10.0,Non-Responder,None,0.897,0.897,0.897,0.905,0.889,235,342,213,202,112,89
+P00083,62,Male,36.7,Treatment,Metformin,1500,Good,Good,Sedentary,10.1,9.3,9.3,8.8,8.4,8.3,Good Responder,None,0.818,0.818,0.747,0.679,0.661,249,335,199,204,128,84
+P00084,71,Male,32.7,Control,None,0,Poor,Good,Moderate,8.6,8.8,8.6,8.6,8.8,8.6,Minimal Responder,None,0.747,0.714,0.714,0.747,0.714,183,289,169,280,132,76
+P00085,63,Female,26.1,Treatment,Sitagliptin,50,Poor,Good,Sedentary,7.4,7.2,7.1,6.9,7.0,6.8,Partial Responder,Mild,0.438,0.417,0.378,0.397,0.358,159,243,229,117,122,82
+P00086,69,Female,28.7,Treatment,Metformin,1500,Poor,Poor,Sedentary,9.0,9.1,8.8,8.8,8.8,8.4,Minimal Responder,None,0.791,0.747,0.747,0.747,0.679,226,343,166,71,144,74
+P00087,79,Female,36.0,Control,None,0,Moderate,Good,Active,9.8,9.8,9.5,9.5,9.3,9.6,Minimal Responder,None,0.872,0.841,0.841,0.818,0.852,231,349,185,224,141,69
+P00088,66,Male,39.3,Treatment,Metformin,1500,Moderate,Good,Moderate,8.5,8.0,7.8,7.3,6.7,6.8,Good Responder,None,0.603,0.562,0.458,0.339,0.358,179,243,137,217,135,92
+P00089,70,Male,25.2,Control,None,0,Good,Good,Moderate,7.9,7.9,7.8,7.6,7.7,7.6,Minimal Responder,None,0.583,0.562,0.521,0.542,0.521,200,273,268,191,133,88
+P00090,55,Female,26.4,Treatment,Sitagliptin,50,Moderate,Good,Moderate,9.5,9.2,9.2,8.8,8.8,8.7,Partial Responder,None,0.805,0.805,0.747,0.747,0.731,232,350,172,189,117,102
+P00091,60,Female,31.4,Treatment,Metformin,1000,Poor,Moderate,Sedentary,7.7,7.4,7.3,6.9,7.1,7.2,Partial Responder,None,0.479,0.458,0.378,0.417,0.438,182,249,218,184,152,68
+P00092,59,Male,35.0,Control,None,0,Good,Moderate,Sedentary,8.5,8.5,8.5,8.5,8.5,8.4,Minimal Responder,None,0.697,0.697,0.697,0.697,0.679,187,268,161,195,109,87
+P00093,53,Female,35.8,Treatment,Metformin,850,Moderate,Poor,Active,8.2,8.1,7.8,7.9,8.0,7.6,Minimal Responder,None,0.622,0.562,0.583,0.603,0.521,191,293,213,197,113,83
+P00094,42,Female,35.4,Control,None,0,Good,Moderate,Moderate,7.3,7.2,7.1,7.1,6.9,7.0,Minimal Responder,None,0.438,0.417,0.417,0.378,0.397,165,253,184,186,122,60
+P00095,66,Male,39.2,Treatment,Empagliflozin,25,Good,Good,Active,8.5,7.9,7.7,7.4,7.0,6.8,Good Responder,None,0.583,0.542,0.479,0.397,0.358,189,271,208,116,113,73
+P00096,41,Female,34.0,Treatment,Sitagliptin,25,Good,Good,Sedentary,8.1,7.9,7.9,7.7,7.6,7.5,Minimal Responder,None,0.583,0.583,0.542,0.521,0.5,184,283,163,169,127,78
+P00097,47,Male,26.2,Control,None,0,Poor,Moderate,Sedentary,7.7,7.9,7.9,8.2,8.2,8.1,Non-Responder,None,0.583,0.583,0.642,0.642,0.622,159,247,238,196,126,77
+P00098,35,Female,28.2,Treatment,Metformin,2000,Moderate,Good,Sedentary,7.4,7.1,6.7,6.3,6.2,5.9,Good Responder,GI Issues,0.417,0.339,0.269,0.253,0.209,162,242,231,239,138,87
+P00099,72,Male,37.8,Treatment,Sitagliptin,25,Good,Poor,Moderate,10.1,10.0,10.0,9.9,9.9,9.9,Minimal Responder,None,0.889,0.889,0.881,0.881,0.881,253,346,171,197,121,69
+P00100,34,Female,34.0,Control,None,0,Poor,Poor,Active,10.3,10.3,10.2,10.1,9.9,10.0,Minimal Responder,None,0.912,0.905,0.897,0.881,0.889,241,333,229,129,147,93
+P00101,46,Female,23.8,Treatment,Metformin,500,Moderate,Moderate,Sedentary,8.3,8.1,8.3,7.9,8.0,7.8,Minimal Responder,None,0.622,0.661,0.583,0.603,0.562,211,294,227,104,148,78
+P00102,46,Female,25.4,Treatment,Metformin,1500,Moderate,Moderate,Active,9.2,8.9,8.5,8.2,7.9,7.6,Good Responder,GI Issues,0.763,0.697,0.642,0.583,0.521,203,271,248,129,119,85
+P00103,75,Male,22.2,Treatment,Metformin,1500,Moderate,Moderate,Sedentary,10.0,9.7,9.4,9.1,9.0,9.1,Partial Responder,None,0.862,0.83,0.791,0.777,0.791,238,329,189,159,128,85
+P00104,52,Female,33.6,Treatment,Metformin,500,Moderate,Poor,Moderate,9.0,8.8,8.9,8.6,8.6,8.8,Minimal Responder,None,0.747,0.763,0.714,0.714,0.747,205,279,157,227,155,78
+P00105,34,Male,22.9,Control,None,0,Poor,Poor,Active,9.5,9.2,9.1,9.4,9.3,9.4,Minimal Responder,None,0.805,0.791,0.83,0.818,0.83,224,322,186,130,122,94
+P00106,69,Male,32.5,Control,None,0,Moderate,Good,Active,9.2,8.9,9.0,8.9,8.8,9.0,Minimal Responder,None,0.763,0.777,0.763,0.747,0.777,231,363,184,158,96,77
+P00107,55,Female,36.9,Treatment,Empagliflozin,25,Good,Poor,Moderate,8.9,8.7,8.6,8.6,8.5,8.5,Minimal Responder,None,0.731,0.714,0.714,0.697,0.697,199,265,193,171,140,82
+P00108,54,Male,22.3,Treatment,Empagliflozin,10,Moderate,Moderate,Moderate,10.5,10.4,10.1,10.0,10.0,10.0,Partial Responder,None,0.918,0.897,0.889,0.889,0.889,250,379,235,226,121,81
+P00109,48,Male,31.3,Treatment,Empagliflozin,25,Good,Poor,Moderate,9.3,9.3,9.1,8.7,8.8,8.8,Partial Responder,None,0.818,0.791,0.731,0.747,0.747,227,342,232,175,130,87
+P00110,75,Female,36.3,Control,None,0,Moderate,Good,Moderate,8.2,8.1,8.1,8.0,8.2,7.8,Minimal Responder,None,0.622,0.622,0.603,0.642,0.562,190,252,166,171,107,90
+P00111,59,Female,35.7,Control,None,0,Moderate,Good,Active,7.6,7.4,7.2,7.2,7.1,7.3,Minimal Responder,None,0.479,0.438,0.438,0.417,0.458,173,273,225,259,141,70
+P00112,31,Female,26.6,Treatment,Metformin,1000,Good,Moderate,Moderate,9.0,8.7,8.4,8.1,8.2,7.6,Partial Responder,None,0.731,0.679,0.622,0.642,0.521,202,297,172,178,134,71
+P00113,49,Male,23.0,Control,None,0,Moderate,Moderate,Moderate,6.7,6.7,6.3,6.5,6.6,6.6,Minimal Responder,None,0.339,0.269,0.303,0.321,0.321,145,204,188,159,146,75
+P00114,60,Female,26.9,Treatment,Metformin,1500,Moderate,Good,Moderate,6.8,6.4,6.0,5.7,5.1,5.2,Good Responder,None,0.286,0.223,0.182,0.119,0.128,160,244,175,233,122,71
+P00115,57,Male,31.0,Treatment,Metformin,850,Good,Moderate,Moderate,10.4,10.0,9.9,9.6,9.2,9.4,Partial Responder,None,0.889,0.881,0.852,0.805,0.83,236,325,248,118,137,75
+P00116,56,Female,27.1,Control,None,0,Good,Good,Sedentary,8.3,8.4,8.2,8.4,8.4,8.6,Non-Responder,None,0.679,0.642,0.679,0.679,0.714,185,279,209,190,124,60
+P00117,60,Female,29.1,Treatment,Empagliflozin,25,Good,Moderate,Moderate,9.0,8.7,8.6,8.4,8.2,7.9,Partial Responder,None,0.731,0.714,0.679,0.642,0.583,193,253,231,128,118,68
+P00118,70,Male,24.5,Treatment,Empagliflozin,10,Good,Good,Sedentary,7.1,6.9,6.6,6.4,6.3,6.3,Partial Responder,UTI,0.378,0.321,0.286,0.269,0.269,162,251,146,189,132,73
+P00119,45,Female,24.5,Control,None,0,Good,Good,Sedentary,8.6,8.6,8.5,8.6,8.7,8.6,Minimal Responder,None,0.714,0.697,0.714,0.731,0.714,212,304,183,252,130,78
+P00120,44,Female,24.8,Treatment,Metformin,2000,Moderate,Good,Active,7.1,6.3,6.1,5.6,5.2,4.7,Excellent Responder,None,0.269,0.237,0.17,0.128,0.088,155,231,175,209,117,78
+P00121,53,Female,36.2,Control,None,0,Poor,Good,Moderate,9.9,10.1,9.8,10.1,10.1,9.8,Non-Responder,None,0.897,0.872,0.897,0.897,0.872,227,310,136,145,123,74
+P00122,32,Female,31.3,Control,None,0,Moderate,Good,Moderate,10.7,10.8,10.6,10.6,10.4,10.4,Minimal Responder,None,0.94,0.93,0.93,0.918,0.918,251,377,194,233,132,88
+P00123,63,Male,33.3,Treatment,Metformin,1000,Poor,Good,Moderate,7.3,6.7,6.7,6.4,6.4,6.0,Partial Responder,GI Issues,0.339,0.339,0.286,0.286,0.223,160,245,195,147,124,83
+P00124,73,Male,28.3,Treatment,Metformin,1500,Poor,Poor,Active,8.8,8.5,8.5,8.4,8.2,8.2,Minimal Responder,None,0.697,0.697,0.679,0.642,0.642,203,293,171,226,125,88
+P00125,76,Female,34.4,Treatment,Sitagliptin,25,Moderate,Good,Moderate,7.2,7.1,6.9,6.8,6.6,6.6,Minimal Responder,None,0.417,0.378,0.358,0.321,0.321,169,251,180,205,138,70
+P00126,31,Male,27.2,Treatment,Sitagliptin,25,Moderate,Moderate,Active,9.4,9.2,9.1,9.2,8.9,9.0,Minimal Responder,None,0.805,0.791,0.805,0.763,0.777,216,310,168,186,153,77
+P00127,48,Female,30.7,Treatment,Sitagliptin,100,Good,Good,Moderate,9.0,8.7,8.4,8.0,7.9,7.8,Good Responder,Headache,0.731,0.679,0.603,0.583,0.562,216,339,170,195,132,73
+P00128,56,Female,30.2,Control,None,0,Moderate,Poor,Moderate,7.0,7.0,6.8,6.8,6.7,6.9,Minimal Responder,None,0.397,0.358,0.358,0.339,0.378,151,219,160,199,151,83
+P00129,47,Female,25.8,Control,None,0,Good,Good,Sedentary,9.5,9.4,9.5,9.4,9.5,9.5,Minimal Responder,None,0.83,0.841,0.83,0.841,0.841,219,340,213,95,119,73
+P00130,39,Male,26.1,Treatment,Metformin,1500,Poor,Good,Moderate,11.0,10.5,10.1,9.6,9.6,9.4,Good Responder,None,0.924,0.897,0.852,0.852,0.83,266,410,207,141,134,79
+P00131,52,Female,31.3,Treatment,Sitagliptin,50,Good,Poor,Active,7.8,7.5,7.5,7.5,7.4,7.5,Minimal Responder,None,0.5,0.5,0.5,0.479,0.5,181,258,237,232,125,72
+P00132,60,Male,29.3,Treatment,Empagliflozin,25,Good,Good,Sedentary,6.9,6.7,6.5,6.2,5.9,5.9,Partial Responder,None,0.339,0.303,0.253,0.209,0.209,160,219,191,137,117,88
+P00133,34,Female,38.2,Control,None,0,Good,Good,Moderate,7.3,7.2,7.2,6.9,6.9,7.2,Minimal Responder,None,0.438,0.438,0.378,0.378,0.438,160,227,216,119,140,80
+P00134,51,Male,27.7,Treatment,Empagliflozin,10,Good,Moderate,Active,10.5,10.3,10.3,9.9,9.7,9.7,Partial Responder,UTI,0.912,0.912,0.881,0.862,0.862,243,376,177,161,77,84
+P00135,33,Male,37.4,Treatment,Metformin,1000,Good,Good,Moderate,9.9,9.4,8.9,8.6,8.0,8.3,Good Responder,GI Issues,0.83,0.763,0.714,0.603,0.661,247,338,202,185,145,74
+P00136,41,Male,24.0,Treatment,Metformin,1000,Good,Good,Active,8.1,7.6,7.1,6.8,6.2,5.8,Good Responder,None,0.521,0.417,0.358,0.253,0.195,177,258,154,223,138,75
+P00137,57,Female,25.3,Treatment,Sitagliptin,25,Moderate,Good,Sedentary,9.0,8.8,8.8,8.6,8.5,8.5,Minimal Responder,None,0.747,0.747,0.714,0.697,0.697,214,330,160,160,133,99
+P00138,65,Male,35.8,Treatment,Metformin,2000,Good,Good,Sedentary,7.0,6.4,6.3,5.5,5.3,5.1,Excellent Responder,None,0.286,0.269,0.159,0.138,0.119,154,217,153,232,144,86
+P00139,66,Female,28.0,Control,None,0,Good,Poor,Active,10.2,10.1,9.9,9.5,9.6,9.6,Partial Responder,None,0.897,0.881,0.841,0.852,0.852,244,364,163,274,130,102
+P00140,78,Female,30.4,Treatment,Metformin,850,Good,Good,Moderate,7.6,7.2,6.8,6.4,6.4,6.1,Good Responder,GI Issues,0.438,0.358,0.286,0.286,0.237,167,229,230,169,122,80
+P00141,76,Male,34.3,Treatment,Metformin,1000,Moderate,Moderate,Sedentary,9.4,9.3,9.1,8.9,8.8,8.6,Partial Responder,None,0.818,0.791,0.763,0.747,0.714,229,305,188,215,142,82
+P00142,78,Female,39.4,Treatment,Metformin,2000,Moderate,Poor,Moderate,8.6,8.3,8.2,7.9,7.8,7.7,Partial Responder,None,0.661,0.642,0.583,0.562,0.542,164,252,168,265,131,88
+P00143,76,Female,24.9,Treatment,Sitagliptin,100,Poor,Good,Sedentary,10.8,10.5,10.5,10.3,10.2,10.0,Partial Responder,None,0.924,0.924,0.912,0.905,0.889,275,366,155,220,153,68
+P00144,40,Female,31.9,Treatment,Metformin,500,Moderate,Poor,Moderate,8.3,8.3,8.2,8.0,7.9,7.9,Minimal Responder,None,0.661,0.642,0.603,0.583,0.583,182,251,204,160,136,71
+P00145,51,Male,27.9,Control,None,0,Good,Moderate,Moderate,9.5,9.2,9.4,9.1,9.2,9.2,Minimal Responder,None,0.805,0.83,0.791,0.805,0.805,230,358,156,131,101,84
+P00146,49,Female,38.6,Treatment,Metformin,850,Good,Good,Sedentary,7.5,7.3,6.9,6.5,6.4,6.3,Good Responder,None,0.458,0.378,0.303,0.286,0.269,172,241,234,209,121,88
+P00147,54,Female,32.5,Control,None,0,Moderate,Poor,Active,8.2,8.1,7.9,7.7,8.1,7.8,Minimal Responder,None,0.622,0.583,0.542,0.622,0.562,201,320,190,219,129,82
+P00148,38,Male,35.4,Control,None,0,Good,Good,Active,8.2,8.1,7.9,7.8,7.6,7.8,Minimal Responder,None,0.622,0.583,0.562,0.521,0.562,191,304,213,98,135,77
+P00149,69,Female,26.1,Treatment,Empagliflozin,10,Poor,Moderate,Active,10.1,9.8,9.9,9.8,9.4,9.4,Minimal Responder,Hypoglycemia,0.872,0.881,0.872,0.83,0.83,235,324,125,194,133,74
+P00150,66,Female,23.4,Treatment,Metformin,2000,Moderate,Good,Active,6.8,6.1,5.6,5.0,4.9,4.6,Excellent Responder,None,0.237,0.17,0.111,0.103,0.082,132,173,152,169,125,104
+P00151,50,Female,37.2,Treatment,Metformin,850,Moderate,Poor,Moderate,10.4,10.4,10.2,10.0,9.9,10.0,Minimal Responder,None,0.918,0.905,0.889,0.881,0.889,248,375,256,192,116,76
+P00152,74,Male,35.1,Control,None,0,Good,Good,Moderate,9.4,9.4,9.1,9.1,9.1,9.2,Minimal Responder,None,0.83,0.791,0.791,0.791,0.805,203,291,183,216,115,83
+P00153,40,Female,25.7,Control,None,0,Good,Moderate,Sedentary,10.4,10.5,10.3,10.5,10.3,10.5,Non-Responder,None,0.924,0.912,0.924,0.912,0.924,245,326,188,241,123,79
+P00154,48,Male,39.8,Treatment,Empagliflozin,25,Moderate,Moderate,Sedentary,7.9,7.7,7.6,7.4,7.3,7.4,Partial Responder,None,0.542,0.521,0.479,0.458,0.479,177,268,171,268,125,92
+P00155,33,Female,27.7,Treatment,Sitagliptin,50,Poor,Good,Moderate,9.4,9.1,8.9,9.0,8.7,8.7,Minimal Responder,None,0.791,0.763,0.777,0.731,0.731,216,283,210,157,122,82
+P00156,58,Female,34.8,Treatment,Metformin,1000,Moderate,Moderate,Sedentary,7.2,6.8,7.1,6.7,6.6,6.3,Partial Responder,None,0.358,0.417,0.339,0.321,0.269,160,250,147,180,143,70
+P00157,64,Male,32.2,Control,None,0,Good,Moderate,Moderate,8.3,8.2,8.0,7.9,8.0,8.1,Minimal Responder,None,0.642,0.603,0.583,0.603,0.622,189,254,151,210,137,83
+P00158,40,Male,24.1,Treatment,Empagliflozin,10,Good,Good,Moderate,9.9,9.6,9.4,9.1,8.8,8.8,Partial Responder,Mild,0.852,0.83,0.791,0.747,0.747,234,313,180,266,131,98
+P00159,71,Female,25.5,Control,None,0,Good,Good,Active,7.2,7.1,7.1,6.8,6.8,6.8,Minimal Responder,None,0.417,0.417,0.358,0.358,0.358,136,184,174,240,121,61
+P00160,31,Male,29.5,Treatment,Empagliflozin,10,Moderate,Good,Moderate,11.0,10.8,10.5,10.2,10.1,10.1,Partial Responder,None,0.94,0.924,0.905,0.897,0.897,256,407,236,139,152,84
+P00161,59,Male,38.9,Control,None,0,Poor,Moderate,Active,10.6,10.6,10.2,10.3,10.1,10.3,Minimal Responder,None,0.93,0.905,0.912,0.897,0.912,264,398,194,188,130,80
+P00162,32,Female,32.9,Control,None,0,Good,Poor,Sedentary,9.0,9.0,9.0,9.0,9.1,9.1,Minimal Responder,None,0.777,0.777,0.777,0.791,0.791,220,339,204,130,175,68
+P00163,59,Female,31.3,Control,None,0,Good,Poor,Sedentary,9.1,9.4,9.0,9.1,9.1,9.0,Minimal Responder,None,0.83,0.777,0.791,0.791,0.777,196,278,157,182,168,92
+P00164,60,Male,36.7,Treatment,Metformin,2000,Good,Good,Active,10.7,9.8,9.0,8.2,8.2,7.9,Excellent Responder,None,0.872,0.777,0.642,0.642,0.583,252,353,167,171,106,75
+P00165,43,Female,23.0,Treatment,Metformin,1500,Moderate,Good,Moderate,7.5,6.9,6.7,6.1,6.0,5.6,Good Responder,None,0.378,0.339,0.237,0.223,0.17,179,245,198,155,125,85
+P00166,45,Female,31.9,Treatment,Metformin,500,Moderate,Moderate,Active,9.6,9.6,9.3,9.0,8.8,9.0,Partial Responder,None,0.852,0.818,0.777,0.747,0.777,222,321,148,153,113,82
+P00167,77,Female,22.7,Treatment,Sitagliptin,100,Good,Good,Moderate,6.6,6.3,6.1,5.8,5.5,5.4,Partial Responder,None,0.269,0.237,0.195,0.159,0.148,142,208,197,144,155,89
+P00168,78,Female,26.5,Treatment,Metformin,1500,Moderate,Poor,Active,8.0,8.0,7.5,7.4,7.5,7.3,Partial Responder,None,0.603,0.5,0.479,0.5,0.458,197,293,214,258,160,92
+P00169,46,Female,33.0,Treatment,Metformin,850,Good,Good,Moderate,9.1,8.6,8.2,7.9,7.6,7.7,Good Responder,Mild,0.714,0.642,0.583,0.521,0.542,211,291,193,114,120,83
+P00170,69,Male,28.6,Treatment,Sitagliptin,100,Moderate,Moderate,Moderate,11.0,10.9,10.6,10.6,10.3,10.3,Minimal Responder,None,0.944,0.93,0.93,0.912,0.912,264,418,231,160,135,81
+P00171,32,Female,24.5,Control,None,0,Good,Good,Active,9.8,9.5,9.5,9.1,9.2,9.4,Partial Responder,None,0.841,0.841,0.791,0.805,0.83,233,315,156,256,127,82
+P00172,62,Male,23.6,Treatment,Sitagliptin,100,Moderate,Good,Moderate,9.7,9.4,9.3,8.7,8.6,8.7,Good Responder,None,0.83,0.818,0.731,0.714,0.731,250,397,185,149,105,70
+P00173,44,Female,38.9,Control,None,0,Moderate,Good,Sedentary,10.8,10.8,11.0,10.9,10.9,11.0,Non-Responder,None,0.94,0.949,0.944,0.944,0.949,268,350,234,149,126,63
+P00174,33,Male,23.7,Control,None,0,Moderate,Moderate,Moderate,10.6,10.4,10.7,10.4,10.5,10.3,Minimal Responder,None,0.918,0.935,0.918,0.924,0.912,258,373,215,152,116,78
+P00175,47,Female,38.0,Treatment,Sitagliptin,25,Good,Moderate,Active,9.0,8.9,8.8,8.5,8.6,8.5,Partial Responder,Headache,0.763,0.747,0.697,0.714,0.697,206,288,197,177,110,83
+P00176,32,Female,34.3,Treatment,Empagliflozin,25,Good,Good,Moderate,8.1,7.5,7.6,7.1,7.0,6.8,Good Responder,None,0.5,0.521,0.417,0.397,0.358,191,274,192,170,125,77
+P00177,41,Male,31.3,Control,None,0,Moderate,Poor,Moderate,6.5,6.2,6.3,6.5,6.3,6.5,Minimal Responder,None,0.253,0.269,0.303,0.269,0.303,146,215,152,196,127,60
+P00178,42,Male,33.3,Control,None,0,Good,Good,Sedentary,10.0,10.0,10.0,9.9,9.9,10.0,Minimal Responder,None,0.889,0.889,0.881,0.881,0.889,230,329,195,157,145,81
+P00179,69,Male,25.0,Control,None,0,Good,Poor,Active,8.7,8.6,8.3,8.2,8.3,8.1,Partial Responder,None,0.714,0.661,0.642,0.661,0.622,210,299,174,122,125,81
+P00180,35,Male,35.1,Treatment,Sitagliptin,100,Moderate,Moderate,Moderate,10.2,10.1,9.9,9.7,9.6,9.6,Partial Responder,None,0.897,0.881,0.862,0.852,0.852,245,372,225,111,119,77
+P00181,49,Female,30.5,Treatment,Empagliflozin,25,Good,Moderate,Sedentary,8.8,8.6,8.5,8.2,8.1,8.1,Partial Responder,Hypoglycemia,0.714,0.697,0.642,0.622,0.622,206,310,142,197,126,93
+P00182,66,Male,37.7,Treatment,Metformin,850,Good,Moderate,Sedentary,8.5,8.4,8.3,7.9,7.8,7.6,Partial Responder,None,0.679,0.661,0.583,0.562,0.521,188,291,177,93,135,78
+P00183,64,Male,27.0,Control,None,0,Good,Moderate,Moderate,10.7,10.7,10.5,10.4,10.5,10.5,Minimal Responder,None,0.935,0.924,0.918,0.924,0.924,256,352,175,183,124,92
+P00184,57,Female,35.2,Treatment,Sitagliptin,100,Poor,Good,Active,8.0,7.7,7.5,7.1,7.0,7.0,Partial Responder,None,0.542,0.5,0.417,0.397,0.397,173,257,239,155,120,84
+P00185,31,Female,38.9,Control,None,0,Good,Moderate,Sedentary,7.8,7.8,7.8,8.0,7.8,7.7,Non-Responder,None,0.562,0.562,0.603,0.562,0.542,166,245,190,182,119,95
+P00186,41,Male,23.4,Control,None,0,Moderate,Good,Sedentary,7.7,7.7,7.7,8.0,7.8,8.0,Non-Responder,None,0.542,0.542,0.603,0.562,0.603,178,251,166,179,120,60
+P00187,70,Male,38.1,Treatment,Sitagliptin,100,Good,Moderate,Moderate,6.5,6.3,6.1,6.0,6.0,5.7,Partial Responder,None,0.269,0.237,0.223,0.223,0.182,136,197,177,132,139,66
+P00188,63,Male,23.8,Treatment,Metformin,2000,Moderate,Poor,Active,9.4,9.0,9.2,8.9,8.7,8.6,Partial Responder,None,0.777,0.805,0.763,0.731,0.714,210,293,183,210,146,90
+P00189,51,Female,32.8,Treatment,Sitagliptin,100,Good,Good,Moderate,8.8,8.4,8.1,7.7,7.7,7.6,Good Responder,None,0.679,0.622,0.542,0.542,0.521,228,306,169,141,142,89
+P00190,58,Female,26.6,Treatment,Metformin,850,Good,Good,Sedentary,9.7,9.3,8.9,8.8,8.5,8.4,Partial Responder,None,0.818,0.763,0.747,0.697,0.679,220,300,160,137,148,87
+P00191,57,Female,29.1,Treatment,Empagliflozin,25,Moderate,Poor,Active,8.8,8.7,8.6,8.5,8.5,8.1,Minimal Responder,None,0.731,0.714,0.697,0.697,0.622,217,289,190,189,118,86
+P00192,64,Female,31.5,Treatment,Empagliflozin,25,Poor,Good,Sedentary,7.4,7.2,7.1,6.7,6.7,6.6,Partial Responder,None,0.438,0.417,0.339,0.339,0.321,151,227,155,240,156,91
+P00193,50,Female,24.7,Treatment,Empagliflozin,10,Moderate,Good,Moderate,7.5,7.0,7.1,6.8,6.7,6.8,Partial Responder,None,0.397,0.417,0.358,0.339,0.358,173,259,194,183,138,71
+P00194,42,Male,28.8,Treatment,Metformin,1000,Good,Good,Active,8.9,8.1,7.9,7.3,7.1,7.0,Excellent Responder,None,0.622,0.583,0.458,0.417,0.397,206,327,220,139,105,92
+P00195,58,Female,30.8,Treatment,Empagliflozin,10,Good,Moderate,Active,6.9,6.6,6.6,6.5,6.2,6.0,Minimal Responder,None,0.321,0.321,0.303,0.253,0.223,145,220,159,161,136,79
+P00196,57,Female,22.6,Treatment,Empagliflozin,25,Moderate,Moderate,Moderate,7.5,7.3,7.1,7.0,6.7,6.9,Partial Responder,None,0.458,0.417,0.397,0.339,0.378,171,225,197,197,149,71
+P00197,47,Male,29.9,Control,None,0,Good,Good,Active,7.5,7.4,7.1,6.8,6.8,6.8,Partial Responder,None,0.479,0.417,0.358,0.358,0.358,169,265,200,190,137,70
+P00198,47,Male,24.3,Treatment,Sitagliptin,50,Poor,Poor,Moderate,6.6,6.6,6.6,6.6,6.5,6.3,Minimal Responder,None,0.321,0.321,0.321,0.303,0.269,135,210,189,139,163,70
+P00199,39,Male,31.4,Treatment,Metformin,1500,Good,Moderate,Sedentary,7.3,7.1,6.9,6.5,6.3,6.2,Partial Responder,None,0.417,0.378,0.303,0.269,0.253,154,221,217,141,126,76
+P00200,37,Female,24.9,Treatment,Metformin,1000,Moderate,Moderate,Moderate,7.6,7.3,7.3,6.9,6.7,6.7,Partial Responder,None,0.458,0.458,0.378,0.339,0.339,156,230,89,148,114,66
+P00201,70,Male,29.6,Treatment,Empagliflozin,10,Good,Good,Sedentary,9.1,8.8,8.6,8.4,8.3,8.3,Partial Responder,None,0.747,0.714,0.679,0.661,0.661,218,347,179,83,143,77
+P00202,71,Male,36.1,Control,None,0,Good,Good,Moderate,8.8,8.5,8.6,8.3,8.6,8.6,Partial Responder,None,0.697,0.714,0.661,0.714,0.714,193,282,223,203,150,85
+P00203,58,Male,36.1,Control,None,0,Good,Good,Sedentary,8.7,8.5,8.7,8.7,8.7,8.7,Minimal Responder,None,0.697,0.731,0.731,0.731,0.731,203,319,146,137,142,63
+P00204,30,Male,23.3,Treatment,Sitagliptin,25,Poor,Good,Active,6.5,6.4,6.2,6.1,5.9,6.0,Minimal Responder,None,0.286,0.253,0.237,0.209,0.223,146,193,207,155,142,63
+P00205,33,Female,22.2,Treatment,Metformin,500,Moderate,Moderate,Sedentary,6.9,6.9,6.7,6.5,6.5,6.3,Minimal Responder,None,0.378,0.339,0.303,0.303,0.269,153,208,209,133,106,76
+P00206,53,Male,35.3,Treatment,Sitagliptin,100,Moderate,Good,Active,10.4,10.1,9.9,9.4,9.3,9.0,Good Responder,None,0.897,0.881,0.83,0.818,0.777,245,351,207,103,104,74
+P00207,70,Male,22.4,Control,None,0,Moderate,Good,Moderate,9.4,9.3,9.3,9.1,9.4,9.4,Minimal Responder,None,0.818,0.818,0.791,0.83,0.83,232,342,249,188,121,62
+P00208,66,Male,27.5,Treatment,Sitagliptin,100,Poor,Moderate,Moderate,7.6,7.4,7.3,7.2,7.0,7.1,Minimal Responder,Headache,0.479,0.458,0.438,0.397,0.417,167,258,211,150,129,69
+P00209,52,Female,24.1,Treatment,Sitagliptin,25,Moderate,Poor,Moderate,10.5,10.5,10.5,10.4,10.4,10.3,Minimal Responder,None,0.924,0.924,0.918,0.918,0.912,241,385,184,146,125,82
+P00210,62,Male,29.4,Control,None,0,Moderate,Good,Active,10.1,10.2,10.1,9.7,9.7,9.5,Minimal Responder,None,0.905,0.897,0.862,0.862,0.841,240,340,176,187,142,74
+P00211,59,Female,28.5,Control,None,0,Good,Poor,Active,9.6,9.5,9.4,8.8,9.2,9.1,Partial Responder,None,0.841,0.83,0.747,0.805,0.791,235,309,191,241,105,89
+P00212,57,Male,28.4,Treatment,Sitagliptin,50,Good,Good,Sedentary,7.0,6.9,6.7,6.4,6.3,6.1,Partial Responder,None,0.378,0.339,0.286,0.269,0.237,147,226,162,160,127,76
+P00213,64,Female,23.0,Control,None,0,Moderate,Good,Active,9.9,9.8,9.6,9.7,9.3,9.4,Minimal Responder,None,0.872,0.852,0.862,0.818,0.83,246,364,221,175,136,83
+P00214,45,Female,22.9,Treatment,Sitagliptin,50,Poor,Moderate,Sedentary,9.9,9.9,9.7,9.6,9.7,9.6,Minimal Responder,None,0.881,0.862,0.852,0.862,0.852,230,313,212,201,134,76
+P00215,35,Female,27.1,Treatment,Metformin,500,Good,Moderate,Active,9.8,9.6,9.4,9.1,9.0,9.0,Partial Responder,None,0.852,0.83,0.791,0.777,0.777,228,330,165,187,135,80
+P00216,70,Female,29.0,Treatment,Metformin,1000,Moderate,Good,Active,10.3,9.7,9.4,8.8,8.6,8.1,Excellent Responder,None,0.862,0.83,0.747,0.714,0.622,238,362,168,222,147,85
+P00217,38,Male,33.0,Treatment,Metformin,2000,Moderate,Good,Moderate,10.1,9.3,9.0,8.7,8.0,8.1,Good Responder,GI Issues,0.818,0.777,0.731,0.603,0.622,250,383,215,240,145,88
+P00218,78,Male,37.0,Treatment,Sitagliptin,50,Good,Good,Sedentary,8.0,7.7,7.5,7.5,7.3,7.2,Partial Responder,None,0.542,0.5,0.5,0.458,0.438,182,264,191,108,110,82
+P00219,36,Female,27.0,Treatment,Metformin,500,Moderate,Good,Moderate,9.9,9.7,9.3,9.3,9.1,8.8,Partial Responder,None,0.862,0.818,0.818,0.791,0.747,228,317,175,130,157,63
+P00220,79,Male,24.1,Treatment,Metformin,2000,Moderate,Moderate,Moderate,6.7,6.4,5.9,5.6,5.8,5.5,Good Responder,None,0.286,0.209,0.17,0.195,0.159,142,226,205,196,132,70
+P00221,35,Female,38.2,Treatment,Metformin,850,Moderate,Poor,Sedentary,10.0,9.8,9.9,9.7,9.8,9.5,Minimal Responder,None,0.872,0.881,0.862,0.872,0.841,210,315,130,185,160,82
+P00222,56,Female,27.1,Control,None,0,Good,Moderate,Moderate,7.6,7.5,7.5,7.4,7.4,7.3,Minimal Responder,None,0.5,0.5,0.479,0.479,0.458,179,255,194,146,128,73
+P00223,56,Male,39.0,Treatment,Metformin,500,Good,Moderate,Moderate,10.6,10.2,10.2,10.0,9.8,9.9,Partial Responder,None,0.905,0.905,0.889,0.872,0.881,256,354,219,175,110,73
+P00224,71,Female,38.0,Control,None,0,Moderate,Good,Sedentary,7.4,7.6,7.4,7.4,7.6,7.5,Minimal Responder,None,0.521,0.479,0.479,0.521,0.5,142,216,141,119,132,71
+P00225,62,Female,28.4,Treatment,Sitagliptin,50,Moderate,Moderate,Sedentary,10.8,10.7,10.6,10.6,10.3,10.3,Minimal Responder,None,0.935,0.93,0.93,0.912,0.912,249,342,202,207,127,84
+P00226,39,Female,28.2,Treatment,Sitagliptin,50,Poor,Good,Active,7.7,7.4,7.3,7.1,7.0,6.9,Partial Responder,None,0.479,0.458,0.417,0.397,0.378,170,230,147,131,124,92
+P00227,44,Female,38.6,Treatment,Sitagliptin,50,Moderate,Good,Sedentary,10.0,9.8,9.5,9.6,9.2,9.2,Minimal Responder,None,0.872,0.841,0.852,0.805,0.805,227,331,214,124,147,81
+P00228,75,Female,27.0,Treatment,Empagliflozin,25,Good,Good,Sedentary,7.0,6.4,6.6,6.3,6.0,6.0,Partial Responder,Mild,0.286,0.321,0.269,0.223,0.223,162,225,239,186,144,66
+P00229,66,Female,30.9,Treatment,Metformin,1000,Good,Moderate,Sedentary,10.6,10.2,10.1,9.9,9.6,9.7,Partial Responder,GI Issues,0.905,0.897,0.881,0.852,0.862,262,390,163,176,138,58
+P00230,51,Male,36.4,Control,None,0,Moderate,Good,Moderate,8.7,8.8,8.7,8.6,8.5,8.3,Minimal Responder,None,0.747,0.731,0.714,0.697,0.661,207,276,188,172,120,69
+P00231,35,Female,24.8,Control,None,0,Good,Moderate,Sedentary,9.6,9.7,9.7,9.5,9.6,9.7,Minimal Responder,None,0.862,0.862,0.841,0.852,0.862,203,304,206,227,129,98
+P00232,30,Female,23.5,Treatment,Metformin,500,Poor,Good,Moderate,9.6,9.4,9.1,9.0,8.9,8.9,Partial Responder,None,0.83,0.791,0.777,0.763,0.763,224,310,209,86,142,74
+P00233,53,Female,31.1,Treatment,Empagliflozin,10,Poor,Good,Active,8.2,7.9,7.9,7.7,7.4,7.5,Minimal Responder,None,0.583,0.583,0.542,0.479,0.5,182,237,164,289,138,74
+P00234,63,Male,25.1,Treatment,Sitagliptin,50,Poor,Good,Sedentary,9.6,9.5,9.3,9.2,8.9,9.0,Minimal Responder,None,0.841,0.818,0.805,0.763,0.777,219,293,168,304,148,68
+P00235,39,Male,29.0,Treatment,Metformin,850,Moderate,Good,Moderate,7.0,6.6,6.5,6.1,5.6,5.6,Partial Responder,Mild,0.321,0.303,0.237,0.17,0.17,150,237,205,173,117,72
+P00236,55,Male,34.1,Control,None,0,Good,Good,Moderate,6.7,6.4,6.6,6.6,6.4,6.5,Minimal Responder,None,0.286,0.321,0.321,0.286,0.303,134,209,174,170,123,68
+P00237,69,Female,29.1,Control,None,0,Moderate,Moderate,Sedentary,9.8,9.8,9.8,9.9,9.9,9.8,Non-Responder,None,0.872,0.872,0.881,0.881,0.872,237,325,169,238,126,74
+P00238,46,Female,31.8,Control,None,0,Good,Moderate,Moderate,10.3,10.3,10.2,9.9,10.0,10.0,Minimal Responder,None,0.912,0.905,0.881,0.889,0.889,257,394,272,187,102,84
+P00239,34,Female,26.3,Treatment,Empagliflozin,10,Moderate,Poor,Sedentary,7.1,7.1,7.0,6.9,6.8,6.9,Minimal Responder,UTI,0.417,0.397,0.378,0.358,0.378,164,243,191,198,133,82
+P00240,67,Male,27.2,Control,None,0,Good,Good,Active,6.7,6.4,6.4,6.2,6.1,6.0,Partial Responder,None,0.286,0.286,0.253,0.237,0.223,144,229,171,189,134,68
+P00241,60,Male,39.9,Treatment,Metformin,500,Poor,Good,Sedentary,7.0,6.8,6.7,6.4,6.4,6.3,Partial Responder,None,0.358,0.339,0.286,0.286,0.269,174,246,234,161,130,79
+P00242,75,Female,31.9,Treatment,Empagliflozin,25,Good,Good,Active,7.8,7.3,7.1,6.7,6.3,6.3,Good Responder,Hypoglycemia,0.458,0.417,0.339,0.269,0.269,189,284,196,241,114,85
+P00243,79,Female,28.5,Treatment,Metformin,850,Good,Good,Moderate,6.9,6.3,6.3,5.9,5.7,5.7,Good Responder,None,0.269,0.269,0.209,0.182,0.182,150,198,166,257,107,96
+P00244,49,Male,37.1,Treatment,Sitagliptin,50,Moderate,Good,Moderate,9.5,9.3,9.2,8.8,8.7,8.8,Partial Responder,None,0.818,0.805,0.747,0.731,0.747,221,314,111,165,131,81
+P00245,59,Male,33.9,Treatment,Empagliflozin,25,Good,Moderate,Active,6.7,6.5,6.2,6.1,5.8,5.8,Partial Responder,Mild,0.303,0.253,0.237,0.195,0.195,159,253,223,184,118,89
+P00246,55,Male,29.3,Control,None,0,Poor,Good,Moderate,8.6,8.6,8.4,8.7,8.6,8.7,Non-Responder,None,0.714,0.679,0.731,0.714,0.731,210,307,169,80,122,79
+P00247,36,Male,24.6,Treatment,Metformin,500,Poor,Poor,Sedentary,8.1,8.2,8.0,8.1,8.1,7.9,Minimal Responder,None,0.642,0.603,0.622,0.622,0.583,172,238,211,205,103,82
+P00248,54,Female,38.4,Control,None,0,Moderate,Good,Moderate,10.8,10.7,10.8,10.6,10.7,10.7,Minimal Responder,None,0.935,0.94,0.93,0.935,0.935,274,366,157,130,115,81
+P00249,34,Male,28.7,Control,None,0,Moderate,Moderate,Sedentary,10.0,10.0,10.4,10.2,10.1,10.3,Non-Responder,None,0.889,0.918,0.905,0.897,0.912,239,361,195,215,157,85
+P00250,73,Female,30.1,Treatment,Metformin,2000,Poor,Poor,Sedentary,10.2,10.0,10.1,9.7,9.8,9.5,Partial Responder,None,0.889,0.897,0.862,0.872,0.841,237,354,185,164,120,82
+P00251,65,Male,23.3,Treatment,Metformin,1000,Moderate,Poor,Sedentary,10.2,10.0,9.7,9.6,9.6,9.8,Partial Responder,GI Issues,0.889,0.862,0.852,0.852,0.872,226,319,176,222,135,76
+P00252,59,Male,23.7,Control,None,0,Moderate,Good,Sedentary,10.5,10.5,10.6,10.4,10.7,10.6,Minimal Responder,None,0.924,0.93,0.918,0.935,0.93,252,399,204,194,100,68
+P00253,54,Male,33.8,Treatment,Sitagliptin,100,Moderate,Moderate,Moderate,10.9,10.5,10.7,10.4,10.2,10.1,Partial Responder,None,0.924,0.935,0.918,0.905,0.897,266,348,156,217,152,82
+P00254,31,Female,27.5,Treatment,Empagliflozin,25,Poor,Good,Sedentary,7.7,7.4,7.4,7.1,7.0,6.9,Partial Responder,None,0.479,0.479,0.417,0.397,0.378,190,264,255,160,119,72
+P00255,49,Female,37.2,Treatment,Metformin,2000,Moderate,Poor,Moderate,8.5,8.3,8.2,7.9,7.8,7.9,Partial Responder,None,0.661,0.642,0.583,0.562,0.583,207,326,201,159,145,68
+P00256,46,Male,37.1,Treatment,Metformin,1000,Good,Moderate,Moderate,9.5,8.9,9.1,8.4,8.3,8.2,Good Responder,None,0.763,0.791,0.679,0.661,0.642,220,307,238,201,153,77
+P00257,61,Female,28.1,Treatment,Metformin,2000,Moderate,Moderate,Sedentary,7.6,7.3,7.0,6.7,6.5,6.5,Partial Responder,None,0.458,0.397,0.339,0.303,0.303,175,241,139,200,140,82
+P00258,71,Male,34.9,Treatment,Empagliflozin,10,Poor,Poor,Moderate,8.2,8.1,8.1,8.0,8.0,7.9,Minimal Responder,None,0.622,0.622,0.603,0.603,0.583,197,288,135,200,118,74
+P00259,62,Male,29.2,Control,None,0,Good,Good,Moderate,7.1,7.1,6.9,6.9,6.7,6.9,Minimal Responder,None,0.417,0.378,0.378,0.339,0.378,158,244,186,164,115,84
+P00260,51,Female,24.2,Treatment,Empagliflozin,10,Moderate,Good,Sedentary,8.0,7.9,7.7,7.5,7.5,7.3,Partial Responder,UTI,0.583,0.542,0.5,0.5,0.458,177,236,171,181,145,63
+P00261,33,Male,28.4,Treatment,Metformin,1500,Moderate,Good,Active,8.0,7.5,7.1,6.5,5.8,5.9,Excellent Responder,GI Issues,0.5,0.417,0.303,0.195,0.209,178,282,206,231,137,88
+P00262,30,Male,37.2,Control,None,0,Poor,Moderate,Moderate,9.4,9.3,9.3,9.4,9.4,9.4,Minimal Responder,None,0.818,0.818,0.83,0.83,0.83,227,349,210,238,125,76
+P00263,32,Female,31.5,Treatment,Sitagliptin,25,Moderate,Poor,Active,6.9,6.8,6.9,6.9,6.7,6.7,Minimal Responder,None,0.358,0.378,0.378,0.339,0.339,155,210,175,186,120,80
+P00264,43,Female,28.0,Treatment,Empagliflozin,25,Moderate,Good,Moderate,7.8,7.5,7.2,6.9,6.8,6.9,Partial Responder,None,0.5,0.438,0.378,0.358,0.378,174,263,202,185,135,83
+P00265,32,Male,29.2,Control,None,0,Moderate,Moderate,Sedentary,6.8,6.8,6.9,6.9,6.8,6.8,Non-Responder,None,0.358,0.378,0.378,0.358,0.358,122,173,210,207,110,79
+P00266,58,Female,31.3,Control,None,0,Moderate,Moderate,Moderate,10.9,10.7,10.7,10.7,10.9,10.8,Minimal Responder,None,0.935,0.935,0.935,0.944,0.94,253,359,158,223,100,83
+P00267,75,Male,23.3,Treatment,Sitagliptin,25,Moderate,Moderate,Sedentary,6.5,6.6,6.4,6.3,6.1,6.2,Minimal Responder,None,0.321,0.286,0.269,0.237,0.253,146,224,179,122,138,93
+P00268,43,Female,22.2,Treatment,Sitagliptin,100,Poor,Good,Active,9.5,9.1,9.1,8.6,8.4,8.3,Partial Responder,None,0.791,0.791,0.714,0.679,0.661,205,326,170,190,125,77
+P00269,68,Female,28.2,Control,None,0,Good,Good,Sedentary,8.4,8.3,8.3,8.4,8.5,8.6,Minimal Responder,None,0.661,0.661,0.679,0.697,0.714,206,276,208,113,113,86
+P00270,32,Female,38.1,Treatment,Empagliflozin,10,Moderate,Good,Sedentary,9.4,9.0,8.9,8.8,8.8,8.7,Partial Responder,None,0.777,0.763,0.747,0.747,0.731,233,332,186,211,149,80
+P00271,43,Male,25.9,Control,None,0,Poor,Good,Moderate,10.9,11.0,10.9,10.8,10.8,10.9,Minimal Responder,None,0.949,0.944,0.94,0.94,0.944,267,386,214,190,115,79
+P00272,38,Male,34.7,Treatment,Metformin,1000,Good,Good,Moderate,8.2,7.5,7.6,7.0,7.0,6.3,Good Responder,None,0.5,0.521,0.397,0.397,0.269,195,276,229,169,144,96
+P00273,40,Male,22.2,Treatment,Empagliflozin,10,Good,Good,Active,8.0,7.6,7.3,7.0,6.8,6.8,Good Responder,UTI,0.521,0.458,0.397,0.358,0.358,188,265,202,121,164,77
+P00274,70,Female,22.3,Treatment,Metformin,2000,Moderate,Good,Moderate,10.3,9.8,9.2,8.6,8.2,8.2,Excellent Responder,None,0.872,0.805,0.714,0.642,0.642,248,326,248,107,129,65
+P00275,75,Female,37.9,Treatment,Sitagliptin,25,Moderate,Moderate,Sedentary,7.2,7.0,7.0,7.0,7.0,6.8,Minimal Responder,None,0.397,0.397,0.397,0.397,0.358,146,220,208,182,139,87
+P00276,52,Male,25.0,Treatment,Metformin,500,Moderate,Good,Active,8.6,8.3,8.0,7.6,7.6,7.4,Good Responder,None,0.661,0.603,0.521,0.521,0.479,210,300,218,133,133,67
+P00277,74,Male,29.4,Treatment,Metformin,1000,Good,Good,Active,10.2,9.7,9.0,8.3,8.1,8.1,Excellent Responder,None,0.862,0.777,0.661,0.622,0.622,260,353,193,140,125,69
+P00278,61,Male,35.9,Treatment,Empagliflozin,25,Poor,Good,Sedentary,9.4,8.9,8.8,8.8,8.7,8.4,Partial Responder,None,0.763,0.747,0.747,0.731,0.679,211,326,228,210,121,82
+P00279,55,Male,24.5,Treatment,Empagliflozin,10,Good,Good,Moderate,10.5,10.1,10.0,9.7,9.3,9.4,Partial Responder,None,0.897,0.889,0.862,0.818,0.83,241,371,207,139,135,72
+P00280,40,Female,22.9,Control,None,0,Good,Good,Sedentary,7.3,7.2,7.4,7.3,7.1,7.3,Minimal Responder,None,0.438,0.479,0.458,0.417,0.458,161,233,204,180,136,96
+P00281,50,Male,23.8,Control,None,0,Poor,Good,Active,8.2,8.1,7.9,7.9,7.9,8.0,Minimal Responder,None,0.622,0.583,0.583,0.583,0.603,182,253,193,194,138,77
+P00282,50,Male,25.4,Treatment,Metformin,850,Moderate,Moderate,Active,7.0,6.7,6.7,6.4,6.2,6.0,Partial Responder,None,0.339,0.339,0.286,0.253,0.223,156,233,148,111,109,104
+P00283,32,Female,27.2,Treatment,Metformin,500,Good,Good,Active,8.6,8.1,8.2,7.5,7.4,7.4,Good Responder,GI Issues,0.622,0.642,0.5,0.479,0.479,212,294,191,163,133,74
+P00284,34,Male,28.1,Control,None,0,Moderate,Moderate,Sedentary,8.3,8.3,8.3,8.3,8.6,8.4,Minimal Responder,None,0.661,0.661,0.661,0.714,0.679,169,232,209,251,123,87
+P00285,47,Female,27.7,Treatment,Metformin,500,Poor,Good,Sedentary,6.6,6.3,6.4,6.2,6.1,6.0,Minimal Responder,None,0.269,0.286,0.253,0.237,0.223,159,242,206,174,129,62
+P00286,73,Male,29.5,Treatment,Metformin,1000,Moderate,Moderate,Active,6.9,6.5,6.3,6.1,5.9,5.8,Partial Responder,None,0.303,0.269,0.237,0.209,0.195,147,193,185,238,137,58
+P00287,61,Male,22.3,Treatment,Metformin,1500,Good,Good,Sedentary,11.0,10.4,10.1,9.7,9.3,9.1,Good Responder,None,0.918,0.897,0.862,0.818,0.791,274,364,252,207,134,79
+P00288,52,Male,28.5,Control,None,0,Moderate,Good,Moderate,6.9,7.0,6.7,6.5,6.8,6.8,Minimal Responder,None,0.397,0.339,0.303,0.358,0.358,158,206,159,112,136,73
+P00289,42,Female,28.9,Control,None,0,Good,Good,Sedentary,8.6,8.7,8.9,8.5,8.6,8.5,Minimal Responder,None,0.731,0.763,0.697,0.714,0.697,207,279,166,178,141,90
+P00290,76,Male,35.8,Treatment,Metformin,850,Good,Poor,Active,7.0,6.9,6.7,6.5,6.4,6.3,Partial Responder,None,0.378,0.339,0.303,0.286,0.269,155,205,181,135,134,93
+P00291,72,Female,26.1,Treatment,Metformin,2000,Good,Moderate,Sedentary,8.5,8.0,7.9,7.6,7.3,7.2,Partial Responder,None,0.603,0.583,0.521,0.458,0.438,200,320,180,186,116,76
+P00292,75,Male,36.5,Treatment,Metformin,1000,Good,Poor,Moderate,6.8,6.6,6.4,6.5,6.1,6.2,Minimal Responder,None,0.321,0.286,0.303,0.237,0.253,151,209,216,239,148,92
+P00293,55,Male,33.8,Treatment,Sitagliptin,25,Poor,Poor,Moderate,7.5,7.6,7.6,7.4,7.2,7.4,Minimal Responder,None,0.521,0.521,0.479,0.438,0.479,162,218,221,240,145,79
+P00294,30,Female,29.8,Control,None,0,Good,Moderate,Moderate,7.3,7.4,7.4,7.0,7.2,7.0,Minimal Responder,None,0.479,0.479,0.397,0.438,0.397,145,199,185,208,154,77
+P00295,34,Female,32.9,Treatment,Sitagliptin,50,Good,Poor,Sedentary,8.7,8.6,8.7,8.5,8.5,8.3,Minimal Responder,None,0.714,0.731,0.697,0.697,0.661,191,302,191,144,137,78
+P00296,71,Female,36.2,Control,None,0,Moderate,Moderate,Moderate,11.0,11.2,11.0,11.0,10.9,10.9,Minimal Responder,None,0.95,0.949,0.949,0.944,0.944,268,390,174,83,100,69
+P00297,61,Female,29.3,Control,None,0,Good,Good,Moderate,10.6,10.5,10.4,10.2,10.4,10.5,Minimal Responder,None,0.924,0.918,0.905,0.918,0.924,250,352,206,215,165,101
+P00298,34,Male,34.1,Treatment,Metformin,1500,Moderate,Moderate,Moderate,8.2,7.8,7.8,7.4,7.1,6.9,Partial Responder,None,0.562,0.562,0.479,0.417,0.378,181,283,214,168,134,76
+P00299,49,Male,25.2,Control,None,0,Good,Good,Active,7.3,7.3,7.0,6.6,6.6,7.0,Partial Responder,None,0.458,0.397,0.321,0.321,0.397,181,257,137,194,122,93
+P00300,54,Male,35.2,Treatment,Sitagliptin,25,Good,Good,Active,9.6,9.3,9.3,9.0,8.9,8.8,Partial Responder,None,0.818,0.818,0.777,0.763,0.747,237,332,152,159,124,62
+P00301,33,Male,27.2,Treatment,Metformin,1500,Good,Good,Active,8.4,7.4,7.4,6.5,6.4,6.1,Excellent Responder,None,0.479,0.479,0.303,0.286,0.237,192,262,203,114,118,77
+P00302,61,Female,29.9,Treatment,Sitagliptin,50,Good,Moderate,Moderate,6.6,6.5,6.3,6.2,6.0,6.1,Minimal Responder,None,0.303,0.269,0.253,0.223,0.237,149,211,137,164,134,77
+P00303,50,Male,23.3,Control,None,0,Moderate,Moderate,Sedentary,7.1,7.1,7.3,7.3,6.9,7.4,Non-Responder,None,0.417,0.458,0.458,0.378,0.479,153,213,192,201,142,83
+P00304,79,Male,34.4,Treatment,Metformin,2000,Good,Poor,Sedentary,6.6,6.4,6.4,6.3,5.9,5.9,Minimal Responder,None,0.286,0.286,0.269,0.209,0.209,144,216,221,189,147,87
+P00305,70,Male,25.7,Treatment,Empagliflozin,10,Poor,Good,Moderate,8.2,7.9,7.6,7.6,7.6,7.6,Partial Responder,UTI,0.583,0.521,0.521,0.521,0.521,193,268,127,175,130,87
+P00306,58,Male,22.6,Control,None,0,Moderate,Poor,Moderate,9.7,9.6,9.7,9.6,9.3,9.6,Minimal Responder,None,0.852,0.862,0.852,0.818,0.852,228,336,251,202,113,78
+P00307,73,Female,32.9,Treatment,Metformin,500,Moderate,Moderate,Sedentary,6.9,6.7,6.6,6.5,6.3,6.5,Minimal Responder,None,0.339,0.321,0.303,0.269,0.303,144,190,235,58,124,83
+P00308,42,Female,30.0,Control,None,0,Good,Moderate,Active,7.2,7.0,6.8,6.6,6.7,6.8,Partial Responder,None,0.397,0.358,0.321,0.339,0.358,172,233,209,181,95,74
+P00309,38,Female,22.1,Treatment,Sitagliptin,100,Good,Moderate,Sedentary,8.6,8.3,8.2,8.1,8.2,7.8,Partial Responder,Headache,0.661,0.642,0.622,0.642,0.562,206,293,226,188,142,78
+P00310,50,Female,34.1,Treatment,Empagliflozin,25,Moderate,Poor,Active,6.9,6.7,6.7,6.4,6.3,6.5,Partial Responder,None,0.339,0.339,0.286,0.269,0.303,129,204,145,139,112,75
+P00311,74,Female,26.1,Control,None,0,Moderate,Moderate,Active,9.2,9.0,9.0,8.6,8.6,8.7,Partial Responder,None,0.777,0.777,0.714,0.714,0.731,211,298,226,205,166,85
+P00312,64,Male,25.3,Control,None,0,Good,Moderate,Moderate,8.8,8.7,8.5,8.6,8.6,8.5,Minimal Responder,None,0.731,0.697,0.714,0.714,0.697,198,297,226,236,122,85
+P00313,70,Male,24.2,Treatment,Metformin,2000,Good,Poor,Sedentary,10.1,9.5,9.8,9.5,9.6,9.4,Partial Responder,None,0.841,0.872,0.841,0.852,0.83,237,326,222,173,117,72
+P00314,46,Male,30.3,Control,None,0,Poor,Moderate,Sedentary,8.1,8.3,8.3,8.3,8.3,8.4,Non-Responder,None,0.661,0.661,0.661,0.661,0.679,194,260,161,136,138,78
+P00315,72,Female,39.9,Treatment,Metformin,1000,Moderate,Moderate,Sedentary,7.5,7.3,7.4,6.8,6.6,6.9,Partial Responder,GI Issues,0.458,0.479,0.358,0.321,0.378,169,223,184,129,115,77
+P00316,35,Female,35.8,Treatment,Sitagliptin,100,Moderate,Moderate,Active,10.9,10.6,10.4,10.1,10.1,9.9,Partial Responder,None,0.93,0.918,0.897,0.897,0.881,252,351,175,211,76,91
+P00317,45,Male,23.8,Treatment,Metformin,1500,Poor,Good,Moderate,8.6,8.2,7.9,7.5,7.3,6.9,Good Responder,None,0.642,0.583,0.5,0.458,0.378,196,264,145,248,125,75
+P00318,41,Female,38.6,Treatment,Empagliflozin,25,Good,Good,Active,7.1,6.6,6.4,6.0,5.9,5.4,Good Responder,None,0.321,0.286,0.223,0.209,0.148,162,219,206,212,113,86
+P00319,60,Male,24.7,Treatment,Sitagliptin,50,Good,Poor,Sedentary,7.0,6.9,7.0,6.6,6.8,6.8,Minimal Responder,None,0.378,0.397,0.321,0.358,0.358,152,232,124,145,132,81
+P00320,33,Female,37.3,Control,None,0,Good,Moderate,Sedentary,7.6,7.5,7.6,7.8,7.7,7.5,Non-Responder,None,0.5,0.521,0.562,0.542,0.5,165,215,176,155,105,71
+P00321,54,Female,24.2,Control,None,0,Moderate,Moderate,Moderate,10.7,10.7,10.8,10.7,10.5,10.6,Minimal Responder,None,0.935,0.94,0.935,0.924,0.93,264,387,178,162,141,78
+P00322,32,Male,24.4,Control,None,0,Poor,Moderate,Active,6.8,6.8,6.4,6.3,6.8,6.5,Partial Responder,None,0.358,0.286,0.269,0.358,0.303,165,233,207,248,120,83
+P00323,49,Male,33.5,Treatment,Metformin,2000,Poor,Good,Sedentary,8.2,8.1,7.4,7.3,6.9,6.7,Partial Responder,None,0.622,0.479,0.458,0.378,0.339,193,280,171,248,120,87
+P00324,74,Female,23.4,Control,None,0,Moderate,Poor,Active,8.2,8.3,8.0,7.9,7.7,7.9,Minimal Responder,None,0.661,0.603,0.583,0.542,0.583,202,297,126,239,145,80
+P00325,36,Female,37.9,Control,None,0,Poor,Moderate,Sedentary,8.9,9.1,8.9,9.2,9.4,9.2,Non-Responder,None,0.791,0.763,0.805,0.83,0.805,203,283,201,138,122,64
+P00326,47,Male,36.6,Treatment,Metformin,500,Good,Good,Moderate,10.0,9.6,9.4,9.0,8.8,8.9,Good Responder,None,0.852,0.83,0.777,0.747,0.763,240,333,158,127,96,88
+P00327,64,Female,26.6,Treatment,Metformin,1500,Poor,Good,Sedentary,6.8,6.3,6.2,6.0,5.5,5.6,Partial Responder,None,0.269,0.253,0.223,0.159,0.17,148,225,213,168,135,71
+P00328,66,Female,26.7,Treatment,Sitagliptin,50,Moderate,Moderate,Moderate,10.3,10.0,10.1,9.9,9.8,9.8,Minimal Responder,Headache,0.889,0.897,0.881,0.872,0.872,250,390,143,160,130,90
+P00329,53,Male,29.0,Treatment,Empagliflozin,25,Moderate,Good,Moderate,6.9,6.6,6.2,6.1,5.9,5.7,Partial Responder,UTI,0.321,0.253,0.237,0.209,0.182,156,212,138,140,161,69
+P00330,78,Male,29.3,Treatment,Sitagliptin,25,Moderate,Good,Active,9.8,9.4,9.5,9.4,9.2,9.2,Minimal Responder,None,0.83,0.841,0.83,0.805,0.805,225,299,107,239,153,74
+P00331,71,Female,32.6,Treatment,Empagliflozin,25,Good,Moderate,Active,7.3,6.9,6.9,6.6,6.5,6.5,Partial Responder,None,0.378,0.378,0.321,0.303,0.303,169,265,180,260,120,78
+P00332,58,Male,35.1,Treatment,Sitagliptin,100,Poor,Moderate,Moderate,7.4,7.2,7.1,6.9,6.8,6.7,Partial Responder,None,0.438,0.417,0.378,0.358,0.339,149,209,185,163,103,70
+P00333,63,Male,35.1,Treatment,Metformin,1500,Good,Poor,Moderate,10.5,10.1,10.1,9.9,9.8,9.8,Partial Responder,None,0.897,0.897,0.881,0.872,0.872,241,353,190,232,110,72
+P00334,66,Male,31.0,Control,None,0,Good,Moderate,Moderate,9.6,9.6,9.5,9.2,9.3,9.3,Minimal Responder,None,0.852,0.841,0.805,0.818,0.818,250,352,181,174,105,77
+P00335,68,Female,27.1,Treatment,Empagliflozin,10,Moderate,Good,Active,10.6,10.1,10.0,9.8,9.5,9.5,Partial Responder,UTI,0.897,0.889,0.872,0.841,0.841,252,337,230,304,130,73
+P00336,68,Female,24.2,Control,None,0,Poor,Good,Active,10.6,10.6,10.6,10.2,10.3,10.2,Minimal Responder,None,0.93,0.93,0.905,0.912,0.905,265,391,133,256,124,86
+P00337,78,Male,23.0,Treatment,Empagliflozin,25,Moderate,Good,Moderate,7.7,7.6,7.1,6.8,6.8,6.8,Partial Responder,None,0.521,0.417,0.358,0.358,0.358,191,278,193,140,144,77
+P00338,78,Female,38.0,Treatment,Sitagliptin,100,Moderate,Good,Sedentary,8.7,8.3,8.3,7.9,8.1,7.6,Partial Responder,None,0.661,0.661,0.583,0.622,0.521,180,245,161,241,126,81
+P00339,50,Female,35.8,Treatment,Metformin,850,Good,Moderate,Moderate,6.6,6.3,6.2,5.9,5.8,5.6,Partial Responder,None,0.269,0.253,0.209,0.195,0.17,154,221,246,159,132,93
+P00340,57,Male,29.1,Treatment,Empagliflozin,10,Good,Good,Moderate,10.0,9.6,9.4,9.2,8.8,9.0,Partial Responder,Hypoglycemia,0.852,0.83,0.805,0.747,0.777,247,380,217,254,113,78
+P00341,68,Male,26.3,Treatment,Empagliflozin,25,Moderate,Good,Sedentary,10.3,9.9,9.5,9.2,9.3,9.2,Good Responder,None,0.881,0.841,0.805,0.818,0.805,265,391,148,113,123,85
+P00342,57,Male,38.8,Treatment,Metformin,850,Poor,Good,Active,10.8,10.4,10.1,9.7,9.5,9.3,Good Responder,GI Issues,0.918,0.897,0.862,0.841,0.818,251,334,155,156,145,69
+P00343,62,Male,29.2,Treatment,Metformin,1500,Good,Good,Sedentary,9.5,9.1,8.8,8.1,8.0,7.7,Good Responder,None,0.791,0.747,0.622,0.603,0.542,240,351,163,123,154,86
+P00344,55,Female,24.7,Treatment,Metformin,1000,Good,Moderate,Sedentary,9.4,9.2,9.0,8.6,8.5,8.4,Partial Responder,None,0.805,0.777,0.714,0.697,0.679,216,326,190,193,147,65
+P00345,66,Female,22.0,Control,None,0,Poor,Good,Sedentary,9.5,9.5,9.7,10.1,10.0,9.8,Non-Responder,None,0.841,0.862,0.897,0.889,0.872,236,363,233,118,121,83
+P00346,54,Female,37.1,Treatment,Metformin,850,Poor,Good,Moderate,9.3,9.2,8.6,8.6,8.3,8.3,Partial Responder,None,0.805,0.714,0.714,0.661,0.661,220,328,155,266,132,70
+P00347,56,Male,23.4,Treatment,Metformin,850,Good,Good,Moderate,10.8,10.1,10.1,9.4,9.5,9.1,Good Responder,GI Issues,0.897,0.897,0.83,0.841,0.791,271,365,203,147,137,75
+P00348,44,Male,27.2,Treatment,Metformin,500,Poor,Good,Moderate,10.5,10.1,10.1,10.0,9.7,9.7,Partial Responder,None,0.897,0.897,0.889,0.862,0.862,255,386,195,196,135,69
+P00349,72,Female,29.5,Control,None,0,Poor,Moderate,Moderate,8.2,8.2,8.3,8.4,8.2,8.2,Non-Responder,None,0.642,0.661,0.679,0.642,0.642,170,256,187,140,156,81
+P00350,58,Female,23.1,Treatment,Sitagliptin,25,Moderate,Moderate,Moderate,10.2,10.1,10.0,9.9,9.9,9.8,Minimal Responder,None,0.897,0.889,0.881,0.881,0.872,215,281,192,92,117,86
+P00351,69,Male,25.5,Control,None,0,Good,Good,Active,9.9,9.8,9.5,9.4,9.3,9.3,Partial Responder,None,0.872,0.841,0.83,0.818,0.818,240,342,218,167,147,72
+P00352,31,Female,26.0,Treatment,Metformin,500,Moderate,Good,Active,9.7,9.5,9.1,8.9,8.6,8.5,Partial Responder,GI Issues,0.841,0.791,0.763,0.714,0.697,229,321,206,136,133,80
+P00353,41,Female,35.9,Control,None,0,Good,Good,Sedentary,8.5,8.5,8.6,8.3,8.4,8.5,Minimal Responder,None,0.697,0.714,0.661,0.679,0.697,201,302,178,121,132,82
+P00354,49,Male,33.0,Control,None,0,Moderate,Moderate,Moderate,10.1,10.1,10.0,9.9,9.9,10.1,Minimal Responder,None,0.897,0.889,0.881,0.881,0.897,241,329,253,185,132,66
+P00355,45,Male,25.4,Treatment,Metformin,500,Poor,Moderate,Moderate,10.5,10.3,10.2,10.1,10.1,9.9,Minimal Responder,None,0.912,0.905,0.897,0.897,0.881,275,406,172,84,121,90
+P00356,62,Female,24.6,Treatment,Metformin,1000,Moderate,Moderate,Moderate,10.9,10.6,10.3,10.3,9.7,9.8,Partial Responder,None,0.93,0.912,0.912,0.862,0.872,268,422,193,233,107,60
+P00357,55,Female,28.9,Treatment,Sitagliptin,50,Good,Poor,Sedentary,9.8,9.7,9.6,9.6,9.4,9.5,Minimal Responder,None,0.862,0.852,0.852,0.83,0.841,230,354,219,166,160,76
+P00358,43,Female,34.1,Control,None,0,Poor,Moderate,Active,7.6,7.5,7.7,7.3,7.6,7.4,Minimal Responder,None,0.5,0.542,0.458,0.521,0.479,175,276,190,87,133,82
+P00359,54,Female,34.6,Treatment,Metformin,500,Poor,Good,Active,10.4,10.1,9.9,9.6,9.4,9.3,Partial Responder,None,0.897,0.881,0.852,0.83,0.818,247,394,196,240,128,77
+P00360,64,Male,26.2,Treatment,Sitagliptin,100,Moderate,Poor,Sedentary,8.2,8.2,8.1,8.1,7.9,7.9,Minimal Responder,None,0.642,0.622,0.622,0.583,0.583,190,248,141,140,136,74
+P00361,76,Female,27.6,Treatment,Empagliflozin,10,Good,Good,Sedentary,7.9,7.4,7.5,7.2,7.0,7.0,Partial Responder,None,0.479,0.5,0.438,0.397,0.397,168,250,179,215,171,85
+P00362,79,Female,31.4,Treatment,Sitagliptin,50,Moderate,Good,Sedentary,10.1,9.9,9.7,9.5,9.4,9.4,Partial Responder,Mild,0.881,0.862,0.841,0.83,0.83,243,346,219,273,140,81
+P00363,73,Male,31.9,Treatment,Metformin,500,Moderate,Good,Moderate,10.3,10.0,9.7,9.5,9.3,9.4,Partial Responder,None,0.889,0.862,0.841,0.818,0.83,244,380,183,217,117,93
+P00364,61,Male,38.8,Treatment,Metformin,2000,Moderate,Poor,Moderate,7.1,7.0,6.6,6.7,6.3,6.5,Minimal Responder,GI Issues,0.397,0.321,0.339,0.269,0.303,146,201,163,141,116,87
+P00365,77,Male,24.9,Treatment,Empagliflozin,25,Moderate,Moderate,Active,10.3,10.0,9.9,9.6,9.6,9.5,Partial Responder,None,0.889,0.881,0.852,0.852,0.841,269,429,203,135,131,76
+P00366,60,Female,36.5,Treatment,Metformin,1000,Moderate,Moderate,Sedentary,10.1,10.0,9.7,9.4,9.4,9.2,Partial Responder,None,0.889,0.862,0.83,0.83,0.805,232,344,201,128,129,89
+P00367,41,Male,37.5,Treatment,Metformin,850,Moderate,Poor,Moderate,10.9,10.7,10.7,10.5,10.4,10.6,Minimal Responder,GI Issues,0.935,0.935,0.924,0.918,0.93,266,409,157,294,158,68
+P00368,74,Male,29.1,Control,None,0,Moderate,Moderate,Active,8.9,8.5,8.7,8.4,8.6,8.4,Partial Responder,None,0.697,0.731,0.679,0.714,0.679,201,266,213,190,123,89
+P00369,46,Male,24.3,Control,None,0,Poor,Poor,Active,10.0,10.1,9.9,9.7,10.0,9.6,Minimal Responder,None,0.897,0.881,0.862,0.889,0.852,243,329,115,168,144,73
+P00370,62,Female,39.4,Treatment,Metformin,500,Good,Moderate,Active,9.9,9.5,9.4,9.2,9.2,9.1,Partial Responder,None,0.841,0.83,0.805,0.805,0.791,225,344,177,205,151,67
+P00371,53,Male,30.6,Treatment,Metformin,500,Good,Moderate,Sedentary,9.6,9.3,9.4,9.1,9.1,9.1,Partial Responder,None,0.818,0.83,0.791,0.791,0.791,237,310,199,149,132,80
+P00372,36,Female,37.8,Treatment,Metformin,2000,Good,Moderate,Active,9.2,8.6,8.2,8.0,7.6,7.2,Good Responder,GI Issues,0.714,0.642,0.603,0.521,0.438,238,368,191,185,132,89
+P00373,69,Male,36.5,Treatment,Sitagliptin,100,Moderate,Good,Sedentary,7.6,7.3,7.1,6.8,6.9,6.7,Partial Responder,None,0.458,0.417,0.358,0.378,0.339,163,213,172,168,108,89
+P00374,64,Male,29.8,Treatment,Empagliflozin,25,Good,Moderate,Moderate,8.4,8.2,8.1,7.7,7.6,7.5,Partial Responder,None,0.642,0.622,0.542,0.521,0.5,207,310,256,179,144,84
+P00375,41,Female,36.2,Treatment,Sitagliptin,100,Good,Moderate,Sedentary,6.5,6.4,6.1,5.9,5.9,5.9,Partial Responder,None,0.286,0.237,0.209,0.209,0.209,136,192,176,186,129,70
+P00376,70,Male,26.2,Treatment,Sitagliptin,50,Moderate,Good,Moderate,10.7,10.4,10.5,9.9,9.9,9.8,Partial Responder,Headache,0.918,0.924,0.881,0.881,0.872,275,408,179,150,100,62
+P00377,60,Male,30.0,Control,None,0,Good,Good,Moderate,9.7,9.5,9.6,9.4,9.4,9.6,Minimal Responder,None,0.841,0.852,0.83,0.83,0.852,254,383,218,56,143,75
+P00378,36,Female,38.0,Treatment,Metformin,500,Good,Moderate,Active,7.9,7.7,7.6,7.2,7.1,7.1,Partial Responder,None,0.542,0.521,0.438,0.417,0.417,178,250,205,205,112,72
+P00379,59,Female,24.7,Treatment,Metformin,500,Poor,Poor,Moderate,7.3,7.2,7.1,7.3,7.1,7.2,Minimal Responder,None,0.438,0.417,0.458,0.417,0.438,148,197,214,126,169,75
+P00380,50,Male,32.4,Treatment,Empagliflozin,25,Good,Poor,Moderate,7.8,7.7,7.6,7.4,7.5,7.3,Minimal Responder,None,0.542,0.521,0.479,0.5,0.458,187,247,155,184,128,83
+P00381,58,Male,29.7,Treatment,Metformin,1000,Good,Poor,Active,9.3,9.0,8.9,8.9,8.5,8.7,Minimal Responder,None,0.777,0.763,0.763,0.697,0.731,222,328,168,213,133,75
+P00382,30,Female,27.0,Treatment,Metformin,500,Moderate,Moderate,Active,9.4,9.1,9.0,8.9,8.8,8.7,Partial Responder,None,0.791,0.777,0.763,0.747,0.731,228,332,209,168,116,76
+P00383,79,Female,24.0,Treatment,Metformin,1500,Good,Poor,Moderate,9.6,9.4,9.3,9.0,9.0,9.1,Partial Responder,None,0.83,0.818,0.777,0.777,0.791,225,343,169,129,122,83
+P00384,35,Female,30.3,Control,None,0,Poor,Good,Moderate,9.6,9.8,9.6,9.9,9.7,9.4,Non-Responder,None,0.872,0.852,0.881,0.862,0.83,220,320,162,124,139,87
+P00385,79,Male,25.5,Treatment,Metformin,1000,Good,Good,Sedentary,7.0,6.7,6.5,6.0,5.6,5.4,Good Responder,GI Issues,0.339,0.303,0.223,0.17,0.148,166,237,232,257,143,72
+P00386,51,Male,31.6,Treatment,Metformin,1000,Good,Moderate,Moderate,8.2,7.9,8.0,7.6,7.0,7.3,Partial Responder,None,0.583,0.603,0.521,0.397,0.458,192,273,190,157,133,85
+P00387,71,Male,28.8,Treatment,Metformin,2000,Poor,Poor,Sedentary,7.7,7.5,7.4,7.5,7.3,7.1,Minimal Responder,None,0.5,0.479,0.5,0.458,0.417,160,209,109,92,127,80
+P00388,72,Male,26.0,Treatment,Metformin,500,Good,Moderate,Sedentary,6.6,6.5,6.3,6.2,6.1,6.0,Minimal Responder,None,0.303,0.269,0.253,0.237,0.223,150,210,182,240,137,94
+P00389,69,Male,22.0,Treatment,Metformin,850,Good,Good,Active,7.3,6.6,6.5,6.1,5.8,5.5,Good Responder,None,0.321,0.303,0.237,0.195,0.159,168,268,175,187,147,73
+P00390,41,Female,32.0,Control,None,0,Good,Good,Active,8.2,8.0,8.1,7.7,7.6,7.8,Minimal Responder,None,0.603,0.622,0.542,0.521,0.562,185,289,168,225,153,60
+P00391,47,Male,22.2,Treatment,Empagliflozin,25,Good,Good,Moderate,7.5,7.2,6.9,6.4,6.4,6.1,Good Responder,None,0.438,0.378,0.286,0.286,0.237,185,259,188,143,138,81
+P00392,45,Male,31.0,Treatment,Metformin,1500,Poor,Good,Moderate,6.7,6.3,5.9,5.6,5.5,5.3,Good Responder,GI Issues,0.269,0.209,0.17,0.159,0.138,139,205,199,163,140,85
+P00393,69,Female,24.4,Control,None,0,Poor,Moderate,Sedentary,8.9,8.9,8.9,9.3,9.2,9.2,Non-Responder,None,0.763,0.763,0.818,0.805,0.805,207,322,188,125,156,71
+P00394,58,Female,25.2,Treatment,Metformin,500,Good,Good,Moderate,6.7,6.5,6.2,6.1,5.8,5.8,Partial Responder,None,0.303,0.253,0.237,0.195,0.195,153,219,236,174,134,88
+P00395,52,Male,38.0,Control,None,0,Good,Good,Moderate,6.8,6.9,6.6,6.4,6.6,6.5,Minimal Responder,None,0.378,0.321,0.286,0.321,0.303,149,195,116,170,115,79
+P00396,46,Female,30.4,Treatment,Metformin,1500,Good,Good,Moderate,9.3,8.6,8.6,7.8,7.3,7.3,Excellent Responder,GI Issues,0.714,0.714,0.562,0.458,0.458,206,272,210,164,117,78
+P00397,38,Female,27.6,Treatment,Metformin,850,Moderate,Moderate,Moderate,8.0,7.7,7.8,7.4,7.3,7.1,Partial Responder,None,0.542,0.562,0.479,0.458,0.417,185,269,192,169,117,95
+P00398,70,Female,35.8,Treatment,Metformin,1500,Poor,Good,Active,10.8,10.1,9.8,9.3,9.2,9.2,Excellent Responder,None,0.897,0.872,0.818,0.805,0.805,259,412,201,181,132,66
+P00399,64,Female,28.9,Treatment,Empagliflozin,10,Good,Moderate,Sedentary,8.2,8.1,7.9,7.8,7.7,7.6,Minimal Responder,UTI,0.622,0.583,0.562,0.542,0.521,197,297,174,135,112,67
+P00400,70,Male,37.3,Control,None,0,Good,Good,Moderate,7.0,7.0,6.9,6.7,6.5,6.7,Minimal Responder,None,0.397,0.378,0.339,0.303,0.339,156,206,184,194,155,58
+P00401,73,Female,37.4,Treatment,Sitagliptin,100,Good,Moderate,Moderate,8.1,8.0,7.9,7.6,7.3,7.5,Partial Responder,Headache,0.603,0.583,0.521,0.458,0.5,187,254,178,180,109,64
+P00402,31,Female,39.5,Control,None,0,Moderate,Good,Active,10.4,10.4,10.2,10.1,9.8,9.9,Minimal Responder,None,0.918,0.905,0.897,0.872,0.881,241,369,144,243,96,77
+P00403,62,Female,27.4,Treatment,Sitagliptin,50,Good,Moderate,Moderate,8.0,7.7,7.7,7.6,7.6,7.6,Minimal Responder,None,0.542,0.542,0.521,0.521,0.521,181,281,208,204,114,80
+P00404,37,Male,24.3,Treatment,Empagliflozin,10,Good,Good,Moderate,8.1,7.8,7.6,7.4,7.3,7.1,Partial Responder,None,0.562,0.521,0.479,0.458,0.417,195,290,221,206,166,68
+P00405,67,Male,34.5,Treatment,Metformin,2000,Good,Good,Sedentary,8.1,7.4,7.1,6.9,6.3,6.3,Good Responder,GI Issues,0.479,0.417,0.378,0.269,0.269,178,266,197,179,145,90
+P00406,40,Female,32.6,Treatment,Metformin,850,Moderate,Moderate,Moderate,10.9,10.5,10.5,10.3,9.9,9.9,Partial Responder,None,0.924,0.924,0.912,0.881,0.881,266,348,184,189,117,65
+P00407,37,Male,28.8,Control,None,0,Poor,Good,Active,9.9,9.9,9.7,9.6,9.5,9.5,Minimal Responder,None,0.881,0.862,0.852,0.841,0.841,228,353,221,154,110,74
+P00408,42,Male,35.8,Control,None,0,Poor,Poor,Moderate,7.3,7.4,7.2,7.2,7.2,7.4,Minimal Responder,None,0.479,0.438,0.438,0.438,0.479,151,232,140,209,128,87
+P00409,62,Male,28.2,Treatment,Metformin,2000,Good,Poor,Moderate,8.5,8.1,8.3,7.8,7.8,7.8,Partial Responder,None,0.622,0.661,0.562,0.562,0.562,196,270,228,184,131,84
+P00410,67,Female,27.4,Control,None,0,Moderate,Poor,Sedentary,8.0,7.8,8.0,8.3,8.2,8.0,Non-Responder,None,0.562,0.603,0.661,0.642,0.603,185,280,218,244,144,62
+P00411,62,Male,30.0,Control,None,0,Good,Good,Sedentary,7.1,7.1,6.9,7.0,7.3,7.1,Minimal Responder,None,0.417,0.378,0.397,0.458,0.417,177,242,223,124,114,86
+P00412,34,Female,34.2,Control,None,0,Poor,Good,Moderate,10.6,10.9,10.6,10.5,10.5,10.8,Minimal Responder,None,0.944,0.93,0.924,0.924,0.94,253,332,189,170,159,77
+P00413,70,Female,35.4,Control,None,0,Moderate,Good,Active,8.3,8.2,8.0,7.8,7.7,7.9,Partial Responder,None,0.642,0.603,0.562,0.542,0.583,191,260,232,133,141,68
+P00414,47,Female,34.1,Treatment,Metformin,1500,Good,Moderate,Sedentary,7.5,7.2,7.1,6.6,6.4,6.4,Partial Responder,None,0.438,0.417,0.321,0.286,0.286,156,211,266,79,134,75
+P00415,35,Female,39.7,Control,None,0,Moderate,Good,Active,6.5,6.6,6.3,6.2,6.1,6.0,Minimal Responder,None,0.321,0.269,0.253,0.237,0.223,146,205,108,169,148,89
+P00416,59,Male,31.2,Control,None,0,Moderate,Moderate,Sedentary,9.6,9.7,9.7,9.7,9.7,10.0,Non-Responder,None,0.862,0.862,0.862,0.862,0.889,233,332,183,198,123,81
+P00417,43,Male,35.3,Control,None,0,Moderate,Moderate,Moderate,10.1,10.1,10.0,9.8,9.9,9.8,Minimal Responder,None,0.897,0.889,0.872,0.881,0.872,258,375,187,116,112,89
+P00418,52,Female,39.0,Control,None,0,Poor,Good,Moderate,8.1,8.2,8.0,8.1,8.1,8.1,Minimal Responder,None,0.642,0.603,0.622,0.622,0.622,197,284,205,103,153,72
+P00419,43,Male,32.4,Treatment,Sitagliptin,100,Good,Moderate,Active,8.9,8.6,8.4,8.2,8.1,7.8,Partial Responder,None,0.714,0.679,0.642,0.622,0.562,212,293,170,164,98,81
+P00420,61,Male,29.9,Treatment,Metformin,2000,Moderate,Good,Sedentary,7.1,6.4,6.5,5.8,5.6,5.7,Good Responder,None,0.286,0.303,0.195,0.17,0.182,152,199,216,177,146,81
+P00421,48,Male,22.3,Treatment,Metformin,500,Good,Good,Moderate,6.7,6.2,6.1,6.0,5.7,5.7,Partial Responder,None,0.253,0.237,0.223,0.182,0.182,148,219,138,269,116,110
+P00422,35,Female,25.3,Treatment,Empagliflozin,25,Moderate,Good,Active,8.9,8.7,8.2,7.8,7.7,7.5,Good Responder,None,0.731,0.642,0.562,0.542,0.5,208,295,216,201,123,83
+P00423,35,Male,26.5,Control,None,0,Good,Good,Active,7.0,6.9,6.8,6.6,6.4,6.8,Minimal Responder,None,0.378,0.358,0.321,0.286,0.358,164,228,127,238,118,71
+P00424,51,Female,26.9,Treatment,Empagliflozin,10,Poor,Good,Sedentary,10.7,10.5,10.4,10.2,10.1,10.0,Partial Responder,None,0.924,0.918,0.905,0.897,0.889,269,420,133,148,145,73
+P00425,65,Male,33.6,Control,None,0,Good,Moderate,Sedentary,8.8,8.8,9.0,8.9,8.9,9.0,Non-Responder,None,0.747,0.777,0.763,0.763,0.777,203,309,155,99,134,66
+P00426,76,Male,23.8,Control,None,0,Good,Good,Sedentary,8.8,8.9,8.7,8.7,8.8,8.8,Minimal Responder,None,0.763,0.731,0.731,0.747,0.747,191,297,224,298,124,67
+P00427,47,Male,26.0,Control,None,0,Good,Good,Sedentary,10.1,10.4,9.9,10.1,10.0,10.1,Minimal Responder,None,0.918,0.881,0.897,0.889,0.897,257,372,220,123,139,68
+P00428,40,Male,36.1,Control,None,0,Moderate,Poor,Sedentary,7.4,7.5,7.5,7.5,7.7,7.9,Non-Responder,None,0.5,0.5,0.5,0.542,0.583,171,229,179,148,119,82
+P00429,63,Female,28.4,Control,None,0,Good,Moderate,Moderate,10.2,10.1,10.1,9.7,10.2,9.9,Partial Responder,None,0.897,0.897,0.862,0.905,0.881,243,367,148,176,148,85
+P00430,73,Female,31.4,Treatment,Empagliflozin,10,Good,Poor,Active,7.9,7.8,7.8,7.7,7.5,7.4,Minimal Responder,Hypoglycemia,0.562,0.562,0.542,0.5,0.479,185,252,143,242,155,74
+P00431,44,Female,37.8,Control,None,0,Moderate,Moderate,Active,9.7,9.7,9.6,9.2,9.1,9.3,Partial Responder,None,0.862,0.852,0.805,0.791,0.818,232,332,187,175,141,72
+P00432,64,Female,22.4,Treatment,Metformin,2000,Moderate,Moderate,Sedentary,6.7,6.3,6.3,5.8,5.8,5.6,Partial Responder,None,0.269,0.269,0.195,0.195,0.17,159,210,211,231,118,68
+P00433,55,Male,25.6,Treatment,Sitagliptin,100,Poor,Moderate,Sedentary,7.4,7.3,7.3,6.9,7.1,7.0,Partial Responder,None,0.458,0.458,0.378,0.417,0.397,146,226,131,124,153,70
+P00434,34,Female,36.6,Treatment,Sitagliptin,50,Good,Good,Active,8.3,7.8,7.8,7.5,7.2,7.2,Partial Responder,Headache,0.562,0.562,0.5,0.438,0.438,188,252,252,236,151,80
+P00435,68,Female,34.2,Treatment,Metformin,2000,Moderate,Moderate,Active,8.8,8.3,7.9,7.4,7.4,7.6,Good Responder,None,0.661,0.583,0.479,0.479,0.521,222,349,151,136,140,82
+P00436,70,Male,26.6,Control,None,0,Moderate,Good,Sedentary,9.6,9.7,9.7,9.8,9.8,9.8,Non-Responder,None,0.862,0.862,0.872,0.872,0.872,234,365,153,128,149,86
+P00437,73,Male,32.5,Control,None,0,Good,Poor,Moderate,7.0,7.1,7.0,6.8,6.9,6.6,Minimal Responder,None,0.417,0.397,0.358,0.378,0.321,172,248,199,201,142,92
+P00438,56,Female,23.8,Treatment,Metformin,850,Poor,Poor,Active,7.2,7.0,7.1,6.9,6.9,6.8,Minimal Responder,None,0.397,0.417,0.378,0.378,0.358,148,225,239,161,140,61
+P00439,53,Male,24.2,Treatment,Sitagliptin,25,Poor,Good,Moderate,6.6,6.4,6.4,6.3,6.3,6.1,Minimal Responder,None,0.286,0.286,0.269,0.269,0.237,153,227,99,205,103,71
+P00440,37,Male,29.3,Treatment,Metformin,2000,Poor,Good,Active,10.2,9.5,9.2,8.7,8.2,8.1,Excellent Responder,None,0.841,0.805,0.731,0.642,0.622,256,394,232,145,131,83
+P00441,38,Female,33.9,Treatment,Metformin,1500,Moderate,Poor,Moderate,6.7,6.4,6.4,6.1,6.2,6.0,Partial Responder,None,0.286,0.286,0.237,0.253,0.223,129,184,175,163,139,60
+P00442,79,Female,33.2,Treatment,Sitagliptin,50,Good,Good,Active,10.5,10.1,10.0,9.7,9.3,9.5,Partial Responder,None,0.897,0.889,0.862,0.818,0.841,252,387,195,275,124,77
+P00443,60,Male,34.7,Treatment,Metformin,1500,Moderate,Poor,Moderate,7.4,7.2,7.1,6.9,7.0,6.7,Partial Responder,GI Issues,0.438,0.417,0.378,0.397,0.339,165,237,174,154,161,61
+P00444,53,Male,23.9,Treatment,Sitagliptin,100,Moderate,Good,Sedentary,10.1,9.7,9.6,9.4,9.3,9.2,Partial Responder,Headache,0.862,0.852,0.83,0.818,0.805,227,359,166,112,142,72
+P00445,53,Female,23.2,Control,None,0,Good,Good,Sedentary,7.8,7.9,7.8,7.8,7.9,7.8,Minimal Responder,None,0.583,0.562,0.562,0.583,0.562,174,252,224,281,116,67
+P00446,35,Male,27.5,Treatment,Empagliflozin,10,Good,Poor,Active,9.2,9.0,9.1,8.9,8.8,8.7,Minimal Responder,None,0.777,0.791,0.763,0.747,0.731,226,325,204,180,115,87
+P00447,61,Female,36.6,Treatment,Metformin,500,Poor,Poor,Sedentary,7.9,7.9,7.8,7.7,7.7,7.7,Minimal Responder,None,0.583,0.562,0.542,0.542,0.542,176,270,161,143,116,68
+P00448,69,Female,28.1,Treatment,Sitagliptin,50,Moderate,Moderate,Moderate,7.7,7.4,7.4,7.3,7.4,7.2,Minimal Responder,None,0.479,0.479,0.458,0.479,0.438,177,274,147,239,140,79
+P00449,75,Male,39.4,Control,None,0,Poor,Good,Sedentary,10.6,10.6,10.7,10.8,10.9,11.0,Non-Responder,None,0.93,0.935,0.94,0.944,0.949,260,381,172,221,129,91
+P00450,75,Female,22.8,Control,None,0,Poor,Poor,Moderate,8.4,8.5,8.4,8.6,8.5,8.1,Non-Responder,None,0.697,0.679,0.714,0.697,0.622,194,263,190,163,115,90
+P00451,38,Female,28.8,Treatment,Empagliflozin,10,Good,Good,Sedentary,10.1,9.7,9.7,9.5,9.3,9.1,Partial Responder,None,0.862,0.862,0.841,0.818,0.791,236,340,201,233,117,89
+P00452,49,Female,25.9,Treatment,Sitagliptin,50,Poor,Moderate,Active,10.6,10.4,10.3,10.1,10.0,10.1,Partial Responder,None,0.918,0.912,0.897,0.889,0.897,264,420,159,152,125,67
+P00453,35,Male,35.9,Control,None,0,Good,Moderate,Active,7.7,7.6,7.5,7.1,7.0,7.0,Partial Responder,None,0.521,0.5,0.417,0.397,0.397,158,241,169,113,133,75
+P00454,43,Female,32.0,Control,None,0,Good,Poor,Moderate,7.3,7.2,7.2,7.1,7.0,7.0,Minimal Responder,None,0.438,0.438,0.417,0.397,0.397,163,252,160,284,152,78
+P00455,51,Female,33.3,Treatment,Metformin,1500,Good,Moderate,Moderate,9.3,8.8,8.7,8.2,8.1,7.8,Good Responder,GI Issues,0.747,0.731,0.642,0.622,0.562,234,307,154,209,132,84
+P00456,33,Male,22.7,Treatment,Empagliflozin,10,Good,Good,Moderate,7.8,7.5,7.3,7.1,7.1,6.9,Partial Responder,UTI,0.5,0.458,0.417,0.417,0.378,173,249,216,245,128,71
+P00457,50,Female,26.4,Treatment,Sitagliptin,25,Good,Poor,Sedentary,9.2,9.1,9.2,9.1,9.0,9.1,Minimal Responder,None,0.791,0.805,0.791,0.777,0.791,210,314,185,155,131,98
+P00458,78,Female,33.0,Treatment,Sitagliptin,100,Poor,Moderate,Moderate,7.3,7.2,7.2,6.8,7.0,6.8,Partial Responder,None,0.438,0.438,0.358,0.397,0.358,170,263,191,168,122,83
+P00459,66,Male,33.1,Treatment,Metformin,1500,Moderate,Good,Moderate,7.8,7.3,6.8,6.6,6.3,6.2,Good Responder,None,0.458,0.358,0.321,0.269,0.253,179,235,236,200,122,71
+P00460,70,Male,26.4,Treatment,Sitagliptin,100,Good,Good,Moderate,10.2,9.8,9.5,9.2,9.0,9.0,Good Responder,None,0.872,0.841,0.805,0.777,0.777,253,394,183,164,113,89
+P00461,44,Male,24.7,Treatment,Metformin,850,Moderate,Moderate,Moderate,9.9,9.9,9.5,9.2,9.0,8.9,Partial Responder,None,0.881,0.841,0.805,0.777,0.763,238,349,238,192,149,71
+P00462,40,Female,36.0,Control,None,0,Good,Good,Sedentary,9.4,9.3,9.4,9.4,9.5,9.3,Minimal Responder,None,0.818,0.83,0.83,0.841,0.818,199,270,183,189,112,78
+P00463,52,Female,24.2,Control,None,0,Moderate,Moderate,Active,8.7,8.8,8.7,8.4,8.3,8.4,Minimal Responder,None,0.747,0.731,0.679,0.661,0.679,215,300,177,116,139,98
+P00464,79,Female,29.9,Treatment,Metformin,500,Good,Good,Active,10.7,10.0,10.1,9.6,9.5,9.4,Good Responder,GI Issues,0.889,0.897,0.852,0.841,0.83,281,389,219,139,112,80
+P00465,38,Female,25.3,Control,None,0,Good,Good,Active,9.9,9.5,9.5,9.1,9.2,9.3,Partial Responder,None,0.841,0.841,0.791,0.805,0.818,250,365,201,211,152,74
+P00466,53,Female,36.3,Control,None,0,Good,Good,Moderate,7.6,7.4,7.5,7.4,7.5,7.2,Minimal Responder,None,0.479,0.5,0.479,0.5,0.438,136,179,208,169,149,76
+P00467,40,Male,34.5,Treatment,Empagliflozin,10,Poor,Moderate,Active,9.2,8.9,8.9,8.6,8.7,8.6,Partial Responder,UTI,0.763,0.763,0.714,0.731,0.714,222,299,213,196,138,77
+P00468,31,Female,31.2,Treatment,Metformin,500,Moderate,Moderate,Moderate,7.4,7.2,7.2,7.0,6.9,6.7,Minimal Responder,GI Issues,0.438,0.438,0.397,0.378,0.339,161,249,190,210,132,90
+P00469,35,Male,23.9,Control,None,0,Moderate,Good,Active,10.5,10.4,10.5,10.2,10.0,9.9,Minimal Responder,None,0.918,0.924,0.905,0.889,0.881,244,327,115,131,112,81
+P00470,41,Male,28.2,Treatment,Empagliflozin,25,Good,Good,Active,10.0,9.4,9.2,8.8,8.4,8.2,Good Responder,None,0.83,0.805,0.747,0.679,0.642,242,332,219,166,109,93
+P00471,65,Female,27.4,Treatment,Sitagliptin,100,Good,Poor,Moderate,10.1,9.9,9.9,9.9,9.7,9.6,Minimal Responder,None,0.881,0.881,0.881,0.862,0.852,242,348,137,132,142,81
+P00472,55,Male,32.1,Treatment,Sitagliptin,50,Poor,Good,Moderate,6.9,6.7,6.4,6.6,6.3,6.3,Minimal Responder,None,0.339,0.286,0.321,0.269,0.269,156,227,164,191,124,83
+P00473,79,Female,28.1,Treatment,Metformin,1500,Good,Poor,Sedentary,8.8,8.7,8.5,8.5,8.1,8.3,Minimal Responder,None,0.731,0.697,0.697,0.622,0.661,206,315,191,219,129,96
+P00474,49,Female,22.3,Treatment,Metformin,1500,Moderate,Moderate,Sedentary,10.5,10.0,10.2,9.7,9.6,9.4,Partial Responder,GI Issues,0.889,0.905,0.862,0.852,0.83,243,349,227,154,165,87
+P00475,55,Male,23.4,Treatment,Metformin,1000,Moderate,Poor,Active,9.1,8.9,8.8,8.8,8.6,8.4,Minimal Responder,None,0.763,0.747,0.747,0.714,0.679,209,321,224,63,120,94
+P00476,36,Female,23.9,Treatment,Sitagliptin,25,Good,Good,Active,7.0,6.8,6.5,6.6,6.3,6.3,Minimal Responder,None,0.358,0.303,0.321,0.269,0.269,147,218,142,153,116,70
+P00477,46,Female,37.8,Control,None,0,Moderate,Good,Active,6.8,6.8,6.5,6.6,6.2,6.2,Minimal Responder,None,0.358,0.303,0.321,0.253,0.253,131,175,220,132,118,75
+P00478,49,Female,37.0,Treatment,Sitagliptin,25,Moderate,Poor,Moderate,7.5,7.4,7.5,7.3,7.3,7.4,Minimal Responder,None,0.479,0.5,0.458,0.458,0.479,155,209,165,74,131,80
+P00479,76,Female,27.2,Control,None,0,Moderate,Poor,Moderate,10.4,10.4,10.4,10.1,10.3,10.4,Minimal Responder,None,0.918,0.918,0.897,0.912,0.918,250,358,172,237,148,79
+P00480,51,Male,34.0,Treatment,Metformin,1000,Moderate,Good,Active,8.2,7.7,7.3,6.8,6.6,6.4,Good Responder,None,0.542,0.458,0.358,0.321,0.286,203,288,151,135,127,69
+P00481,54,Male,35.3,Treatment,Metformin,1000,Good,Good,Sedentary,7.3,6.8,6.6,6.3,6.0,5.8,Good Responder,None,0.358,0.321,0.269,0.223,0.195,157,239,197,193,127,81
+P00482,39,Female,35.7,Treatment,Metformin,850,Good,Good,Sedentary,7.5,7.0,6.9,6.6,6.4,6.4,Partial Responder,Mild,0.397,0.378,0.321,0.286,0.286,161,237,202,101,148,77
+P00483,73,Female,38.4,Treatment,Metformin,1500,Good,Moderate,Sedentary,8.4,8.1,7.8,7.5,7.2,7.3,Partial Responder,None,0.622,0.562,0.5,0.438,0.458,183,259,144,240,140,84
+P00484,46,Female,36.1,Treatment,Sitagliptin,25,Moderate,Moderate,Active,8.3,8.2,8.0,8.0,7.8,7.9,Minimal Responder,None,0.642,0.603,0.603,0.562,0.583,192,259,194,182,110,85
+P00485,74,Male,36.2,Treatment,Metformin,1500,Moderate,Good,Active,9.2,8.6,8.3,7.4,6.9,7.1,Excellent Responder,None,0.714,0.661,0.479,0.378,0.417,229,313,191,181,155,80
+P00486,39,Female,27.0,Control,None,0,Poor,Good,Sedentary,10.3,10.3,10.6,10.6,10.7,10.8,Non-Responder,None,0.912,0.93,0.93,0.935,0.94,269,396,192,170,123,82
+P00487,43,Male,31.4,Treatment,Sitagliptin,50,Good,Moderate,Active,7.9,7.6,7.4,7.5,7.3,7.2,Minimal Responder,None,0.521,0.479,0.5,0.458,0.438,183,261,180,145,151,68
+P00488,42,Male,33.1,Treatment,Empagliflozin,25,Good,Good,Sedentary,7.6,7.2,7.2,6.8,6.7,6.6,Partial Responder,None,0.438,0.438,0.358,0.339,0.321,173,252,162,192,113,77
+P00489,64,Female,27.6,Treatment,Sitagliptin,50,Good,Moderate,Moderate,9.4,9.3,9.1,9.0,8.7,8.8,Minimal Responder,None,0.818,0.791,0.777,0.731,0.747,218,295,146,166,139,85
+P00490,34,Male,36.7,Treatment,Empagliflozin,25,Poor,Good,Sedentary,10.0,9.6,9.7,9.5,9.2,9.1,Partial Responder,None,0.852,0.862,0.841,0.805,0.791,237,355,212,184,101,77
+P00491,65,Female,29.5,Control,None,0,Moderate,Moderate,Sedentary,7.6,7.7,7.7,7.7,7.8,7.7,Non-Responder,None,0.542,0.542,0.542,0.562,0.542,178,277,166,299,128,96
+P00492,51,Female,36.3,Control,None,0,Good,Moderate,Active,7.3,7.2,7.0,6.7,6.7,6.8,Partial Responder,None,0.438,0.397,0.339,0.339,0.358,160,220,197,99,117,73
+P00493,46,Male,39.0,Control,None,0,Moderate,Moderate,Sedentary,8.0,8.2,8.1,8.3,8.0,8.2,Non-Responder,None,0.642,0.622,0.661,0.603,0.642,181,262,239,183,154,78
+P00494,76,Female,23.9,Treatment,Metformin,850,Good,Moderate,Active,10.9,10.4,10.2,10.0,9.9,9.5,Partial Responder,None,0.918,0.905,0.889,0.881,0.841,266,424,226,179,133,94
+P00495,36,Female,30.6,Treatment,Sitagliptin,25,Moderate,Good,Active,9.0,8.7,8.8,8.5,8.5,8.5,Partial Responder,None,0.731,0.747,0.697,0.697,0.697,206,288,163,151,121,86
+P00496,73,Male,37.7,Treatment,Empagliflozin,10,Good,Moderate,Moderate,10.4,10.1,10.0,9.8,9.7,9.8,Partial Responder,None,0.897,0.889,0.872,0.862,0.872,251,371,183,111,116,88
+P00497,40,Female,31.0,Treatment,Metformin,2000,Good,Good,Active,10.7,9.5,9.2,8.5,8.1,7.8,Excellent Responder,None,0.841,0.805,0.697,0.622,0.562,240,318,213,165,112,63
+P00498,52,Male,33.1,Control,None,0,Moderate,Good,Active,7.9,8.0,7.7,7.3,7.4,7.4,Partial Responder,None,0.603,0.542,0.458,0.479,0.479,186,276,211,64,154,68
+P00499,34,Female,24.0,Control,None,0,Good,Poor,Sedentary,8.2,8.1,8.1,8.4,8.1,8.2,Non-Responder,None,0.622,0.622,0.679,0.622,0.642,212,281,242,186,138,77
+P00500,73,Female,39.3,Treatment,Sitagliptin,25,Poor,Poor,Sedentary,7.3,7.2,7.3,7.3,7.3,7.2,Minimal Responder,None,0.438,0.458,0.458,0.458,0.438,157,249,172,155,144,75
+P00501,42,Female,24.6,Treatment,Metformin,850,Moderate,Good,Sedentary,10.4,10.2,10.0,9.4,9.1,9.0,Good Responder,None,0.905,0.889,0.83,0.791,0.777,256,388,237,142,97,84
+P00502,48,Male,28.9,Control,None,0,Moderate,Poor,Moderate,9.1,8.9,9.1,9.1,8.9,9.2,Minimal Responder,None,0.763,0.791,0.791,0.763,0.805,223,343,171,183,110,88
+P00503,31,Male,34.6,Treatment,Sitagliptin,25,Moderate,Moderate,Active,10.0,9.9,9.7,9.7,9.6,9.5,Minimal Responder,None,0.881,0.862,0.862,0.852,0.841,253,382,243,166,97,73
+P00504,30,Male,35.8,Treatment,Metformin,850,Good,Good,Active,9.6,8.8,8.7,8.1,8.1,7.7,Excellent Responder,None,0.747,0.731,0.622,0.622,0.542,226,334,171,231,122,78
+P00505,34,Female,27.3,Treatment,Empagliflozin,10,Moderate,Good,Sedentary,7.9,7.8,7.7,7.2,7.3,7.2,Partial Responder,None,0.562,0.542,0.438,0.458,0.438,162,232,231,243,140,86
+P00506,54,Female,27.3,Treatment,Empagliflozin,25,Good,Good,Sedentary,10.3,9.7,9.6,9.4,9.0,9.3,Partial Responder,Hypoglycemia,0.862,0.852,0.83,0.777,0.818,252,392,194,164,116,80
+P00507,72,Male,35.7,Treatment,Sitagliptin,50,Good,Good,Moderate,10.7,10.2,10.3,9.9,9.8,9.7,Partial Responder,None,0.905,0.912,0.881,0.872,0.862,262,416,169,252,108,73
+P00508,77,Male,27.8,Treatment,Metformin,500,Good,Poor,Sedentary,10.2,10.0,10.1,10.1,9.9,10.0,Minimal Responder,GI Issues,0.889,0.897,0.897,0.881,0.889,243,352,183,223,143,86
+P00509,50,Female,29.5,Treatment,Metformin,1500,Moderate,Moderate,Active,6.9,6.6,6.1,6.0,5.7,5.6,Partial Responder,None,0.321,0.237,0.223,0.182,0.17,150,237,204,319,105,79
+P00510,54,Female,27.4,Treatment,Metformin,2000,Moderate,Poor,Sedentary,10.0,9.8,9.8,9.6,9.5,9.3,Minimal Responder,None,0.872,0.872,0.852,0.841,0.818,242,357,164,213,163,74
+P00511,76,Male,30.9,Control,None,0,Moderate,Good,Moderate,9.9,9.8,9.9,9.8,9.6,9.8,Minimal Responder,None,0.872,0.881,0.872,0.852,0.872,241,352,181,255,147,68
+P00512,41,Female,24.9,Control,None,0,Moderate,Good,Sedentary,10.2,10.4,10.4,10.5,10.3,10.3,Non-Responder,None,0.918,0.918,0.924,0.912,0.912,249,358,239,202,134,78
+P00513,50,Male,32.9,Control,None,0,Good,Moderate,Active,8.3,8.4,7.9,7.8,7.8,7.6,Partial Responder,None,0.679,0.583,0.562,0.562,0.521,189,258,209,228,133,66
+P00514,54,Male,36.5,Control,None,0,Good,Good,Moderate,8.9,8.9,8.8,8.7,8.7,8.7,Minimal Responder,None,0.763,0.747,0.731,0.731,0.731,213,277,214,103,130,68
+P00515,49,Male,37.3,Control,None,0,Moderate,Good,Active,10.8,10.6,10.4,10.3,10.4,10.4,Partial Responder,None,0.93,0.918,0.912,0.918,0.918,260,357,217,297,108,78
+P00516,76,Male,39.3,Control,None,0,Good,Moderate,Sedentary,8.3,8.3,8.0,8.7,8.3,8.4,Non-Responder,None,0.661,0.603,0.731,0.661,0.679,198,288,130,149,137,87
+P00517,52,Male,38.6,Treatment,Sitagliptin,100,Good,Moderate,Sedentary,6.8,6.5,6.5,6.2,6.2,6.2,Partial Responder,None,0.303,0.303,0.253,0.253,0.253,142,201,209,168,122,82
+P00518,69,Female,27.3,Treatment,Metformin,1000,Moderate,Poor,Sedentary,8.5,8.4,8.4,8.1,8.2,8.0,Minimal Responder,GI Issues,0.679,0.679,0.622,0.642,0.603,198,284,128,257,127,82
+P00519,56,Female,33.6,Control,None,0,Moderate,Good,Active,10.4,10.1,10.2,9.8,10.0,10.1,Partial Responder,None,0.897,0.905,0.872,0.889,0.897,236,376,228,155,134,81
+P00520,31,Male,27.6,Treatment,Empagliflozin,10,Moderate,Good,Active,9.7,9.4,9.2,8.9,8.6,8.5,Partial Responder,None,0.83,0.805,0.763,0.714,0.697,228,320,153,218,137,68
+P00521,63,Female,26.7,Treatment,Metformin,850,Good,Good,Active,10.7,10.3,9.7,9.2,8.8,8.4,Excellent Responder,None,0.912,0.862,0.805,0.747,0.679,266,382,168,74,123,80
+P00522,77,Male,27.1,Control,None,0,Good,Poor,Moderate,6.6,6.6,6.3,6.4,6.1,6.3,Minimal Responder,None,0.321,0.269,0.286,0.237,0.269,132,177,189,108,136,81
+P00523,58,Female,30.4,Treatment,Empagliflozin,10,Poor,Poor,Moderate,9.2,9.1,9.1,8.8,9.1,8.9,Minimal Responder,None,0.791,0.791,0.747,0.791,0.763,214,281,224,123,118,88
+P00524,33,Female,27.1,Treatment,Empagliflozin,10,Moderate,Good,Moderate,9.1,8.9,8.7,8.5,8.3,8.2,Partial Responder,None,0.763,0.731,0.697,0.661,0.642,190,291,210,99,123,74
+P00525,35,Male,38.2,Treatment,Metformin,2000,Good,Good,Sedentary,8.0,7.6,7.1,6.5,6.3,6.4,Excellent Responder,None,0.521,0.417,0.303,0.269,0.286,169,249,151,190,148,79
+P00526,47,Female,22.5,Control,None,0,Moderate,Moderate,Moderate,10.3,10.5,10.3,10.1,10.1,10.4,Minimal Responder,None,0.924,0.912,0.897,0.897,0.918,238,364,202,196,128,79
+P00527,60,Male,23.9,Treatment,Metformin,2000,Moderate,Moderate,Active,6.7,6.1,6.0,5.7,5.3,5.2,Good Responder,None,0.237,0.223,0.182,0.138,0.128,147,198,164,126,115,92
+P00528,59,Male,28.7,Treatment,Empagliflozin,10,Poor,Poor,Moderate,9.3,9.3,9.2,9.1,9.2,9.0,Minimal Responder,None,0.818,0.805,0.791,0.805,0.777,224,330,147,191,109,84
+P00529,52,Male,32.3,Control,None,0,Good,Good,Sedentary,7.2,7.2,7.3,7.3,7.4,7.3,Non-Responder,None,0.438,0.458,0.458,0.479,0.458,159,219,232,201,121,88
+P00530,37,Female,37.0,Treatment,Metformin,1500,Moderate,Moderate,Active,10.8,10.4,10.0,9.8,9.4,9.3,Good Responder,None,0.918,0.889,0.872,0.83,0.818,259,354,183,213,106,76
+P00531,48,Male,38.6,Treatment,Sitagliptin,25,Good,Moderate,Active,7.2,7.1,7.0,6.9,6.8,6.8,Minimal Responder,None,0.417,0.397,0.378,0.358,0.358,156,203,231,175,142,77
+P00532,60,Male,34.1,Treatment,Metformin,500,Moderate,Good,Active,6.9,6.3,6.4,6.1,5.9,5.8,Partial Responder,GI Issues,0.269,0.286,0.237,0.209,0.195,158,212,159,244,137,88
+P00533,74,Female,26.3,Control,None,0,Good,Good,Moderate,10.2,10.1,10.1,9.9,9.9,10.0,Minimal Responder,None,0.897,0.897,0.881,0.881,0.889,248,345,169,149,133,87
+P00534,42,Male,29.9,Control,None,0,Good,Moderate,Sedentary,6.6,6.6,6.5,6.6,6.8,6.5,Minimal Responder,None,0.321,0.303,0.321,0.358,0.303,139,186,186,188,130,93
+P00535,57,Female,39.1,Treatment,Sitagliptin,100,Poor,Good,Moderate,10.3,9.9,9.8,9.5,9.4,9.5,Partial Responder,None,0.881,0.872,0.841,0.83,0.841,262,418,156,176,124,62
+P00536,31,Male,24.1,Treatment,Empagliflozin,10,Good,Poor,Sedentary,8.2,8.2,8.1,8.1,8.0,7.9,Minimal Responder,None,0.642,0.622,0.622,0.603,0.583,208,290,207,254,140,89
+P00537,38,Male,33.0,Treatment,Sitagliptin,25,Good,Good,Moderate,10.0,9.7,9.6,9.5,9.4,9.4,Partial Responder,None,0.862,0.852,0.841,0.83,0.83,228,305,162,179,138,78
+P00538,35,Female,22.7,Treatment,Metformin,1000,Moderate,Poor,Active,8.0,7.7,7.7,7.6,7.3,7.2,Minimal Responder,None,0.542,0.542,0.521,0.458,0.438,188,256,156,207,138,78
+P00539,48,Female,28.7,Control,None,0,Good,Good,Moderate,7.0,7.1,6.7,6.9,6.8,6.8,Minimal Responder,None,0.417,0.339,0.378,0.358,0.358,185,273,180,180,143,96
+P00540,55,Male,24.6,Control,None,0,Good,Good,Active,8.3,8.1,8.1,7.7,7.7,7.6,Partial Responder,None,0.622,0.622,0.542,0.542,0.521,194,256,237,146,112,59
+P00541,39,Male,34.7,Treatment,Metformin,1000,Poor,Moderate,Active,9.2,9.0,8.9,8.4,8.1,8.2,Partial Responder,None,0.777,0.763,0.679,0.622,0.642,218,340,207,177,130,84
+P00542,32,Female,29.8,Treatment,Empagliflozin,25,Good,Moderate,Sedentary,10.0,9.6,9.5,9.4,9.2,9.3,Partial Responder,None,0.852,0.841,0.83,0.805,0.818,240,381,191,211,112,91
+P00543,31,Male,36.5,Control,None,0,Moderate,Good,Active,7.1,7.2,6.9,6.7,6.6,6.6,Minimal Responder,None,0.438,0.378,0.339,0.321,0.321,162,223,203,259,117,88
+P00544,53,Female,27.5,Control,None,0,Good,Good,Active,7.6,7.4,7.4,7.1,7.2,6.9,Partial Responder,None,0.479,0.479,0.417,0.438,0.378,179,257,144,162,164,81
+P00545,35,Male,29.8,Treatment,Metformin,500,Poor,Moderate,Moderate,6.9,6.8,6.8,6.5,6.4,6.5,Minimal Responder,None,0.358,0.358,0.303,0.286,0.303,139,182,216,107,116,92
+P00546,64,Male,23.5,Control,None,0,Moderate,Good,Active,8.1,8.0,7.9,7.6,7.6,7.6,Partial Responder,None,0.603,0.583,0.521,0.521,0.521,186,278,222,211,118,88
+P00547,66,Male,30.8,Control,None,0,Moderate,Good,Sedentary,8.3,8.4,8.5,8.4,8.5,8.4,Non-Responder,None,0.679,0.697,0.679,0.697,0.679,169,241,189,132,123,84
+P00548,50,Male,24.3,Treatment,Metformin,2000,Poor,Moderate,Moderate,10.3,9.7,9.7,9.3,9.1,9.2,Good Responder,None,0.862,0.862,0.818,0.791,0.805,247,341,182,83,152,86
+P00549,52,Female,24.4,Control,None,0,Moderate,Good,Active,9.8,9.7,9.6,9.2,9.3,9.5,Partial Responder,None,0.862,0.852,0.805,0.818,0.841,226,308,214,256,123,86
+P00550,70,Male,23.8,Treatment,Sitagliptin,25,Good,Good,Active,8.6,8.3,8.2,8.0,7.8,7.9,Partial Responder,Headache,0.661,0.642,0.603,0.562,0.583,204,305,199,114,121,90
+P00551,51,Male,22.3,Control,None,0,Good,Poor,Moderate,7.1,6.8,6.9,6.6,6.9,6.8,Partial Responder,None,0.358,0.378,0.321,0.378,0.358,141,201,187,120,124,66
+P00552,55,Female,25.9,Control,None,0,Moderate,Good,Sedentary,8.9,9.1,9.0,9.0,9.0,9.1,Non-Responder,None,0.791,0.777,0.777,0.777,0.791,204,276,197,140,118,77
+P00553,61,Female,26.7,Treatment,Metformin,500,Good,Good,Moderate,6.5,6.1,6.1,5.7,5.6,5.5,Partial Responder,None,0.237,0.237,0.182,0.17,0.159,150,226,180,196,137,69
+P00554,75,Male,33.7,Treatment,Sitagliptin,100,Good,Poor,Sedentary,9.1,9.0,9.0,8.9,8.8,8.8,Minimal Responder,Headache,0.777,0.777,0.763,0.747,0.747,208,306,194,235,107,76
+P00555,30,Male,36.8,Control,None,0,Good,Good,Moderate,9.0,9.0,8.9,8.6,8.6,8.8,Minimal Responder,None,0.777,0.763,0.714,0.714,0.747,193,301,130,167,106,107
+P00556,34,Female,33.6,Control,None,0,Moderate,Good,Moderate,7.4,7.3,7.4,7.2,7.2,7.2,Minimal Responder,None,0.458,0.479,0.438,0.438,0.438,168,224,211,211,122,74
+P00557,64,Male,36.0,Treatment,Metformin,1000,Moderate,Poor,Active,6.5,6.5,6.3,6.0,5.8,5.5,Partial Responder,None,0.303,0.269,0.223,0.195,0.159,134,206,188,162,122,74
+P00558,72,Male,27.4,Control,None,0,Poor,Moderate,Sedentary,6.7,6.8,7.2,7.0,6.9,6.9,Non-Responder,None,0.358,0.438,0.397,0.378,0.378,144,216,195,191,151,98
+P00559,48,Male,22.1,Control,None,0,Moderate,Moderate,Active,7.4,7.1,7.0,7.1,6.9,7.1,Minimal Responder,None,0.417,0.397,0.417,0.378,0.417,158,211,192,251,103,71
+P00560,62,Male,33.1,Control,None,0,Poor,Poor,Sedentary,10.5,10.5,10.6,10.7,10.8,10.8,Non-Responder,None,0.924,0.93,0.935,0.94,0.94,274,413,193,153,139,76
+P00561,63,Male,39.4,Treatment,Metformin,1500,Good,Poor,Moderate,7.3,7.1,7.2,6.7,6.6,6.6,Partial Responder,None,0.417,0.438,0.339,0.321,0.321,147,211,185,214,141,73
+P00562,79,Male,35.9,Treatment,Metformin,850,Good,Good,Active,8.5,8.0,7.6,7.2,6.9,6.9,Good Responder,None,0.603,0.521,0.438,0.378,0.378,226,358,141,110,135,76
+P00563,78,Male,27.4,Treatment,Empagliflozin,10,Good,Good,Active,8.2,7.7,7.7,7.4,7.0,7.0,Partial Responder,None,0.542,0.542,0.479,0.397,0.397,185,248,191,246,162,68
+P00564,61,Male,26.1,Control,None,0,Poor,Good,Sedentary,10.4,10.6,10.6,10.7,10.8,10.5,Non-Responder,None,0.93,0.93,0.935,0.94,0.924,254,379,226,103,121,88
+P00565,35,Male,38.5,Control,None,0,Moderate,Good,Sedentary,9.8,9.6,10.1,9.7,10.0,9.8,Minimal Responder,None,0.852,0.897,0.862,0.889,0.872,229,324,182,161,140,76
+P00566,58,Female,28.5,Treatment,Metformin,850,Good,Moderate,Active,7.1,6.9,6.4,6.2,6.0,6.0,Partial Responder,None,0.378,0.286,0.253,0.223,0.223,151,240,197,119,163,73
+P00567,51,Male,23.8,Treatment,Sitagliptin,25,Good,Moderate,Moderate,10.2,10.0,10.1,10.0,9.7,9.8,Minimal Responder,None,0.889,0.897,0.889,0.862,0.872,238,333,235,202,148,62
+P00568,51,Female,31.5,Treatment,Metformin,1500,Good,Good,Moderate,8.2,7.5,7.5,6.7,6.4,6.4,Good Responder,GI Issues,0.5,0.5,0.339,0.286,0.286,195,310,204,150,118,79
+P00569,61,Male,39.6,Treatment,Metformin,850,Moderate,Poor,Moderate,7.7,7.7,7.4,7.4,7.3,7.2,Minimal Responder,None,0.542,0.479,0.479,0.458,0.438,160,251,151,165,119,73
+P00570,41,Male,27.2,Treatment,Metformin,1500,Moderate,Good,Moderate,9.8,9.2,9.0,8.3,8.1,7.9,Excellent Responder,None,0.805,0.777,0.661,0.622,0.583,238,329,170,137,130,86
+P00571,77,Male,36.2,Control,None,0,Poor,Moderate,Active,9.9,9.9,9.7,9.5,9.8,9.5,Minimal Responder,None,0.881,0.862,0.841,0.872,0.841,216,333,186,244,106,69
+P00572,49,Male,23.1,Control,None,0,Moderate,Good,Active,9.0,9.0,8.8,8.6,8.6,8.5,Minimal Responder,None,0.777,0.747,0.714,0.714,0.697,214,342,224,223,125,97
+P00573,77,Male,38.8,Treatment,Metformin,1000,Good,Moderate,Active,7.6,7.3,7.0,6.4,6.3,6.1,Good Responder,None,0.458,0.397,0.286,0.269,0.237,180,248,165,146,96,79
+P00574,43,Male,23.4,Control,None,0,Good,Poor,Moderate,10.4,10.5,10.0,10.2,10.0,10.1,Minimal Responder,None,0.924,0.889,0.905,0.889,0.897,239,342,200,253,130,84
+P00575,70,Female,27.5,Treatment,Metformin,850,Moderate,Good,Active,7.6,7.1,6.9,6.4,6.1,6.1,Good Responder,None,0.417,0.378,0.286,0.237,0.237,178,259,195,208,139,78
+P00576,60,Male,25.1,Control,None,0,Good,Moderate,Active,10.2,10.1,9.9,9.6,9.5,9.6,Partial Responder,None,0.897,0.881,0.852,0.841,0.852,247,343,207,227,152,77
+P00577,57,Male,38.7,Treatment,Empagliflozin,10,Good,Moderate,Moderate,6.8,6.5,6.6,6.1,6.3,6.4,Partial Responder,None,0.303,0.321,0.237,0.269,0.286,164,214,139,289,137,83
+P00578,36,Female,32.6,Control,None,0,Poor,Moderate,Active,6.5,6.4,6.4,6.2,6.0,6.5,Minimal Responder,None,0.286,0.286,0.253,0.223,0.303,131,179,161,150,148,79
+P00579,52,Male,29.6,Control,None,0,Poor,Good,Sedentary,8.1,8.3,8.5,8.3,8.5,8.3,Non-Responder,None,0.661,0.697,0.661,0.697,0.661,214,296,146,149,124,67
+P00580,32,Female,25.1,Control,None,0,Good,Good,Sedentary,7.5,7.5,7.5,7.2,7.4,7.3,Minimal Responder,None,0.5,0.5,0.438,0.479,0.458,145,208,173,55,114,71
+P00581,36,Female,34.8,Treatment,Metformin,2000,Good,Moderate,Moderate,7.7,7.3,7.0,6.7,6.3,6.3,Good Responder,None,0.458,0.397,0.339,0.269,0.269,171,231,152,158,126,82
+P00582,41,Male,25.5,Treatment,Sitagliptin,50,Good,Poor,Sedentary,9.3,9.2,9.1,9.2,9.0,9.0,Minimal Responder,None,0.805,0.791,0.805,0.777,0.777,203,317,197,199,136,67
+P00583,51,Male,29.5,Control,None,0,Moderate,Good,Active,8.3,8.3,8.0,8.0,8.0,7.8,Minimal Responder,None,0.661,0.603,0.603,0.603,0.562,210,317,205,143,112,78
+P00584,56,Male,24.0,Treatment,Metformin,2000,Moderate,Good,Moderate,8.1,7.5,6.9,6.8,6.4,6.1,Good Responder,None,0.5,0.378,0.358,0.286,0.237,183,243,219,160,129,74
+P00585,69,Male,31.1,Control,None,0,Good,Moderate,Moderate,7.9,7.8,7.7,7.6,7.7,7.8,Minimal Responder,None,0.562,0.542,0.521,0.542,0.562,178,266,216,186,120,79
+P00586,57,Male,23.1,Treatment,Metformin,1500,Poor,Good,Active,9.2,8.7,8.1,7.9,7.7,7.4,Good Responder,None,0.731,0.622,0.583,0.542,0.479,222,332,248,122,140,55
+P00587,53,Female,30.4,Treatment,Metformin,1000,Good,Moderate,Moderate,8.3,7.8,7.8,7.6,7.3,7.3,Partial Responder,Mild,0.562,0.562,0.521,0.458,0.458,191,303,196,135,115,82
+P00588,40,Female,24.7,Treatment,Metformin,2000,Moderate,Good,Active,7.2,6.6,6.0,5.5,5.0,4.8,Excellent Responder,None,0.321,0.223,0.159,0.111,0.095,154,200,168,134,140,88
+P00589,79,Male,23.7,Treatment,Metformin,2000,Moderate,Good,Active,6.9,6.0,5.7,5.0,4.8,4.7,Excellent Responder,None,0.223,0.182,0.111,0.095,0.088,139,191,136,130,118,94
+P00590,52,Female,22.9,Control,None,0,Moderate,Poor,Moderate,9.0,9.1,8.8,8.8,8.8,8.8,Minimal Responder,None,0.791,0.747,0.747,0.747,0.747,213,336,220,199,143,72
+P00591,42,Male,38.3,Treatment,Metformin,1500,Good,Good,Sedentary,8.8,8.2,8.0,7.7,7.1,7.0,Good Responder,None,0.642,0.603,0.542,0.417,0.397,210,332,200,150,123,64
+P00592,67,Male,35.6,Treatment,Metformin,850,Good,Moderate,Sedentary,9.9,9.6,9.5,9.2,9.1,9.2,Partial Responder,None,0.852,0.841,0.805,0.791,0.805,244,370,169,122,135,97
+P00593,49,Male,32.0,Treatment,Metformin,1500,Good,Good,Active,6.8,6.1,5.8,4.6,4.6,4.5,Excellent Responder,None,0.237,0.195,0.082,0.082,0.076,168,257,201,216,97,70
+P00594,66,Female,36.5,Treatment,Empagliflozin,25,Good,Good,Moderate,7.5,6.9,6.8,6.4,6.4,6.3,Good Responder,None,0.378,0.358,0.286,0.286,0.269,147,195,234,136,113,83
+P00595,39,Female,22.3,Control,None,0,Good,Good,Moderate,10.5,10.4,10.4,10.2,10.3,10.2,Minimal Responder,None,0.918,0.918,0.905,0.912,0.905,254,369,172,250,133,58
+P00596,71,Male,26.7,Treatment,Metformin,500,Poor,Poor,Moderate,10.1,10.1,10.2,10.0,9.8,9.9,Minimal Responder,None,0.897,0.905,0.889,0.872,0.881,255,349,209,169,99,64
+P00597,78,Male,22.8,Treatment,Sitagliptin,25,Good,Moderate,Active,7.6,7.5,7.4,7.2,7.2,7.1,Minimal Responder,None,0.5,0.479,0.438,0.438,0.417,170,230,176,137,133,68
+P00598,52,Female,36.9,Treatment,Metformin,1000,Good,Moderate,Sedentary,10.4,10.1,9.9,9.7,9.4,9.5,Partial Responder,GI Issues,0.897,0.881,0.862,0.83,0.841,228,352,164,157,108,80
+P00599,40,Female,38.5,Control,None,0,Good,Good,Sedentary,8.0,7.8,7.9,8.0,8.2,7.9,Minimal Responder,None,0.562,0.583,0.603,0.642,0.583,170,228,242,166,148,80
+P00600,45,Female,34.7,Control,None,0,Poor,Good,Moderate,7.0,7.1,7.0,6.8,7.0,7.2,Minimal Responder,None,0.417,0.397,0.358,0.397,0.438,157,226,157,191,161,71
+P00601,31,Female,38.0,Treatment,Empagliflozin,25,Good,Good,Active,8.8,8.4,8.0,7.5,7.5,7.2,Good Responder,Hypoglycemia,0.679,0.603,0.5,0.5,0.438,209,331,189,151,132,90
+P00602,52,Female,29.4,Treatment,Sitagliptin,50,Moderate,Good,Moderate,9.3,9.0,8.9,8.7,8.4,8.4,Partial Responder,None,0.777,0.763,0.731,0.679,0.679,227,308,241,130,115,71
+P00603,34,Female,29.0,Treatment,Metformin,500,Good,Moderate,Active,10.5,10.3,10.1,9.9,9.6,9.7,Partial Responder,None,0.912,0.897,0.881,0.852,0.862,247,394,205,261,122,66
+P00604,79,Female,22.0,Treatment,Metformin,500,Moderate,Good,Sedentary,6.5,6.2,5.9,5.8,5.8,5.7,Partial Responder,None,0.253,0.209,0.195,0.195,0.182,142,227,208,179,127,71
+P00605,73,Male,28.9,Treatment,Sitagliptin,100,Poor,Good,Moderate,9.4,9.1,9.0,8.7,8.6,8.3,Partial Responder,None,0.791,0.777,0.731,0.714,0.661,214,314,178,278,144,72
+P00606,50,Female,30.6,Control,None,0,Good,Good,Moderate,7.2,6.8,7.2,7.2,7.0,7.0,Minimal Responder,None,0.358,0.438,0.438,0.397,0.397,163,220,176,122,142,61
+P00607,66,Male,36.3,Treatment,Sitagliptin,50,Good,Good,Moderate,6.9,6.7,6.4,6.1,6.0,6.1,Partial Responder,None,0.339,0.286,0.237,0.223,0.237,152,212,191,219,130,74
+P00608,44,Female,33.7,Control,None,0,Poor,Moderate,Active,7.9,7.9,7.7,7.7,7.5,7.8,Minimal Responder,None,0.583,0.542,0.542,0.5,0.562,172,246,191,231,131,89
+P00609,74,Female,23.4,Treatment,Metformin,2000,Moderate,Good,Moderate,7.3,6.5,6.2,5.6,5.4,5.4,Excellent Responder,None,0.303,0.253,0.17,0.148,0.148,178,248,196,141,140,70
+P00610,30,Male,39.3,Treatment,Metformin,2000,Moderate,Moderate,Sedentary,9.6,9.0,8.8,8.9,8.8,8.5,Partial Responder,None,0.777,0.747,0.763,0.747,0.697,212,293,198,245,146,85
+P00611,49,Female,22.9,Treatment,Metformin,850,Good,Moderate,Moderate,10.7,10.3,10.3,9.8,9.7,9.6,Partial Responder,None,0.912,0.912,0.872,0.862,0.852,259,412,145,184,130,95
+P00612,33,Female,29.9,Treatment,Sitagliptin,25,Moderate,Good,Moderate,6.5,6.4,6.2,6.1,5.9,6.1,Minimal Responder,None,0.286,0.253,0.237,0.209,0.237,131,176,185,118,123,98
+P00613,40,Female,26.8,Treatment,Sitagliptin,25,Poor,Moderate,Sedentary,6.6,6.5,6.5,6.3,6.3,6.3,Minimal Responder,Headache,0.303,0.303,0.269,0.269,0.269,161,245,148,158,138,73
+P00614,30,Male,24.1,Treatment,Sitagliptin,100,Good,Good,Moderate,6.7,6.2,6.3,5.8,5.7,5.5,Partial Responder,Mild,0.253,0.269,0.195,0.182,0.159,152,198,215,158,123,60
+P00615,69,Female,27.3,Treatment,Metformin,1000,Good,Moderate,Moderate,9.0,8.5,8.6,8.0,7.9,7.8,Good Responder,None,0.697,0.714,0.603,0.583,0.562,205,303,168,164,109,66
+P00616,30,Female,33.6,Control,None,0,Poor,Good,Moderate,8.9,8.8,8.8,8.8,8.9,8.7,Minimal Responder,None,0.747,0.747,0.747,0.763,0.731,206,324,186,82,119,70
+P00617,39,Female,27.4,Treatment,Metformin,1500,Poor,Good,Active,9.7,8.9,8.8,8.4,7.9,7.9,Good Responder,None,0.763,0.747,0.679,0.583,0.583,250,347,161,198,112,70
+P00618,68,Male,26.6,Treatment,Sitagliptin,25,Moderate,Good,Active,7.5,7.2,7.2,7.0,6.9,7.0,Partial Responder,None,0.438,0.438,0.397,0.378,0.397,159,216,142,186,115,71
+P00619,71,Male,24.1,Control,None,0,Poor,Poor,Moderate,6.7,6.6,6.6,6.8,6.9,6.7,Non-Responder,None,0.321,0.321,0.358,0.378,0.339,128,191,214,165,124,78
+P00620,44,Male,30.8,Treatment,Sitagliptin,100,Good,Good,Sedentary,10.2,9.9,9.7,9.3,9.3,9.0,Partial Responder,None,0.881,0.862,0.818,0.818,0.777,249,377,176,163,131,77
+P00621,39,Female,29.3,Control,None,0,Good,Moderate,Active,7.0,6.8,6.6,6.4,6.3,6.5,Partial Responder,None,0.358,0.321,0.286,0.269,0.303,157,237,163,103,111,65
+P00622,53,Male,30.0,Control,None,0,Moderate,Good,Active,10.0,9.8,9.5,9.6,9.7,9.6,Minimal Responder,None,0.872,0.841,0.852,0.862,0.852,247,345,175,171,136,100
+P00623,73,Female,32.0,Treatment,Metformin,500,Moderate,Good,Active,9.9,9.8,9.3,9.0,8.8,8.7,Partial Responder,None,0.872,0.818,0.777,0.747,0.731,244,336,166,100,120,95
+P00624,74,Male,36.6,Treatment,Metformin,2000,Poor,Good,Sedentary,9.6,9.1,8.9,8.4,8.4,8.4,Good Responder,None,0.791,0.763,0.679,0.679,0.679,247,392,193,82,126,89
+P00625,37,Female,24.1,Treatment,Metformin,500,Moderate,Good,Sedentary,7.0,6.9,6.8,6.4,6.5,6.2,Partial Responder,GI Issues,0.378,0.358,0.286,0.303,0.253,137,216,116,229,118,94
+P00626,69,Female,35.4,Treatment,Empagliflozin,25,Good,Good,Sedentary,8.7,8.5,8.1,8.0,7.7,7.6,Partial Responder,UTI,0.697,0.622,0.603,0.542,0.521,191,275,196,161,131,81
+P00627,45,Female,28.5,Treatment,Metformin,850,Poor,Moderate,Sedentary,9.4,9.0,9.2,8.9,8.8,8.8,Partial Responder,GI Issues,0.777,0.805,0.763,0.747,0.747,230,357,183,140,133,99
+P00628,52,Male,26.4,Treatment,Sitagliptin,25,Moderate,Good,Active,8.5,8.3,8.2,8.0,8.0,7.9,Partial Responder,Headache,0.661,0.642,0.603,0.603,0.583,186,267,181,277,139,82
+P00629,40,Male,30.3,Treatment,Empagliflozin,25,Good,Good,Sedentary,11.0,10.6,10.5,10.1,9.7,9.8,Partial Responder,None,0.93,0.924,0.897,0.862,0.872,254,363,202,145,135,69
+P00630,43,Female,28.6,Control,None,0,Moderate,Poor,Active,9.4,9.2,9.3,9.0,9.1,8.8,Minimal Responder,None,0.805,0.818,0.777,0.791,0.747,242,326,254,206,98,74
+P00631,34,Female,27.0,Treatment,Sitagliptin,25,Moderate,Good,Moderate,7.1,7.0,6.9,6.7,6.6,6.7,Minimal Responder,None,0.397,0.378,0.339,0.321,0.339,141,201,188,176,131,105
+P00632,63,Female,37.5,Treatment,Sitagliptin,50,Good,Moderate,Sedentary,6.8,6.6,6.4,6.3,6.3,6.3,Partial Responder,Headache,0.321,0.286,0.269,0.269,0.269,145,212,145,65,113,64
+P00633,37,Male,31.0,Treatment,Metformin,1000,Moderate,Good,Active,6.7,6.1,5.9,5.3,5.0,5.0,Good Responder,None,0.237,0.209,0.138,0.111,0.111,145,189,187,170,115,61
+P00634,54,Female,26.2,Control,None,0,Poor,Moderate,Moderate,10.7,10.7,10.8,10.6,10.6,10.8,Minimal Responder,None,0.935,0.94,0.93,0.93,0.94,273,391,217,264,139,71
+P00635,49,Female,31.7,Control,None,0,Good,Good,Moderate,8.2,8.1,8.1,7.9,7.9,7.8,Minimal Responder,None,0.622,0.622,0.583,0.583,0.562,170,261,230,176,133,67
+P00636,73,Female,24.0,Treatment,Sitagliptin,25,Poor,Poor,Sedentary,7.4,7.3,7.4,7.3,7.3,7.3,Minimal Responder,None,0.458,0.479,0.458,0.458,0.458,170,256,203,222,125,60
+P00637,58,Male,28.5,Treatment,Empagliflozin,10,Poor,Poor,Active,9.2,9.2,9.1,9.0,8.8,8.8,Minimal Responder,UTI,0.805,0.791,0.777,0.747,0.747,208,310,167,229,143,68
+P00638,69,Male,25.2,Treatment,Metformin,1000,Poor,Good,Moderate,8.3,8.0,7.6,7.4,7.2,7.1,Partial Responder,None,0.603,0.521,0.479,0.438,0.417,198,311,211,154,137,73
+P00639,39,Female,23.9,Treatment,Metformin,1000,Good,Moderate,Sedentary,9.3,9.0,8.6,8.7,8.5,8.3,Partial Responder,None,0.777,0.714,0.731,0.697,0.661,211,275,171,136,140,77
+P00640,46,Male,22.7,Treatment,Empagliflozin,10,Good,Moderate,Sedentary,10.0,9.8,9.7,9.6,9.4,9.4,Minimal Responder,Mild,0.872,0.862,0.852,0.83,0.83,256,376,189,252,137,82
+P00641,50,Female,33.5,Treatment,Empagliflozin,25,Moderate,Poor,Moderate,7.3,7.1,7.4,7.0,7.0,6.8,Minimal Responder,None,0.417,0.479,0.397,0.397,0.358,154,237,161,190,124,69
+P00642,72,Female,24.1,Control,None,0,Good,Good,Moderate,6.7,6.5,6.5,6.3,6.3,6.3,Minimal Responder,None,0.303,0.303,0.269,0.269,0.269,121,177,176,224,126,73
+P00643,51,Male,31.2,Treatment,Metformin,850,Good,Poor,Active,7.9,8.0,7.4,7.4,7.5,7.1,Partial Responder,GI Issues,0.603,0.479,0.479,0.5,0.417,172,240,194,122,131,107
+P00644,78,Male,24.5,Treatment,Metformin,2000,Moderate,Good,Moderate,6.7,6.2,5.9,5.2,5.0,4.7,Excellent Responder,None,0.253,0.209,0.128,0.111,0.088,143,192,157,214,124,55
+P00645,66,Male,29.3,Treatment,Empagliflozin,25,Moderate,Moderate,Active,9.2,8.8,8.9,8.6,8.5,8.0,Partial Responder,None,0.747,0.763,0.714,0.697,0.603,228,357,218,181,118,93
+P00646,35,Male,33.8,Treatment,Metformin,500,Good,Moderate,Moderate,10.2,10.0,10.0,9.6,9.8,9.4,Partial Responder,GI Issues,0.889,0.889,0.852,0.872,0.83,233,336,184,271,137,70
+P00647,48,Female,29.6,Treatment,Metformin,500,Moderate,Good,Sedentary,10.4,10.1,10.1,9.7,9.6,9.5,Partial Responder,None,0.897,0.897,0.862,0.852,0.841,239,374,184,211,142,79
+P00648,31,Male,29.2,Control,None,0,Moderate,Poor,Moderate,9.5,9.5,9.5,9.3,9.3,9.4,Minimal Responder,None,0.841,0.841,0.818,0.818,0.83,236,348,178,236,106,84
+P00649,62,Female,38.2,Treatment,Metformin,1500,Good,Good,Active,10.9,10.1,9.9,8.9,8.4,8.2,Excellent Responder,GI Issues,0.897,0.881,0.763,0.679,0.642,252,379,196,264,112,66
+P00650,68,Female,34.8,Treatment,Metformin,500,Poor,Poor,Active,8.0,8.0,7.8,7.9,7.8,7.8,Minimal Responder,None,0.603,0.562,0.583,0.562,0.562,181,279,204,224,137,83
+P00651,33,Male,27.6,Control,None,0,Good,Moderate,Moderate,7.5,7.3,7.2,7.4,7.4,7.5,Minimal Responder,None,0.458,0.438,0.479,0.479,0.5,167,250,169,253,129,78
+P00652,68,Female,29.2,Treatment,Sitagliptin,100,Good,Good,Sedentary,7.4,7.1,6.8,6.6,6.4,6.5,Partial Responder,None,0.417,0.358,0.321,0.286,0.303,168,238,171,90,145,92
+P00653,44,Male,27.1,Treatment,Metformin,850,Poor,Poor,Moderate,6.9,6.6,6.7,6.6,6.6,6.5,Minimal Responder,Mild,0.321,0.339,0.321,0.321,0.303,144,209,183,257,114,65
+P00654,68,Female,37.7,Treatment,Sitagliptin,25,Moderate,Good,Active,10.0,9.7,9.8,9.4,9.4,9.3,Partial Responder,None,0.862,0.872,0.83,0.83,0.818,231,356,146,154,114,92
+P00655,78,Female,34.2,Treatment,Sitagliptin,25,Moderate,Moderate,Sedentary,10.8,10.8,10.7,10.7,10.5,10.5,Minimal Responder,None,0.94,0.935,0.935,0.924,0.924,267,377,134,204,155,83
+P00656,44,Male,24.7,Treatment,Metformin,2000,Poor,Good,Moderate,8.7,8.1,8.0,7.3,7.4,6.9,Good Responder,None,0.622,0.603,0.458,0.479,0.378,194,275,154,153,127,68
+P00657,64,Male,23.1,Treatment,Sitagliptin,50,Moderate,Moderate,Moderate,9.5,9.3,9.1,9.2,9.0,8.9,Minimal Responder,None,0.818,0.791,0.805,0.777,0.763,212,282,155,188,124,60
+P00658,61,Male,24.7,Control,None,0,Poor,Moderate,Active,7.2,7.1,7.0,6.9,6.7,6.9,Minimal Responder,None,0.417,0.397,0.378,0.339,0.378,172,271,179,225,122,84
+P00659,64,Female,29.2,Treatment,Metformin,850,Poor,Moderate,Sedentary,10.1,10.0,9.6,9.5,9.6,9.5,Partial Responder,None,0.889,0.852,0.841,0.852,0.841,248,329,155,178,132,96
+P00660,65,Male,24.8,Treatment,Sitagliptin,50,Poor,Good,Sedentary,8.9,8.6,8.7,8.4,8.3,8.4,Partial Responder,None,0.714,0.731,0.679,0.661,0.679,226,338,166,148,107,68
+P00661,50,Male,28.0,Treatment,Sitagliptin,25,Good,Good,Moderate,9.5,9.1,9.3,9.2,8.9,8.8,Minimal Responder,None,0.791,0.818,0.805,0.763,0.747,234,333,136,96,142,92
+P00662,77,Female,27.8,Control,None,0,Good,Poor,Sedentary,8.1,8.0,8.2,8.1,8.2,8.1,Minimal Responder,None,0.603,0.642,0.622,0.642,0.622,173,246,224,201,136,77
+P00663,71,Female,23.3,Treatment,Empagliflozin,10,Moderate,Good,Moderate,8.1,7.9,7.6,7.5,7.3,7.3,Partial Responder,None,0.583,0.521,0.5,0.458,0.458,187,281,158,152,121,79
+P00664,64,Male,30.8,Control,None,0,Good,Good,Moderate,9.5,9.5,9.5,9.3,9.2,9.1,Minimal Responder,None,0.841,0.841,0.818,0.805,0.791,216,285,150,189,107,90
+P00665,51,Male,32.6,Treatment,Metformin,850,Good,Good,Moderate,8.8,8.5,8.1,7.6,7.3,7.4,Good Responder,None,0.697,0.622,0.521,0.458,0.479,189,279,195,187,134,78
+P00666,59,Female,27.8,Treatment,Metformin,500,Good,Good,Active,8.3,7.8,7.6,7.4,6.9,7.1,Partial Responder,None,0.562,0.521,0.479,0.378,0.417,187,286,173,229,147,96
+P00667,69,Female,26.1,Treatment,Metformin,2000,Poor,Good,Moderate,7.3,6.6,6.4,6.1,6.0,5.8,Good Responder,None,0.321,0.286,0.237,0.223,0.195,173,268,224,214,130,74
+P00668,76,Male,34.9,Treatment,Empagliflozin,25,Moderate,Poor,Active,8.5,8.4,8.2,8.1,8.0,8.1,Minimal Responder,None,0.679,0.642,0.622,0.603,0.622,200,270,158,109,133,90
+P00669,58,Female,32.1,Treatment,Sitagliptin,25,Good,Good,Sedentary,7.5,7.4,7.3,7.2,7.1,7.0,Minimal Responder,None,0.479,0.458,0.438,0.417,0.397,155,243,216,146,117,69
+P00670,35,Male,23.3,Treatment,Sitagliptin,25,Good,Poor,Active,8.8,8.7,8.7,8.6,8.6,8.5,Minimal Responder,None,0.731,0.731,0.714,0.714,0.697,201,301,168,294,128,77
+P00671,47,Female,38.3,Treatment,Sitagliptin,100,Good,Moderate,Moderate,10.4,10.2,9.8,9.6,9.6,9.5,Partial Responder,None,0.905,0.872,0.852,0.852,0.841,250,391,174,93,125,80
+P00672,50,Male,29.2,Control,None,0,Good,Good,Active,7.2,7.1,7.1,6.6,6.8,6.7,Partial Responder,None,0.417,0.417,0.321,0.358,0.339,143,207,157,188,142,83
+P00673,78,Male,27.5,Control,None,0,Poor,Good,Moderate,9.4,9.5,9.4,9.4,9.6,9.4,Minimal Responder,None,0.841,0.83,0.83,0.852,0.83,230,336,199,145,121,67
+P00674,77,Female,25.9,Treatment,Sitagliptin,25,Poor,Poor,Moderate,8.3,8.3,8.2,8.1,8.1,8.1,Minimal Responder,None,0.661,0.642,0.622,0.622,0.622,189,298,215,189,139,77
+P00675,77,Female,29.1,Control,None,0,Moderate,Moderate,Moderate,8.1,8.1,8.2,7.9,8.1,8.0,Minimal Responder,None,0.622,0.642,0.583,0.622,0.603,172,270,204,273,125,75
+P00676,59,Male,23.6,Control,None,0,Moderate,Moderate,Moderate,6.9,7.0,6.7,6.7,6.7,6.7,Minimal Responder,None,0.397,0.339,0.339,0.339,0.339,137,197,140,198,97,93
+P00677,72,Female,30.8,Treatment,Sitagliptin,100,Good,Good,Sedentary,7.4,7.2,6.8,6.8,6.5,6.3,Partial Responder,None,0.438,0.358,0.358,0.303,0.269,177,245,186,121,127,75
+P00678,79,Female,22.0,Treatment,Metformin,1000,Good,Good,Active,7.4,7.0,6.6,5.8,5.6,5.4,Excellent Responder,GI Issues,0.397,0.321,0.195,0.17,0.148,162,230,183,214,132,83
+P00679,35,Male,24.0,Treatment,Metformin,1000,Poor,Moderate,Moderate,10.8,10.4,10.6,10.3,10.1,9.8,Partial Responder,GI Issues,0.918,0.93,0.912,0.897,0.872,275,389,267,179,126,75
+P00680,52,Female,29.6,Treatment,Metformin,2000,Good,Poor,Active,7.0,6.8,6.5,6.2,6.2,5.9,Partial Responder,None,0.358,0.303,0.253,0.253,0.209,170,236,238,150,117,96
+P00681,60,Female,38.9,Control,None,0,Moderate,Moderate,Moderate,7.5,7.4,7.4,7.4,7.3,7.3,Minimal Responder,None,0.479,0.479,0.479,0.458,0.458,179,247,181,180,123,69
+P00682,40,Female,32.4,Treatment,Metformin,1500,Poor,Moderate,Moderate,10.4,10.0,9.8,9.6,9.6,9.3,Partial Responder,None,0.889,0.872,0.852,0.852,0.818,246,383,171,161,134,74
+P00683,45,Female,34.9,Control,None,0,Poor,Moderate,Active,10.0,9.9,9.9,9.8,9.7,9.7,Minimal Responder,None,0.881,0.881,0.872,0.862,0.862,215,284,206,142,123,67
+P00684,55,Female,24.0,Treatment,Empagliflozin,25,Moderate,Moderate,Sedentary,7.5,7.4,7.2,6.9,6.9,6.8,Partial Responder,None,0.479,0.438,0.378,0.378,0.358,172,259,193,152,113,71
+P00685,76,Female,30.4,Treatment,Empagliflozin,10,Poor,Good,Moderate,7.1,6.9,6.8,6.6,6.4,6.5,Partial Responder,None,0.378,0.358,0.321,0.286,0.303,178,241,181,243,135,70
+P00686,79,Male,27.3,Treatment,Empagliflozin,10,Moderate,Moderate,Active,9.0,8.8,8.7,8.5,8.5,8.2,Partial Responder,None,0.747,0.731,0.697,0.697,0.642,211,296,195,177,126,77
+P00687,66,Female,32.7,Control,None,0,Good,Good,Active,9.1,8.9,8.7,8.5,8.5,8.5,Partial Responder,None,0.763,0.731,0.697,0.697,0.697,195,257,180,208,127,80
+P00688,50,Female,23.0,Control,None,0,Moderate,Moderate,Sedentary,9.7,9.7,9.7,9.8,10.0,9.9,Non-Responder,None,0.862,0.862,0.872,0.889,0.881,225,311,167,222,121,79
+P00689,52,Female,34.7,Treatment,Metformin,500,Moderate,Poor,Moderate,8.0,8.0,7.7,7.9,7.6,7.6,Minimal Responder,GI Issues,0.603,0.542,0.583,0.521,0.521,181,277,156,229,151,77
+P00690,50,Female,34.3,Treatment,Empagliflozin,10,Moderate,Moderate,Sedentary,10.0,9.7,9.7,9.6,9.6,9.4,Minimal Responder,None,0.862,0.862,0.852,0.852,0.83,229,359,226,181,132,91
+P00691,55,Female,27.5,Control,None,0,Moderate,Moderate,Moderate,6.8,6.8,6.7,6.6,6.7,6.7,Minimal Responder,None,0.358,0.339,0.321,0.339,0.339,123,168,166,187,134,90
+P00692,74,Female,31.6,Treatment,Empagliflozin,25,Moderate,Good,Moderate,7.4,7.1,6.9,6.4,6.6,6.3,Good Responder,UTI,0.417,0.378,0.286,0.321,0.269,165,237,189,160,139,73
+P00693,46,Female,28.2,Treatment,Metformin,1500,Poor,Poor,Moderate,9.3,9.2,9.1,9.0,8.7,8.7,Minimal Responder,None,0.805,0.791,0.777,0.731,0.731,212,306,200,130,131,78
+P00694,63,Female,34.3,Treatment,Sitagliptin,100,Moderate,Good,Sedentary,8.9,8.5,8.6,8.2,8.0,8.1,Partial Responder,None,0.697,0.714,0.642,0.603,0.622,226,353,165,300,145,77
+P00695,42,Male,22.8,Treatment,Metformin,1500,Moderate,Good,Sedentary,8.3,8.0,7.4,7.3,7.0,6.8,Good Responder,GI Issues,0.603,0.479,0.458,0.397,0.358,193,295,137,200,122,89
+P00696,55,Female,27.1,Control,None,0,Moderate,Good,Sedentary,10.3,10.4,10.2,10.3,10.6,10.4,Minimal Responder,None,0.918,0.905,0.912,0.93,0.918,254,369,203,203,125,88
+P00697,48,Male,34.4,Treatment,Metformin,1000,Poor,Good,Active,7.6,7.2,7.0,6.4,6.2,6.1,Good Responder,None,0.438,0.397,0.286,0.253,0.237,170,255,219,146,168,66
+P00698,49,Male,29.2,Control,None,0,Poor,Good,Sedentary,7.1,7.1,7.0,7.6,7.1,7.5,Non-Responder,None,0.417,0.397,0.521,0.417,0.5,158,246,141,107,130,79
+P00699,43,Male,22.4,Control,None,0,Moderate,Poor,Moderate,7.4,7.4,7.3,7.3,7.3,7.4,Minimal Responder,None,0.479,0.458,0.458,0.458,0.479,149,194,210,171,141,91
+P00700,32,Male,27.4,Treatment,Metformin,500,Good,Poor,Sedentary,7.4,7.3,7.1,7.2,7.2,6.9,Minimal Responder,None,0.458,0.417,0.438,0.438,0.378,155,220,178,166,153,86
+P00701,59,Female,27.1,Treatment,Metformin,850,Moderate,Moderate,Moderate,8.5,8.4,8.3,7.8,7.6,7.7,Partial Responder,None,0.679,0.661,0.562,0.521,0.542,208,327,174,119,120,71
+P00702,76,Female,22.7,Control,None,0,Moderate,Poor,Moderate,7.1,6.9,7.1,6.8,7.1,7.1,Minimal Responder,None,0.378,0.417,0.358,0.417,0.417,159,242,253,257,104,60
+P00703,32,Male,22.0,Control,None,0,Poor,Moderate,Moderate,8.4,8.4,8.4,8.5,8.3,8.4,Non-Responder,None,0.679,0.679,0.697,0.661,0.679,190,278,249,178,118,63
+P00704,50,Male,29.5,Treatment,Metformin,500,Moderate,Good,Active,9.6,9.3,9.2,8.8,8.5,8.4,Partial Responder,GI Issues,0.818,0.805,0.747,0.697,0.679,234,341,241,249,110,69
+P00705,76,Female,33.5,Control,None,0,Good,Good,Active,6.6,6.4,6.2,5.9,6.1,6.1,Partial Responder,None,0.286,0.253,0.209,0.237,0.237,148,208,203,280,130,85
+P00706,52,Female,23.3,Treatment,Sitagliptin,100,Good,Poor,Moderate,6.8,6.6,6.5,6.4,6.3,6.5,Minimal Responder,None,0.321,0.303,0.286,0.269,0.303,168,245,176,191,128,70
+P00707,55,Male,23.0,Treatment,Metformin,850,Good,Moderate,Moderate,6.6,6.3,6.0,5.9,5.8,5.8,Partial Responder,None,0.269,0.223,0.209,0.195,0.195,144,216,165,146,109,82
+P00708,54,Male,31.7,Control,None,0,Poor,Poor,Moderate,10.7,10.7,10.6,10.6,10.9,10.8,Minimal Responder,None,0.935,0.93,0.93,0.944,0.94,250,356,178,223,120,73
+P00709,50,Male,39.1,Treatment,Metformin,2000,Moderate,Good,Moderate,8.8,7.9,7.9,7.2,7.1,6.9,Excellent Responder,None,0.583,0.583,0.438,0.417,0.378,205,310,177,192,137,73
+P00710,45,Male,32.3,Control,None,0,Good,Good,Sedentary,9.2,9.3,9.3,9.1,9.1,9.1,Minimal Responder,None,0.818,0.818,0.791,0.791,0.791,223,348,204,123,166,65
+P00711,30,Male,39.0,Control,None,0,Good,Moderate,Active,6.8,6.6,6.6,6.2,6.4,6.3,Partial Responder,None,0.321,0.321,0.253,0.286,0.269,158,213,175,222,107,66
+P00712,54,Male,40.0,Treatment,Empagliflozin,25,Moderate,Good,Active,9.5,9.1,8.6,8.3,8.3,8.2,Good Responder,None,0.791,0.714,0.661,0.661,0.642,210,301,176,232,108,81
+P00713,39,Female,29.2,Treatment,Empagliflozin,10,Moderate,Poor,Moderate,8.4,8.3,8.2,8.1,8.0,8.0,Minimal Responder,None,0.661,0.642,0.622,0.603,0.603,197,280,233,196,126,59
+P00714,75,Female,29.8,Control,None,0,Moderate,Poor,Sedentary,6.7,6.7,6.6,6.9,7.0,6.9,Non-Responder,None,0.339,0.321,0.378,0.397,0.378,137,206,236,219,137,92
+P00715,62,Female,32.9,Control,None,0,Good,Good,Sedentary,8.6,8.6,8.6,8.6,8.6,8.7,Minimal Responder,None,0.714,0.714,0.714,0.714,0.731,194,267,269,217,157,89
+P00716,69,Female,29.0,Treatment,Sitagliptin,50,Moderate,Moderate,Active,9.5,9.1,9.4,9.0,8.9,8.9,Partial Responder,None,0.791,0.83,0.777,0.763,0.763,234,349,196,212,154,94
+P00717,44,Male,26.3,Control,None,0,Good,Good,Moderate,6.8,6.8,6.7,6.3,6.6,6.5,Partial Responder,None,0.358,0.339,0.269,0.321,0.303,156,244,203,177,131,70
+P00718,74,Female,26.9,Treatment,Metformin,1500,Moderate,Moderate,Sedentary,10.0,9.8,9.6,9.2,9.0,8.9,Partial Responder,None,0.872,0.852,0.805,0.777,0.763,234,334,252,191,118,86
+P00719,48,Male,22.1,Control,None,0,Poor,Poor,Active,8.6,8.3,8.7,8.6,8.1,8.3,Minimal Responder,None,0.661,0.731,0.714,0.622,0.661,199,313,258,158,98,74
+P00720,53,Male,22.6,Treatment,Empagliflozin,25,Moderate,Poor,Active,7.5,7.3,7.4,7.1,7.2,6.9,Minimal Responder,None,0.458,0.479,0.417,0.438,0.378,163,260,222,193,141,87
+P00721,66,Female,26.8,Treatment,Metformin,500,Poor,Moderate,Sedentary,6.5,6.3,6.3,6.3,6.2,6.1,Minimal Responder,None,0.269,0.269,0.269,0.253,0.237,169,225,159,221,131,98
+P00722,39,Male,22.8,Treatment,Empagliflozin,10,Moderate,Moderate,Sedentary,10.4,10.2,10.0,10.1,9.9,9.9,Minimal Responder,None,0.905,0.889,0.897,0.881,0.881,255,349,151,196,107,84
+P00723,64,Female,27.3,Treatment,Metformin,850,Good,Good,Active,6.8,6.3,6.0,5.6,5.3,5.3,Good Responder,None,0.269,0.223,0.17,0.138,0.138,140,222,193,152,109,77
+P00724,75,Female,31.3,Treatment,Metformin,1500,Good,Good,Active,9.2,8.5,7.9,7.3,6.9,6.8,Excellent Responder,GI Issues,0.697,0.583,0.458,0.378,0.358,231,367,231,148,125,78
+P00725,43,Female,22.0,Treatment,Empagliflozin,25,Moderate,Moderate,Active,10.4,10.2,9.8,9.7,9.5,9.5,Partial Responder,None,0.905,0.872,0.862,0.841,0.841,265,352,177,121,166,91
+P00726,44,Male,28.3,Treatment,Metformin,1500,Good,Good,Moderate,9.3,8.8,8.3,7.8,7.4,7.3,Excellent Responder,None,0.747,0.661,0.562,0.479,0.458,238,310,170,141,139,82
+P00727,69,Male,32.2,Treatment,Empagliflozin,10,Moderate,Good,Sedentary,10.4,10.1,10.0,9.8,9.6,9.6,Partial Responder,None,0.897,0.889,0.872,0.852,0.852,273,368,133,84,104,83
+P00728,73,Female,29.2,Treatment,Empagliflozin,25,Moderate,Good,Moderate,6.9,6.4,6.6,6.0,5.9,5.8,Partial Responder,None,0.286,0.321,0.223,0.209,0.195,158,253,194,205,140,56
+P00729,39,Female,27.1,Treatment,Sitagliptin,100,Moderate,Moderate,Active,8.0,7.7,7.6,7.2,7.1,7.2,Partial Responder,None,0.542,0.521,0.438,0.417,0.438,179,242,162,178,115,94
+P00730,32,Male,26.9,Treatment,Sitagliptin,25,Moderate,Good,Active,8.9,8.7,8.6,8.3,8.3,8.3,Partial Responder,None,0.731,0.714,0.661,0.661,0.661,207,300,207,217,140,82
+P00731,44,Male,31.5,Treatment,Sitagliptin,25,Poor,Good,Moderate,10.7,10.5,10.4,10.3,10.3,10.2,Minimal Responder,None,0.924,0.918,0.912,0.912,0.905,257,400,187,175,115,83
+P00732,41,Male,23.3,Control,None,0,Good,Poor,Moderate,8.0,8.1,8.0,7.8,7.9,7.7,Minimal Responder,None,0.622,0.603,0.562,0.583,0.542,179,234,167,185,94,66
+P00733,65,Female,33.7,Treatment,Sitagliptin,100,Poor,Good,Sedentary,6.8,6.7,6.4,6.1,6.0,6.0,Partial Responder,None,0.339,0.286,0.237,0.223,0.223,161,238,184,132,106,67
+P00734,36,Male,28.1,Treatment,Sitagliptin,50,Moderate,Moderate,Sedentary,10.5,10.3,10.2,10.2,10.1,10.0,Minimal Responder,Headache,0.912,0.905,0.905,0.897,0.889,255,353,210,194,120,73
+P00735,77,Female,30.3,Treatment,Empagliflozin,10,Moderate,Poor,Sedentary,10.4,10.2,10.3,10.1,10.2,10.0,Minimal Responder,UTI,0.905,0.912,0.897,0.905,0.889,261,407,188,103,162,70
+P00736,32,Male,32.8,Control,None,0,Moderate,Good,Active,10.6,10.4,10.4,10.1,9.9,10.3,Partial Responder,None,0.918,0.918,0.897,0.881,0.912,264,366,170,250,110,84
+P00737,73,Female,28.2,Treatment,Empagliflozin,10,Moderate,Good,Moderate,9.8,9.5,9.4,9.0,9.0,9.1,Partial Responder,None,0.841,0.83,0.777,0.777,0.791,224,337,165,116,114,82
+P00738,50,Female,24.8,Control,None,0,Moderate,Moderate,Sedentary,7.3,7.3,7.5,7.2,7.6,7.6,Minimal Responder,None,0.458,0.5,0.438,0.521,0.521,146,219,196,200,105,67
+P00739,75,Female,33.2,Treatment,Sitagliptin,25,Moderate,Good,Moderate,7.4,7.3,7.1,7.0,7.0,6.8,Minimal Responder,None,0.458,0.417,0.397,0.397,0.358,153,209,124,128,126,75
+P00740,51,Male,37.7,Treatment,Metformin,1500,Good,Good,Moderate,8.5,7.8,7.4,7.2,6.6,6.6,Good Responder,None,0.562,0.479,0.438,0.321,0.321,193,253,210,156,129,89
+P00741,31,Male,23.6,Treatment,Metformin,2000,Poor,Moderate,Active,10.9,10.5,10.3,9.8,9.7,9.6,Good Responder,None,0.924,0.912,0.872,0.862,0.852,267,380,188,121,129,75
+P00742,67,Male,24.4,Treatment,Metformin,850,Good,Good,Sedentary,8.5,8.1,7.8,7.3,7.4,7.2,Good Responder,None,0.622,0.562,0.458,0.479,0.438,191,265,166,136,123,85
+P00743,69,Female,22.6,Treatment,Metformin,1500,Moderate,Good,Moderate,9.6,9.1,8.8,8.3,7.7,7.8,Good Responder,None,0.791,0.747,0.661,0.542,0.562,236,364,212,219,136,92
+P00744,62,Male,30.7,Treatment,Metformin,2000,Good,Good,Moderate,8.0,7.3,6.6,6.1,6.0,5.8,Excellent Responder,None,0.458,0.321,0.237,0.223,0.195,178,274,204,263,138,84
+P00745,56,Female,36.9,Treatment,Sitagliptin,100,Moderate,Good,Sedentary,10.9,10.7,10.7,10.0,10.0,10.1,Partial Responder,None,0.935,0.935,0.889,0.889,0.897,269,387,205,147,134,93
+P00746,52,Male,26.4,Treatment,Empagliflozin,25,Good,Good,Moderate,8.9,8.5,8.2,7.9,7.6,7.6,Good Responder,None,0.697,0.642,0.583,0.521,0.521,210,311,182,161,144,86
+P00747,56,Female,37.9,Treatment,Sitagliptin,25,Moderate,Moderate,Active,6.9,6.8,6.8,6.6,6.7,6.4,Minimal Responder,Headache,0.358,0.358,0.321,0.339,0.286,169,250,180,161,120,81
+P00748,33,Male,37.9,Treatment,Metformin,1000,Good,Moderate,Active,10.2,9.8,9.5,9.0,9.0,8.8,Good Responder,None,0.872,0.841,0.777,0.777,0.747,236,365,196,203,132,86
+P00749,53,Female,31.3,Treatment,Metformin,500,Moderate,Poor,Moderate,10.2,10.0,10.1,9.9,9.8,10.0,Minimal Responder,None,0.889,0.897,0.881,0.872,0.889,268,383,217,206,156,81
+P00750,42,Male,23.5,Control,None,0,Moderate,Good,Sedentary,8.5,8.6,8.8,8.7,8.7,8.7,Non-Responder,None,0.714,0.747,0.731,0.731,0.731,191,264,192,218,126,96
+P00751,35,Male,27.3,Treatment,Metformin,850,Moderate,Good,Moderate,10.4,10.1,9.9,9.4,9.3,9.1,Good Responder,GI Issues,0.897,0.881,0.83,0.818,0.791,238,328,202,92,138,65
+P00752,60,Female,22.0,Treatment,Empagliflozin,10,Moderate,Moderate,Active,9.2,9.0,8.8,8.8,8.4,8.5,Minimal Responder,None,0.777,0.747,0.747,0.679,0.697,215,314,177,108,162,68
+P00753,45,Female,26.7,Control,None,0,Moderate,Moderate,Sedentary,10.9,10.8,11.0,11.3,11.1,10.9,Non-Responder,None,0.94,0.949,0.95,0.95,0.944,299,429,198,190,152,75
+P00754,57,Male,27.5,Control,None,0,Moderate,Moderate,Moderate,10.8,10.8,10.8,10.7,10.7,10.6,Minimal Responder,None,0.94,0.94,0.935,0.935,0.93,272,390,161,88,118,71
+P00755,55,Female,25.9,Control,None,0,Good,Moderate,Moderate,9.9,9.9,10.0,9.6,9.5,9.7,Minimal Responder,None,0.881,0.889,0.852,0.841,0.862,243,323,202,229,122,71
+P00756,79,Female,26.9,Treatment,Sitagliptin,100,Moderate,Good,Moderate,9.7,9.3,9.2,8.9,8.7,8.6,Partial Responder,Headache,0.818,0.805,0.763,0.731,0.714,240,364,159,236,117,90
+P00757,58,Male,33.2,Treatment,Metformin,500,Good,Good,Sedentary,6.8,6.4,6.6,6.2,6.1,6.0,Partial Responder,None,0.286,0.321,0.253,0.237,0.223,141,192,191,286,144,82
+P00758,78,Male,27.2,Treatment,Metformin,850,Moderate,Good,Active,10.5,9.9,9.7,9.3,9.1,8.8,Good Responder,None,0.881,0.862,0.818,0.791,0.747,258,351,177,242,147,91
+P00759,73,Female,23.8,Treatment,Metformin,2000,Moderate,Moderate,Sedentary,7.0,6.6,6.6,6.2,6.0,5.9,Partial Responder,None,0.321,0.321,0.253,0.223,0.209,154,219,163,178,131,77
+P00760,35,Male,39.4,Treatment,Metformin,2000,Poor,Moderate,Sedentary,9.1,8.8,8.8,8.3,8.6,8.3,Partial Responder,None,0.747,0.747,0.661,0.714,0.661,233,319,164,178,134,72
+P00761,51,Female,39.6,Treatment,Sitagliptin,50,Good,Poor,Active,6.6,6.4,6.4,6.2,6.1,6.2,Minimal Responder,None,0.286,0.286,0.253,0.237,0.253,142,209,167,172,138,77
+P00762,68,Male,29.9,Control,None,0,Moderate,Poor,Moderate,8.6,8.6,8.4,8.4,8.5,8.4,Minimal Responder,None,0.714,0.679,0.679,0.697,0.679,196,277,200,184,126,71
+P00763,52,Male,38.0,Treatment,Metformin,1500,Moderate,Poor,Moderate,10.3,10.0,10.1,9.8,9.5,9.8,Partial Responder,None,0.889,0.897,0.872,0.841,0.872,237,340,204,209,106,75
+P00764,62,Male,31.6,Control,None,0,Moderate,Moderate,Moderate,7.2,7.3,7.1,7.0,7.1,7.0,Minimal Responder,None,0.458,0.417,0.397,0.417,0.397,161,235,244,123,143,67
+P00765,42,Female,30.0,Control,None,0,Moderate,Good,Active,7.6,7.5,7.3,7.2,7.1,7.1,Minimal Responder,None,0.5,0.458,0.438,0.417,0.417,174,237,166,161,141,67
+P00766,55,Male,27.7,Control,None,0,Moderate,Good,Active,9.4,9.3,9.1,9.2,9.0,8.6,Minimal Responder,None,0.818,0.791,0.805,0.777,0.714,211,284,163,115,128,70
+P00767,70,Female,36.6,Treatment,Empagliflozin,10,Good,Good,Moderate,7.3,7.0,6.8,6.4,6.4,6.3,Partial Responder,None,0.397,0.358,0.286,0.286,0.269,167,261,155,194,131,83
+P00768,51,Male,33.0,Treatment,Metformin,850,Moderate,Moderate,Active,6.6,6.2,6.2,5.9,5.6,5.8,Partial Responder,None,0.253,0.253,0.209,0.17,0.195,145,207,216,186,141,80
+P00769,61,Male,28.8,Control,None,0,Poor,Good,Sedentary,9.9,10.3,10.1,10.2,10.1,10.0,Non-Responder,None,0.912,0.897,0.905,0.897,0.889,248,353,227,283,142,98
+P00770,50,Female,23.9,Control,None,0,Moderate,Moderate,Moderate,8.1,8.0,8.1,8.0,8.2,7.8,Minimal Responder,None,0.603,0.622,0.603,0.642,0.562,198,260,155,239,131,59
+P00771,75,Male,25.7,Treatment,Sitagliptin,50,Good,Good,Sedentary,6.5,6.3,6.2,5.9,5.8,5.8,Partial Responder,None,0.269,0.253,0.209,0.195,0.195,141,204,169,156,121,75
+P00772,71,Male,32.8,Control,None,0,Poor,Moderate,Active,7.4,7.2,7.2,7.1,6.9,6.9,Minimal Responder,None,0.438,0.438,0.417,0.378,0.378,155,227,177,240,122,71
+P00773,62,Female,24.6,Treatment,Metformin,1000,Good,Moderate,Sedentary,7.1,6.9,6.7,6.4,6.3,6.1,Partial Responder,None,0.378,0.339,0.286,0.269,0.237,149,219,149,175,144,96
+P00774,63,Male,31.0,Control,None,0,Moderate,Moderate,Active,8.9,8.8,8.8,8.4,8.4,8.6,Partial Responder,None,0.747,0.747,0.679,0.679,0.714,226,342,188,97,137,83
+P00775,71,Female,36.0,Control,None,0,Poor,Good,Active,8.4,8.3,8.3,8.0,8.1,8.4,Minimal Responder,None,0.661,0.661,0.603,0.622,0.679,196,265,240,162,136,74
+P00776,38,Male,28.0,Treatment,Metformin,1000,Good,Good,Active,9.7,8.9,8.7,8.0,7.8,7.6,Excellent Responder,None,0.763,0.731,0.603,0.562,0.521,249,343,203,244,122,99
+P00777,54,Female,25.8,Treatment,Metformin,500,Good,Good,Active,7.5,7.1,6.8,6.4,6.5,6.2,Good Responder,GI Issues,0.417,0.358,0.286,0.303,0.253,174,269,116,205,141,94
+P00778,37,Female,28.9,Treatment,Metformin,500,Moderate,Poor,Sedentary,9.7,9.6,9.6,9.6,9.4,9.3,Minimal Responder,None,0.852,0.852,0.852,0.83,0.818,239,379,200,264,128,79
+P00779,52,Female,26.2,Treatment,Sitagliptin,100,Moderate,Poor,Active,10.0,10.1,9.7,9.5,9.6,9.5,Partial Responder,None,0.897,0.862,0.841,0.852,0.841,250,335,193,210,134,75
+P00780,69,Female,29.6,Control,None,0,Moderate,Good,Active,8.6,8.5,8.4,8.3,8.1,8.2,Minimal Responder,None,0.697,0.679,0.661,0.622,0.642,188,272,205,202,148,78
+P00781,55,Male,28.8,Control,None,0,Moderate,Good,Moderate,9.8,9.8,9.5,9.7,9.7,9.9,Minimal Responder,None,0.872,0.841,0.862,0.862,0.881,238,325,170,218,156,67
+P00782,50,Male,27.9,Treatment,Metformin,1500,Poor,Moderate,Moderate,8.7,8.6,8.0,8.0,7.8,7.9,Partial Responder,None,0.714,0.603,0.603,0.562,0.583,191,252,224,154,133,71
+P00783,45,Female,30.1,Treatment,Empagliflozin,25,Good,Moderate,Moderate,7.7,7.4,7.3,6.9,6.9,6.9,Partial Responder,None,0.479,0.458,0.378,0.378,0.378,171,239,151,181,140,85
+P00784,55,Male,36.1,Treatment,Sitagliptin,50,Poor,Good,Moderate,6.6,6.4,6.2,6.1,6.0,5.9,Partial Responder,None,0.286,0.253,0.237,0.223,0.209,149,200,204,190,134,76
+P00785,67,Male,36.8,Control,None,0,Good,Good,Moderate,10.0,9.9,9.9,9.9,9.7,10.1,Minimal Responder,None,0.881,0.881,0.881,0.862,0.897,230,348,225,220,126,80
+P00786,51,Female,37.6,Treatment,Sitagliptin,100,Good,Moderate,Moderate,10.5,10.2,10.1,9.8,9.9,9.7,Partial Responder,None,0.905,0.897,0.872,0.881,0.862,260,380,202,172,117,72
+P00787,56,Male,24.6,Treatment,Empagliflozin,10,Moderate,Moderate,Moderate,7.3,7.1,7.0,6.8,7.0,6.7,Partial Responder,None,0.417,0.397,0.358,0.397,0.339,148,199,215,153,133,85
+P00788,47,Male,24.2,Treatment,Empagliflozin,10,Good,Good,Sedentary,9.3,9.0,8.9,8.6,8.5,8.4,Partial Responder,None,0.777,0.763,0.714,0.697,0.679,232,302,172,81,121,70
+P00789,38,Male,23.6,Treatment,Metformin,1000,Poor,Moderate,Sedentary,6.8,6.6,6.4,6.3,6.2,6.0,Partial Responder,GI Issues,0.321,0.286,0.269,0.253,0.223,142,219,181,208,124,97
+P00790,73,Female,31.4,Control,None,0,Good,Good,Active,9.6,9.3,9.3,8.9,8.8,8.8,Partial Responder,None,0.818,0.818,0.763,0.747,0.747,219,296,195,176,147,72
+P00791,41,Female,33.2,Treatment,Metformin,1000,Poor,Good,Sedentary,8.5,8.3,8.2,7.9,7.4,7.5,Partial Responder,None,0.661,0.642,0.583,0.479,0.5,183,271,191,178,149,66
+P00792,70,Female,24.9,Treatment,Empagliflozin,10,Poor,Moderate,Active,6.7,6.6,6.4,6.3,6.2,6.3,Minimal Responder,None,0.321,0.286,0.269,0.253,0.269,140,196,193,124,120,94
+P00793,45,Male,38.5,Control,None,0,Moderate,Good,Sedentary,10.8,10.8,10.9,10.9,10.9,10.8,Non-Responder,None,0.94,0.944,0.944,0.944,0.94,244,360,181,231,143,70
+P00794,72,Female,31.6,Treatment,Sitagliptin,100,Good,Moderate,Moderate,8.4,8.1,8.0,7.7,7.6,7.6,Partial Responder,Headache,0.622,0.603,0.542,0.521,0.521,189,264,268,105,131,75
+P00795,58,Female,38.5,Treatment,Metformin,500,Good,Poor,Moderate,9.6,9.5,9.4,9.4,9.4,9.1,Minimal Responder,None,0.841,0.83,0.83,0.83,0.791,240,318,199,261,162,75
+P00796,41,Male,36.2,Treatment,Metformin,500,Poor,Moderate,Moderate,10.5,10.3,10.2,10.1,10.0,10.0,Minimal Responder,None,0.912,0.905,0.897,0.889,0.889,253,346,200,146,141,85
+P00797,46,Female,27.2,Treatment,Metformin,1500,Good,Moderate,Sedentary,9.6,9.5,8.9,8.6,8.5,8.4,Good Responder,GI Issues,0.841,0.763,0.714,0.697,0.679,217,294,202,206,140,69
+P00798,57,Male,28.8,Control,None,0,Poor,Moderate,Active,9.9,9.9,9.7,9.4,9.6,9.5,Partial Responder,None,0.881,0.862,0.83,0.852,0.841,240,343,225,215,101,76
+P00799,44,Male,34.0,Treatment,Empagliflozin,25,Poor,Moderate,Active,7.5,7.3,7.2,7.0,7.0,6.7,Partial Responder,None,0.458,0.438,0.397,0.397,0.339,170,255,209,253,117,67
+P00800,78,Female,37.8,Control,None,0,Good,Good,Active,7.4,7.3,7.0,6.8,6.8,6.7,Partial Responder,None,0.458,0.397,0.358,0.358,0.339,185,255,177,91,119,86
+P00801,41,Male,25.1,Treatment,Metformin,1000,Good,Poor,Sedentary,7.8,7.6,7.5,7.5,7.3,7.5,Minimal Responder,None,0.521,0.5,0.5,0.458,0.5,185,241,185,136,126,70
+P00802,49,Male,39.1,Treatment,Sitagliptin,25,Good,Good,Active,6.7,6.5,6.4,6.3,5.9,6.1,Minimal Responder,Mild,0.303,0.286,0.269,0.209,0.237,149,217,196,133,152,64
+P00803,36,Male,38.9,Treatment,Empagliflozin,10,Good,Good,Moderate,9.8,9.5,9.3,9.0,8.8,8.7,Partial Responder,None,0.841,0.818,0.777,0.747,0.731,244,362,224,157,109,80
+P00804,30,Male,29.1,Control,None,0,Poor,Moderate,Moderate,7.7,7.8,7.8,7.7,7.7,7.9,Minimal Responder,None,0.562,0.562,0.542,0.542,0.583,173,275,191,150,120,66
+P00805,62,Male,22.3,Treatment,Sitagliptin,100,Good,Moderate,Moderate,8.6,8.3,8.1,7.9,8.0,7.8,Partial Responder,None,0.661,0.622,0.583,0.603,0.562,199,294,168,202,91,74
+P00806,69,Female,29.0,Treatment,Metformin,850,Moderate,Good,Sedentary,7.0,6.8,6.5,6.2,6.2,5.9,Partial Responder,None,0.358,0.303,0.253,0.253,0.209,171,246,202,163,116,74
+P00807,47,Female,24.6,Treatment,Sitagliptin,100,Moderate,Moderate,Moderate,8.9,8.7,8.6,8.4,8.1,8.2,Partial Responder,None,0.731,0.714,0.679,0.622,0.642,192,283,166,135,134,84
+P00808,54,Female,31.6,Treatment,Empagliflozin,25,Poor,Moderate,Active,7.2,7.2,6.9,6.7,6.4,6.5,Partial Responder,None,0.438,0.378,0.339,0.286,0.303,170,268,217,213,114,62
+P00809,39,Female,32.6,Treatment,Metformin,850,Good,Good,Moderate,6.5,6.0,5.6,5.6,5.1,5.0,Partial Responder,GI Issues,0.223,0.17,0.17,0.119,0.111,139,215,240,138,123,70
+P00810,34,Female,23.7,Control,None,0,Moderate,Good,Sedentary,7.8,7.9,8.0,8.0,7.9,8.0,Non-Responder,None,0.583,0.603,0.603,0.583,0.603,174,243,229,255,128,87
+P00811,61,Female,23.2,Treatment,Empagliflozin,25,Good,Poor,Active,9.4,9.1,9.0,9.0,8.9,8.9,Minimal Responder,None,0.791,0.777,0.777,0.763,0.763,218,299,133,176,115,72
+P00812,61,Female,27.3,Treatment,Empagliflozin,25,Poor,Moderate,Sedentary,7.3,7.1,7.1,6.8,6.8,6.8,Partial Responder,None,0.417,0.417,0.358,0.358,0.358,164,226,192,178,117,96
+P00813,74,Male,28.9,Treatment,Sitagliptin,100,Good,Moderate,Moderate,6.8,6.6,6.4,6.2,6.1,6.0,Partial Responder,None,0.321,0.286,0.253,0.237,0.223,148,215,192,195,100,78
+P00814,60,Female,26.5,Control,None,0,Moderate,Moderate,Active,10.9,10.9,10.8,10.4,10.6,10.5,Partial Responder,None,0.944,0.94,0.918,0.93,0.924,262,399,186,215,124,68
+P00815,67,Male,37.7,Control,None,0,Moderate,Poor,Active,8.3,8.5,8.3,7.9,7.7,8.0,Minimal Responder,None,0.697,0.661,0.583,0.542,0.603,184,267,192,186,161,75
+P00816,64,Female,29.9,Treatment,Metformin,850,Poor,Poor,Moderate,8.7,8.6,8.4,8.5,8.5,8.3,Minimal Responder,None,0.714,0.679,0.697,0.697,0.661,184,243,195,194,155,79
+P00817,39,Female,22.6,Control,None,0,Good,Good,Active,9.6,9.3,9.2,9.0,9.0,9.0,Partial Responder,None,0.818,0.805,0.777,0.777,0.777,222,337,151,123,156,99
+P00818,36,Female,39.9,Treatment,Sitagliptin,25,Moderate,Poor,Sedentary,7.8,7.8,7.7,7.6,7.8,7.7,Minimal Responder,None,0.562,0.542,0.521,0.562,0.542,172,265,250,134,97,97
+P00819,37,Female,32.7,Control,None,0,Good,Good,Active,10.9,10.6,10.5,10.1,10.5,10.1,Partial Responder,None,0.93,0.924,0.897,0.924,0.897,268,372,195,252,126,81
+P00820,46,Male,37.2,Treatment,Empagliflozin,10,Good,Good,Sedentary,7.1,6.9,6.8,6.6,6.3,6.2,Partial Responder,None,0.378,0.358,0.321,0.269,0.253,177,265,173,136,138,73
+P00821,49,Male,28.3,Control,None,0,Moderate,Good,Moderate,9.7,9.6,9.7,9.6,9.4,9.3,Minimal Responder,None,0.852,0.862,0.852,0.83,0.818,226,323,189,237,135,72
+P00822,76,Female,28.9,Treatment,Sitagliptin,50,Poor,Good,Moderate,8.3,8.1,8.0,7.8,7.6,7.5,Partial Responder,Headache,0.622,0.603,0.562,0.521,0.5,181,284,220,125,130,71
+P00823,37,Male,22.7,Control,None,0,Moderate,Moderate,Active,7.2,7.2,7.0,6.6,6.9,6.6,Partial Responder,None,0.438,0.397,0.321,0.378,0.321,153,238,197,210,116,65
+P00824,55,Female,33.1,Treatment,Empagliflozin,10,Moderate,Poor,Moderate,9.4,9.3,9.4,9.3,9.1,9.2,Minimal Responder,None,0.818,0.83,0.818,0.791,0.805,225,328,168,182,102,87
+P00825,68,Female,24.9,Treatment,Empagliflozin,25,Poor,Poor,Moderate,10.0,10.0,9.7,9.7,9.8,9.6,Minimal Responder,None,0.889,0.862,0.862,0.872,0.852,246,371,199,164,133,93
+P00826,73,Female,28.6,Treatment,Metformin,2000,Good,Moderate,Sedentary,10.5,10.2,9.9,9.4,9.6,9.0,Good Responder,GI Issues,0.905,0.881,0.83,0.852,0.777,262,410,172,204,140,81
+P00827,62,Male,29.4,Control,None,0,Good,Good,Active,9.9,9.5,9.5,9.2,9.2,9.4,Partial Responder,None,0.841,0.841,0.805,0.805,0.83,246,356,208,132,143,82
+P00828,50,Male,31.7,Treatment,Metformin,850,Good,Good,Active,8.8,8.1,8.0,7.2,7.0,7.1,Excellent Responder,None,0.622,0.603,0.438,0.397,0.417,216,301,235,170,135,78
+P00829,42,Male,26.1,Control,None,0,Moderate,Poor,Moderate,7.2,7.0,6.9,7.2,7.1,7.1,Minimal Responder,None,0.397,0.378,0.438,0.417,0.417,157,240,161,194,117,71
+P00830,75,Male,22.1,Treatment,Empagliflozin,10,Good,Good,Active,7.3,7.1,6.7,6.5,6.3,6.1,Partial Responder,None,0.417,0.339,0.303,0.269,0.237,183,250,183,128,144,85
+P00831,61,Female,36.0,Treatment,Sitagliptin,50,Poor,Moderate,Active,10.5,10.3,10.3,10.1,9.9,10.0,Minimal Responder,None,0.912,0.912,0.897,0.881,0.889,251,356,203,249,119,75
+P00832,40,Female,33.9,Control,None,0,Moderate,Poor,Active,11.0,11.1,10.7,10.5,10.6,10.7,Partial Responder,None,0.95,0.935,0.924,0.93,0.935,270,421,140,113,109,84
+P00833,65,Female,24.1,Control,None,0,Good,Good,Active,6.9,6.6,6.5,6.3,6.5,6.3,Partial Responder,None,0.321,0.303,0.269,0.303,0.269,164,249,200,274,145,97
+P00834,37,Female,24.8,Control,None,0,Poor,Moderate,Moderate,8.7,8.6,8.7,8.7,8.5,8.7,Minimal Responder,None,0.714,0.731,0.731,0.697,0.731,209,297,130,214,140,93
+P00835,35,Female,32.1,Control,None,0,Good,Good,Moderate,10.4,10.4,10.4,10.0,10.1,10.1,Minimal Responder,None,0.918,0.918,0.889,0.897,0.897,229,312,170,219,127,69
+P00836,35,Male,38.7,Treatment,Sitagliptin,100,Good,Moderate,Moderate,7.2,7.0,6.7,6.6,6.4,6.3,Partial Responder,None,0.397,0.339,0.321,0.286,0.269,160,225,189,158,147,75
+P00837,35,Male,26.5,Treatment,Sitagliptin,100,Good,Good,Active,11.0,10.5,10.1,9.8,9.5,9.5,Good Responder,None,0.924,0.897,0.872,0.841,0.841,278,385,201,224,158,69
+P00838,53,Male,36.6,Treatment,Metformin,2000,Poor,Moderate,Sedentary,9.5,9.0,9.2,8.9,8.7,8.9,Partial Responder,None,0.777,0.805,0.763,0.731,0.763,213,288,126,203,116,72
+P00839,38,Female,36.8,Control,None,0,Good,Poor,Sedentary,7.3,7.5,7.3,7.3,7.3,7.2,Minimal Responder,None,0.5,0.458,0.458,0.458,0.438,170,259,200,247,139,89
+P00840,65,Male,25.7,Control,None,0,Moderate,Moderate,Sedentary,8.5,8.6,8.5,8.5,8.5,8.8,Minimal Responder,None,0.714,0.697,0.697,0.697,0.747,201,276,259,158,130,71
+P00841,43,Male,33.4,Control,None,0,Good,Moderate,Active,9.6,9.5,9.4,9.1,9.0,8.9,Partial Responder,None,0.841,0.83,0.791,0.777,0.763,241,346,194,127,142,98
+P00842,52,Female,39.9,Control,None,0,Good,Poor,Moderate,10.0,9.8,9.8,9.7,9.9,9.7,Minimal Responder,None,0.872,0.872,0.862,0.881,0.862,233,330,215,131,129,84
+P00843,39,Female,40.0,Treatment,Sitagliptin,50,Good,Good,Moderate,10.9,10.6,10.5,10.2,10.0,10.0,Partial Responder,None,0.93,0.924,0.905,0.889,0.889,276,440,240,206,134,76
+P00844,76,Female,36.2,Treatment,Metformin,1500,Good,Good,Moderate,10.9,10.2,9.7,9.4,8.9,8.6,Excellent Responder,None,0.905,0.862,0.83,0.763,0.714,268,380,179,150,88,69
+P00845,74,Female,31.9,Treatment,Metformin,1000,Good,Poor,Sedentary,6.7,6.3,6.4,6.5,6.3,6.2,Minimal Responder,None,0.269,0.286,0.303,0.269,0.253,163,216,184,228,124,98
+P00846,70,Female,29.1,Treatment,Metformin,500,Poor,Moderate,Sedentary,6.6,6.5,6.5,6.2,6.3,6.0,Minimal Responder,None,0.303,0.303,0.253,0.269,0.223,171,227,169,298,128,98
+P00847,75,Female,22.1,Treatment,Metformin,500,Good,Poor,Moderate,9.4,9.3,9.2,9.3,9.0,9.0,Minimal Responder,None,0.818,0.805,0.818,0.777,0.777,238,352,207,214,145,83
+P00848,76,Female,33.3,Treatment,Metformin,850,Good,Moderate,Moderate,7.6,7.4,7.2,6.9,6.6,6.4,Partial Responder,None,0.479,0.438,0.378,0.321,0.286,176,260,179,252,113,72
+P00849,63,Male,24.0,Treatment,Metformin,2000,Good,Moderate,Sedentary,7.8,7.1,7.2,7.1,6.8,6.7,Partial Responder,None,0.417,0.438,0.417,0.358,0.339,200,285,155,185,107,90
+P00850,49,Female,36.8,Treatment,Metformin,850,Moderate,Moderate,Sedentary,7.1,6.9,7.0,6.5,6.6,6.5,Partial Responder,Mild,0.378,0.397,0.303,0.321,0.303,163,233,186,113,126,85
+P00851,66,Male,28.5,Control,None,0,Moderate,Poor,Sedentary,9.8,9.7,10.1,9.9,9.8,9.9,Non-Responder,None,0.862,0.897,0.881,0.872,0.881,225,296,140,155,126,80
+P00852,62,Male,22.2,Treatment,Sitagliptin,100,Poor,Good,Moderate,7.7,7.5,7.2,7.1,6.9,6.9,Partial Responder,None,0.5,0.438,0.417,0.378,0.378,174,253,163,188,146,78
+P00853,71,Female,29.8,Treatment,Metformin,1000,Moderate,Good,Active,7.8,7.3,7.0,6.5,6.2,6.0,Good Responder,None,0.458,0.397,0.303,0.253,0.223,185,269,185,229,131,97
+P00854,50,Female,35.6,Treatment,Empagliflozin,25,Moderate,Moderate,Active,7.3,7.0,6.8,6.8,6.7,6.5,Partial Responder,None,0.397,0.358,0.358,0.339,0.303,171,230,171,206,134,78
+P00855,67,Male,26.9,Control,None,0,Moderate,Good,Sedentary,8.7,8.8,8.8,8.8,8.9,8.9,Non-Responder,None,0.747,0.747,0.747,0.763,0.763,192,256,259,209,140,91
+P00856,68,Male,28.4,Treatment,Sitagliptin,25,Poor,Good,Sedentary,6.9,6.7,6.7,6.7,6.5,6.4,Minimal Responder,None,0.339,0.339,0.339,0.303,0.286,140,187,229,164,119,68
+P00857,77,Male,25.1,Control,None,0,Moderate,Moderate,Active,6.6,6.6,6.3,6.3,6.2,6.3,Minimal Responder,None,0.321,0.269,0.269,0.253,0.269,139,185,191,219,158,72
+P00858,64,Female,25.1,Treatment,Metformin,1500,Moderate,Good,Moderate,9.3,8.6,8.6,7.9,7.6,7.5,Good Responder,None,0.714,0.714,0.583,0.521,0.5,226,335,223,112,145,72
+P00859,30,Male,36.4,Control,None,0,Poor,Good,Moderate,9.0,8.8,9.0,9.1,8.9,8.9,Non-Responder,None,0.747,0.777,0.791,0.763,0.763,218,296,210,255,105,65
+P00860,68,Female,34.9,Treatment,Sitagliptin,25,Moderate,Moderate,Active,7.6,7.5,7.4,7.3,7.2,7.2,Minimal Responder,None,0.5,0.479,0.458,0.438,0.438,173,238,178,212,141,82
+P00861,78,Male,26.5,Control,None,0,Moderate,Good,Sedentary,7.2,7.0,7.2,7.6,7.3,7.1,Non-Responder,None,0.397,0.438,0.521,0.458,0.417,152,206,191,86,103,81
+P00862,49,Male,39.9,Treatment,Sitagliptin,50,Moderate,Moderate,Sedentary,9.9,9.8,9.7,9.3,9.4,9.3,Partial Responder,None,0.872,0.862,0.818,0.83,0.818,255,405,186,181,112,82
+P00863,50,Male,23.1,Treatment,Empagliflozin,25,Moderate,Poor,Moderate,8.3,8.2,8.2,8.1,7.9,7.9,Minimal Responder,Hypoglycemia,0.642,0.642,0.622,0.583,0.583,181,282,224,142,153,72
+P00864,75,Male,36.0,Treatment,Metformin,500,Moderate,Good,Sedentary,10.7,10.6,10.3,9.9,10.1,9.9,Partial Responder,None,0.93,0.912,0.881,0.897,0.881,273,374,178,131,112,77
+P00865,63,Female,36.9,Treatment,Empagliflozin,10,Moderate,Good,Sedentary,10.6,10.4,10.0,10.0,9.8,9.8,Partial Responder,None,0.918,0.889,0.889,0.872,0.872,265,371,202,193,137,88
+P00866,50,Female,29.4,Treatment,Metformin,1500,Moderate,Good,Sedentary,8.5,7.9,7.8,7.4,7.2,7.0,Good Responder,None,0.583,0.562,0.479,0.438,0.397,210,286,225,226,149,75
+P00867,49,Female,34.6,Treatment,Metformin,1500,Moderate,Moderate,Active,7.6,7.1,6.8,6.8,6.4,6.2,Partial Responder,None,0.417,0.358,0.358,0.286,0.253,167,242,187,144,143,75
+P00868,52,Male,22.2,Control,None,0,Moderate,Good,Active,9.0,9.0,8.8,8.5,8.5,8.6,Partial Responder,None,0.777,0.747,0.697,0.697,0.714,210,274,175,173,167,77
+P00869,54,Male,22.0,Control,None,0,Moderate,Good,Sedentary,6.5,6.6,6.4,6.8,6.7,6.6,Non-Responder,None,0.321,0.286,0.358,0.339,0.321,140,210,216,86,120,90
+P00870,31,Female,29.0,Treatment,Empagliflozin,25,Moderate,Poor,Moderate,10.1,10.1,9.8,9.7,9.7,9.5,Minimal Responder,None,0.897,0.872,0.862,0.862,0.841,238,347,204,230,143,77
+P00871,57,Male,38.8,Treatment,Sitagliptin,100,Moderate,Good,Moderate,6.8,6.6,6.4,6.2,5.9,5.7,Partial Responder,None,0.321,0.286,0.253,0.209,0.182,151,237,201,163,139,67
+P00872,66,Male,34.0,Treatment,Metformin,2000,Poor,Good,Active,7.4,6.8,6.5,5.9,5.6,5.6,Excellent Responder,None,0.358,0.303,0.209,0.17,0.17,181,244,194,212,123,72
+P00873,72,Male,29.1,Treatment,Metformin,500,Good,Good,Sedentary,6.5,6.3,6.1,5.9,5.7,5.8,Partial Responder,None,0.269,0.237,0.209,0.182,0.195,127,196,174,158,124,66
+P00874,58,Female,24.7,Treatment,Metformin,500,Good,Moderate,Sedentary,9.1,9.0,8.9,8.6,8.6,8.6,Partial Responder,None,0.777,0.763,0.714,0.714,0.714,208,320,177,197,128,81
+P00875,45,Male,37.8,Treatment,Metformin,1000,Moderate,Good,Sedentary,7.5,7.1,6.9,6.7,6.4,6.5,Partial Responder,None,0.417,0.378,0.339,0.286,0.303,161,215,175,146,119,86
+P00876,69,Male,33.7,Treatment,Metformin,500,Good,Good,Active,8.9,8.5,8.5,8.0,7.7,7.6,Partial Responder,None,0.697,0.697,0.603,0.542,0.521,208,295,164,211,120,85
+P00877,62,Female,35.1,Treatment,Metformin,1500,Good,Good,Active,10.8,9.9,9.5,8.8,8.4,8.4,Excellent Responder,None,0.881,0.841,0.747,0.679,0.679,262,354,161,213,134,92
+P00878,79,Female,26.5,Treatment,Metformin,1500,Poor,Good,Sedentary,8.5,8.0,8.0,7.4,7.4,7.5,Good Responder,None,0.603,0.603,0.479,0.479,0.5,205,282,178,163,123,75
+P00879,71,Male,27.0,Treatment,Metformin,1000,Good,Good,Moderate,7.3,6.8,6.6,5.9,5.8,5.4,Good Responder,None,0.358,0.321,0.209,0.195,0.148,163,225,171,154,113,89
+P00880,69,Female,22.0,Control,None,0,Moderate,Moderate,Moderate,8.9,8.8,9.0,8.6,8.7,8.8,Minimal Responder,None,0.747,0.777,0.714,0.731,0.747,212,311,207,216,120,78
+P00881,30,Male,38.0,Treatment,Metformin,850,Moderate,Moderate,Sedentary,8.1,7.9,7.7,7.3,7.4,7.4,Partial Responder,GI Issues,0.583,0.542,0.458,0.479,0.479,190,270,202,253,113,95
+P00882,35,Female,27.9,Control,None,0,Moderate,Good,Moderate,8.3,8.1,8.2,8.3,8.0,8.1,Minimal Responder,None,0.622,0.642,0.661,0.603,0.622,194,307,220,69,128,79
+P00883,32,Male,22.7,Treatment,Sitagliptin,50,Moderate,Poor,Moderate,10.6,10.5,10.6,10.3,10.4,10.3,Minimal Responder,None,0.924,0.93,0.912,0.918,0.912,265,355,189,215,118,85
+P00884,50,Female,29.4,Control,None,0,Good,Poor,Moderate,6.8,6.8,6.8,6.5,6.6,6.5,Minimal Responder,None,0.358,0.358,0.303,0.321,0.303,147,234,142,197,110,107
+P00885,65,Male,22.6,Treatment,Metformin,2000,Moderate,Poor,Active,10.9,10.5,10.6,10.4,10.2,9.9,Partial Responder,GI Issues,0.924,0.93,0.918,0.905,0.881,283,387,193,117,143,71
+P00886,47,Female,26.5,Treatment,Sitagliptin,25,Poor,Moderate,Active,8.4,8.3,8.1,8.1,8.1,8.1,Minimal Responder,Headache,0.661,0.622,0.622,0.622,0.622,220,337,202,207,146,76
+P00887,74,Female,34.0,Treatment,Metformin,2000,Good,Good,Sedentary,8.4,7.8,7.7,6.9,6.6,6.7,Excellent Responder,None,0.562,0.542,0.378,0.321,0.339,201,282,175,197,133,79
+P00888,77,Female,38.4,Treatment,Metformin,1500,Good,Good,Moderate,7.4,6.8,6.4,5.9,5.5,5.5,Excellent Responder,None,0.358,0.286,0.209,0.159,0.159,168,226,226,182,109,68
+P00889,37,Male,24.3,Control,None,0,Moderate,Good,Sedentary,9.7,9.7,9.8,9.7,9.7,9.9,Minimal Responder,None,0.862,0.872,0.862,0.862,0.881,238,371,167,183,162,82
+P00890,64,Male,28.6,Treatment,Sitagliptin,50,Good,Poor,Sedentary,8.5,8.5,8.4,8.3,8.2,8.2,Minimal Responder,None,0.697,0.679,0.661,0.642,0.642,186,259,210,139,134,81
+P00891,43,Female,32.9,Control,None,0,Good,Moderate,Moderate,8.2,7.9,8.0,7.9,8.1,8.0,Minimal Responder,None,0.583,0.603,0.583,0.622,0.603,190,285,214,189,129,65
+P00892,45,Female,24.4,Treatment,Sitagliptin,50,Good,Poor,Active,9.4,9.5,9.1,9.1,9.0,8.9,Minimal Responder,None,0.841,0.791,0.791,0.777,0.763,216,318,213,143,95,90
+P00893,56,Male,28.4,Control,None,0,Good,Good,Active,9.4,9.2,8.9,8.8,9.0,8.8,Partial Responder,None,0.805,0.763,0.747,0.777,0.747,228,329,194,149,116,80
+P00894,39,Male,26.0,Treatment,Metformin,1000,Good,Good,Sedentary,9.9,9.5,9.2,8.7,8.5,8.3,Good Responder,None,0.841,0.805,0.731,0.697,0.661,230,333,182,202,133,77
+P00895,57,Male,37.7,Treatment,Metformin,1500,Good,Good,Active,8.9,8.0,7.5,7.0,6.6,6.3,Excellent Responder,Mild,0.603,0.5,0.397,0.321,0.269,205,312,159,93,134,74
+P00896,79,Male,30.3,Control,None,0,Moderate,Poor,Moderate,10.1,10.1,9.9,9.9,9.8,9.9,Minimal Responder,None,0.897,0.881,0.881,0.872,0.881,224,297,202,215,125,57
+P00897,41,Female,29.3,Treatment,Metformin,850,Good,Good,Active,7.1,6.6,6.3,5.7,5.4,5.4,Good Responder,None,0.321,0.269,0.182,0.148,0.148,145,218,178,221,140,86
+P00898,46,Male,35.7,Treatment,Metformin,850,Good,Good,Moderate,7.6,7.1,6.6,6.5,6.4,6.2,Good Responder,GI Issues,0.417,0.321,0.303,0.286,0.253,175,275,178,207,158,82
+P00899,41,Male,29.1,Control,None,0,Moderate,Poor,Sedentary,8.2,8.4,8.4,8.3,8.2,8.4,Non-Responder,None,0.679,0.679,0.661,0.642,0.679,180,237,213,174,121,84
+P00900,61,Male,37.9,Control,None,0,Moderate,Moderate,Active,6.8,6.7,6.3,6.4,6.6,6.3,Minimal Responder,None,0.339,0.269,0.286,0.321,0.269,159,213,189,191,119,75
+P00901,61,Female,30.4,Treatment,Metformin,1000,Moderate,Poor,Sedentary,9.6,9.5,9.4,9.2,9.1,9.1,Minimal Responder,None,0.841,0.83,0.805,0.791,0.791,219,332,192,159,136,69
+P00902,73,Male,26.6,Treatment,Metformin,500,Moderate,Good,Active,8.5,8.1,8.0,7.8,7.6,7.4,Partial Responder,None,0.622,0.603,0.562,0.521,0.479,202,289,224,170,113,91
+P00903,44,Female,39.9,Treatment,Metformin,2000,Moderate,Poor,Active,7.5,7.2,7.2,6.9,6.8,6.8,Partial Responder,None,0.438,0.438,0.378,0.358,0.358,161,229,139,100,121,74
+P00904,55,Female,35.2,Treatment,Metformin,1500,Good,Good,Sedentary,9.5,9.2,8.6,8.1,7.8,7.9,Good Responder,None,0.805,0.714,0.622,0.562,0.583,230,308,155,183,131,82
+P00905,62,Male,33.8,Control,None,0,Moderate,Moderate,Sedentary,8.5,8.7,8.8,8.7,8.5,8.7,Non-Responder,None,0.731,0.747,0.731,0.697,0.731,182,264,133,180,119,85
+P00906,56,Male,25.9,Control,None,0,Good,Good,Active,7.4,7.3,7.1,6.8,6.8,7.0,Partial Responder,None,0.458,0.417,0.358,0.358,0.397,161,215,132,128,134,72
+P00907,76,Female,22.0,Treatment,Metformin,1500,Moderate,Good,Sedentary,7.9,7.4,7.4,6.6,6.4,6.5,Good Responder,None,0.479,0.479,0.321,0.286,0.303,172,248,251,240,99,78
+P00908,60,Female,36.8,Control,None,0,Moderate,Good,Sedentary,9.1,9.1,9.1,9.3,9.0,9.3,Non-Responder,None,0.791,0.791,0.818,0.777,0.818,223,341,200,177,122,93
+P00909,79,Female,23.5,Treatment,Empagliflozin,10,Good,Poor,Moderate,8.2,8.1,8.0,7.8,7.9,7.9,Minimal Responder,None,0.622,0.603,0.562,0.583,0.583,193,266,193,110,134,83
+P00910,76,Female,23.6,Control,None,0,Good,Good,Active,8.7,8.6,8.6,8.3,8.1,8.0,Minimal Responder,None,0.714,0.714,0.661,0.622,0.603,191,276,215,223,136,87
+P00911,67,Male,29.6,Control,None,0,Poor,Good,Active,6.8,6.6,6.6,6.5,6.7,6.6,Minimal Responder,None,0.321,0.321,0.303,0.339,0.321,146,233,198,132,127,100
+P00912,51,Male,31.3,Treatment,Empagliflozin,10,Moderate,Good,Sedentary,9.3,9.1,9.0,8.8,8.7,8.4,Partial Responder,None,0.791,0.777,0.747,0.731,0.679,212,319,146,94,127,79
+P00913,64,Female,22.7,Treatment,Metformin,500,Moderate,Moderate,Active,9.8,9.5,9.5,9.2,9.3,9.3,Partial Responder,GI Issues,0.841,0.841,0.805,0.818,0.818,244,379,190,216,137,81
+P00914,45,Male,36.5,Treatment,Metformin,1000,Moderate,Moderate,Sedentary,9.5,9.4,9.0,8.9,8.6,8.6,Partial Responder,None,0.83,0.777,0.763,0.714,0.714,239,340,215,222,154,79
+P00915,69,Female,28.3,Control,None,0,Good,Moderate,Moderate,8.3,8.1,7.9,8.2,8.0,8.1,Minimal Responder,None,0.622,0.583,0.642,0.603,0.622,177,271,204,65,110,66
+P00916,73,Male,33.3,Control,None,0,Moderate,Poor,Active,6.7,6.6,6.5,6.2,6.0,6.3,Partial Responder,None,0.321,0.303,0.253,0.223,0.269,154,202,133,126,141,99
+P00917,78,Female,26.5,Control,None,0,Moderate,Moderate,Active,7.2,7.2,7.1,6.7,6.7,6.6,Partial Responder,None,0.438,0.417,0.339,0.339,0.321,152,203,170,135,135,70
+P00918,54,Female,29.3,Treatment,Metformin,1000,Poor,Good,Active,10.9,10.3,10.0,9.7,9.4,9.0,Good Responder,None,0.912,0.889,0.862,0.83,0.777,264,359,205,117,142,82
+P00919,39,Female,28.5,Treatment,Sitagliptin,50,Moderate,Good,Moderate,10.9,10.6,10.5,10.3,10.1,10.1,Partial Responder,None,0.93,0.924,0.912,0.897,0.897,266,378,236,178,82,75
+P00920,46,Female,27.8,Treatment,Sitagliptin,100,Moderate,Moderate,Moderate,8.2,8.1,7.9,7.6,7.6,7.7,Partial Responder,None,0.622,0.583,0.521,0.521,0.542,207,322,115,276,134,71
+P00921,74,Female,24.2,Treatment,Empagliflozin,10,Poor,Good,Active,6.6,6.4,6.0,5.8,5.8,5.7,Partial Responder,None,0.286,0.223,0.195,0.195,0.182,133,187,191,111,124,101
+P00922,48,Female,29.1,Treatment,Metformin,850,Good,Poor,Active,8.6,8.4,8.2,8.1,7.7,7.8,Partial Responder,None,0.679,0.642,0.622,0.542,0.562,208,311,117,232,107,82
+P00923,74,Male,35.2,Treatment,Metformin,850,Good,Good,Active,7.0,6.3,6.1,5.8,5.4,5.2,Good Responder,None,0.269,0.237,0.195,0.148,0.128,142,215,216,306,124,88
+P00924,39,Female,33.5,Treatment,Metformin,1000,Moderate,Poor,Active,7.8,7.5,7.5,7.2,7.3,7.1,Partial Responder,None,0.5,0.5,0.438,0.458,0.417,165,244,187,131,153,85
+P00925,66,Male,39.4,Treatment,Metformin,1000,Good,Moderate,Moderate,10.0,9.7,9.3,9.1,9.1,8.7,Partial Responder,None,0.862,0.818,0.791,0.791,0.731,241,339,125,146,140,84
+P00926,59,Male,22.2,Treatment,Metformin,500,Good,Moderate,Moderate,8.9,8.7,8.5,8.3,8.3,8.3,Partial Responder,None,0.731,0.697,0.661,0.661,0.661,209,308,161,222,127,81
+P00927,72,Female,27.8,Treatment,Metformin,850,Good,Good,Moderate,9.6,9.2,9.0,8.2,8.1,8.0,Good Responder,None,0.805,0.777,0.642,0.622,0.603,200,281,190,214,121,68
+P00928,39,Female,32.0,Control,None,0,Poor,Moderate,Sedentary,6.7,6.9,6.8,6.9,7.2,6.9,Non-Responder,None,0.378,0.358,0.378,0.438,0.378,157,208,169,215,135,81
+P00929,72,Female,29.4,Treatment,Metformin,1500,Moderate,Moderate,Moderate,9.7,9.5,9.0,8.9,8.3,8.6,Partial Responder,GI Issues,0.841,0.777,0.763,0.661,0.714,210,336,170,225,117,87
+P00930,38,Female,24.6,Control,None,0,Poor,Moderate,Sedentary,7.9,7.9,8.1,7.9,8.2,8.3,Minimal Responder,None,0.583,0.622,0.583,0.642,0.661,179,240,212,154,135,97
+P00931,55,Male,27.4,Treatment,Sitagliptin,50,Moderate,Poor,Sedentary,10.9,10.8,10.8,10.7,10.6,10.6,Minimal Responder,Headache,0.94,0.94,0.935,0.93,0.93,279,369,201,109,114,83
+P00932,56,Female,36.8,Treatment,Metformin,500,Moderate,Good,Active,7.7,7.3,7.2,6.8,6.7,6.7,Partial Responder,None,0.458,0.438,0.358,0.339,0.339,196,306,207,200,124,73
+P00933,61,Male,33.8,Treatment,Metformin,1000,Moderate,Moderate,Sedentary,10.0,9.6,9.6,9.4,8.9,9.2,Partial Responder,None,0.852,0.852,0.83,0.763,0.805,237,330,206,186,135,72
+P00934,55,Female,34.1,Treatment,Metformin,850,Good,Good,Sedentary,8.5,7.9,7.8,7.6,7.5,7.3,Partial Responder,None,0.583,0.562,0.521,0.5,0.458,183,274,183,239,130,69
+P00935,69,Male,27.6,Control,None,0,Poor,Good,Sedentary,10.6,10.6,10.7,10.9,10.9,10.9,Non-Responder,None,0.93,0.935,0.944,0.944,0.944,270,378,246,258,137,62
+P00936,37,Female,27.2,Treatment,Sitagliptin,50,Good,Poor,Moderate,8.1,8.1,7.9,7.8,7.8,7.9,Minimal Responder,None,0.622,0.583,0.562,0.562,0.583,194,275,247,216,120,80
+P00937,66,Female,31.7,Treatment,Sitagliptin,50,Poor,Good,Active,10.5,10.1,10.1,9.8,9.7,9.7,Partial Responder,None,0.897,0.897,0.872,0.862,0.862,250,345,180,223,108,84
+P00938,58,Male,27.8,Treatment,Sitagliptin,100,Good,Moderate,Moderate,6.7,6.4,6.2,6.0,6.1,5.9,Partial Responder,None,0.286,0.253,0.223,0.237,0.209,139,195,216,241,168,85
+P00939,78,Male,35.1,Treatment,Empagliflozin,10,Good,Good,Moderate,6.8,6.4,6.4,6.2,5.7,5.8,Partial Responder,None,0.286,0.286,0.253,0.182,0.195,141,201,207,115,140,83
+P00940,75,Female,38.8,Treatment,Sitagliptin,25,Moderate,Good,Moderate,8.3,8.1,8.1,7.8,7.8,7.7,Partial Responder,None,0.622,0.622,0.562,0.562,0.542,188,285,151,159,152,96
+P00941,74,Male,29.2,Treatment,Metformin,2000,Poor,Good,Sedentary,9.0,8.6,8.4,8.2,7.9,7.7,Partial Responder,None,0.714,0.679,0.642,0.583,0.542,215,312,225,239,122,70
+P00942,73,Male,34.6,Treatment,Empagliflozin,10,Poor,Poor,Sedentary,7.2,7.1,7.1,7.0,7.0,6.9,Minimal Responder,None,0.417,0.417,0.397,0.397,0.378,154,244,175,245,119,94
+P00943,51,Female,22.5,Control,None,0,Moderate,Poor,Moderate,10.2,10.3,10.0,10.1,9.9,10.0,Minimal Responder,None,0.912,0.889,0.897,0.881,0.889,242,318,219,231,119,82
+P00944,63,Female,31.5,Treatment,Sitagliptin,100,Good,Poor,Sedentary,7.5,7.5,7.5,7.1,7.1,7.3,Minimal Responder,None,0.5,0.5,0.417,0.417,0.458,175,254,159,198,144,86
+P00945,76,Male,23.4,Treatment,Sitagliptin,25,Moderate,Good,Sedentary,9.8,9.5,9.5,9.5,9.3,9.3,Minimal Responder,None,0.841,0.841,0.841,0.818,0.818,220,325,204,124,127,91
+P00946,66,Female,37.7,Treatment,Metformin,2000,Good,Good,Moderate,7.8,7.0,6.9,6.1,5.7,5.8,Excellent Responder,GI Issues,0.397,0.378,0.237,0.182,0.195,173,273,156,173,142,69
+P00947,79,Female,30.1,Control,None,0,Moderate,Moderate,Sedentary,10.7,10.7,10.9,10.8,10.8,10.9,Non-Responder,None,0.935,0.944,0.94,0.94,0.944,244,321,219,180,167,88
+P00948,59,Male,27.9,Control,None,0,Moderate,Good,Moderate,6.8,6.9,6.7,6.7,6.8,6.5,Minimal Responder,None,0.378,0.339,0.339,0.358,0.303,150,221,173,237,99,76
+P00949,41,Female,36.9,Treatment,Empagliflozin,25,Moderate,Moderate,Sedentary,10.7,10.4,10.3,10.1,10.0,10.0,Partial Responder,None,0.918,0.912,0.897,0.889,0.889,241,375,200,134,111,76
+P00950,33,Female,36.2,Treatment,Metformin,1500,Moderate,Poor,Sedentary,6.9,6.7,6.4,6.3,6.4,6.5,Partial Responder,None,0.339,0.286,0.269,0.286,0.303,160,220,202,216,103,73
+P00951,40,Male,33.7,Treatment,Metformin,2000,Good,Poor,Moderate,7.7,7.3,7.4,7.2,7.1,6.8,Partial Responder,GI Issues,0.458,0.479,0.438,0.417,0.358,161,252,212,136,150,75
+P00952,79,Female,30.3,Control,None,0,Poor,Good,Moderate,7.2,7.0,7.3,7.1,7.2,7.3,Minimal Responder,None,0.397,0.458,0.417,0.438,0.458,142,185,117,197,146,64
+P00953,63,Female,23.1,Treatment,Metformin,1500,Good,Good,Active,10.8,10.1,9.4,8.8,8.2,8.1,Excellent Responder,None,0.897,0.83,0.747,0.642,0.622,260,395,224,251,151,81
+P00954,47,Male,37.9,Treatment,Sitagliptin,25,Poor,Good,Moderate,7.9,7.6,7.7,7.6,7.5,7.3,Minimal Responder,Headache,0.521,0.542,0.521,0.5,0.458,197,311,182,175,120,83
+P00955,72,Female,26.7,Treatment,Metformin,1500,Moderate,Good,Active,10.9,10.5,9.8,9.1,8.8,8.6,Excellent Responder,None,0.924,0.872,0.791,0.747,0.714,273,409,210,175,137,80
+P00956,54,Female,29.5,Treatment,Sitagliptin,25,Poor,Moderate,Sedentary,9.3,9.3,9.2,9.2,9.1,9.0,Minimal Responder,None,0.818,0.805,0.805,0.791,0.777,201,288,241,208,126,79
+P00957,70,Male,32.8,Control,None,0,Poor,Good,Sedentary,7.5,7.7,7.7,7.9,7.7,7.7,Non-Responder,None,0.542,0.542,0.583,0.542,0.542,155,204,162,139,96,94
+P00958,30,Female,35.2,Control,None,0,Good,Poor,Active,8.8,8.7,8.3,8.2,8.4,8.2,Partial Responder,None,0.731,0.661,0.642,0.679,0.642,202,318,189,78,150,75
+P00959,69,Male,38.0,Treatment,Metformin,2000,Good,Moderate,Moderate,6.8,6.3,6.1,5.9,5.5,5.1,Partial Responder,None,0.269,0.237,0.209,0.159,0.119,171,246,184,187,138,86
+P00960,46,Male,29.5,Control,None,0,Poor,Poor,Active,8.4,8.4,8.3,8.0,8.0,8.1,Minimal Responder,None,0.679,0.661,0.603,0.603,0.622,185,242,208,149,137,78
+P00961,73,Male,25.3,Control,None,0,Good,Good,Moderate,7.1,7.0,7.1,6.8,6.7,7.1,Minimal Responder,None,0.397,0.417,0.358,0.339,0.417,148,223,181,114,151,89
+P00962,78,Female,31.6,Control,None,0,Moderate,Poor,Sedentary,10.0,10.1,10.0,10.1,10.4,10.2,Non-Responder,None,0.897,0.889,0.897,0.918,0.905,256,370,183,244,115,78
+P00963,45,Female,37.2,Treatment,Metformin,2000,Poor,Poor,Sedentary,10.2,10.0,10.2,9.9,9.7,9.6,Minimal Responder,GI Issues,0.889,0.905,0.881,0.862,0.852,248,332,179,256,148,67
+P00964,38,Male,22.6,Treatment,Metformin,500,Good,Good,Active,8.3,7.8,7.5,7.5,7.3,7.2,Partial Responder,None,0.562,0.5,0.5,0.458,0.438,202,276,233,171,118,63
+P00965,50,Male,23.7,Treatment,Metformin,1500,Moderate,Good,Sedentary,8.5,7.9,7.7,7.5,6.9,6.9,Good Responder,None,0.583,0.542,0.5,0.378,0.378,190,251,174,80,138,65
+P00966,75,Female,29.6,Treatment,Empagliflozin,10,Moderate,Good,Active,7.3,6.9,6.8,6.5,6.6,6.2,Partial Responder,None,0.378,0.358,0.303,0.321,0.253,162,239,107,192,123,77
+P00967,77,Male,29.3,Treatment,Metformin,850,Good,Good,Sedentary,8.8,8.5,8.2,7.8,7.7,7.4,Good Responder,None,0.697,0.642,0.562,0.542,0.479,219,326,186,202,94,69
+P00968,30,Male,28.6,Control,None,0,Good,Good,Sedentary,8.5,8.4,8.4,8.3,8.5,8.6,Minimal Responder,None,0.679,0.679,0.661,0.697,0.714,196,285,154,90,148,79
+P00969,36,Male,25.5,Treatment,Metformin,850,Moderate,Good,Active,8.3,7.6,7.6,7.0,6.9,6.9,Good Responder,None,0.521,0.521,0.397,0.378,0.378,203,314,194,205,119,72
+P00970,32,Female,22.2,Treatment,Metformin,500,Moderate,Good,Active,9.4,9.1,8.9,8.7,8.4,8.2,Partial Responder,None,0.791,0.763,0.731,0.679,0.642,227,354,262,195,103,76
+P00971,64,Female,25.0,Control,None,0,Poor,Good,Sedentary,6.6,6.9,6.8,6.7,7.0,6.7,Non-Responder,None,0.378,0.358,0.339,0.397,0.339,132,196,172,221,128,73
+P00972,64,Female,25.7,Treatment,Sitagliptin,25,Good,Good,Sedentary,9.3,9.2,9.1,8.8,8.8,8.8,Partial Responder,None,0.805,0.791,0.747,0.747,0.747,220,287,197,201,121,81
+P00973,76,Female,24.5,Treatment,Metformin,500,Moderate,Good,Sedentary,10.4,10.1,10.0,9.9,9.6,9.7,Partial Responder,GI Issues,0.897,0.889,0.881,0.852,0.862,262,395,169,125,140,74
+P00974,41,Female,34.9,Treatment,Empagliflozin,25,Good,Good,Sedentary,7.9,7.4,7.2,7.1,7.0,6.6,Partial Responder,None,0.479,0.438,0.417,0.397,0.321,187,267,183,212,131,89
+P00975,39,Male,39.8,Control,None,0,Good,Poor,Moderate,9.4,9.3,9.2,9.2,8.9,9.2,Minimal Responder,None,0.818,0.805,0.805,0.763,0.805,223,328,241,128,141,85
+P00976,59,Female,29.4,Control,None,0,Poor,Good,Active,7.4,7.3,7.3,7.2,7.1,7.2,Minimal Responder,None,0.458,0.458,0.438,0.417,0.438,147,220,190,185,153,94
+P00977,70,Female,35.6,Treatment,Sitagliptin,50,Moderate,Good,Active,7.7,7.3,7.3,7.1,6.7,6.7,Partial Responder,None,0.458,0.458,0.417,0.339,0.339,156,219,192,180,140,77
+P00978,78,Male,22.1,Control,None,0,Poor,Good,Moderate,9.6,9.7,9.6,9.7,9.7,9.5,Non-Responder,None,0.862,0.852,0.862,0.862,0.841,213,336,205,145,128,68
+P00979,60,Female,29.4,Control,None,0,Poor,Poor,Moderate,10.1,10.3,10.2,10.2,10.0,10.2,Non-Responder,None,0.912,0.905,0.905,0.889,0.905,238,319,132,253,124,94
+P00980,49,Female,33.8,Treatment,Metformin,1000,Poor,Good,Moderate,10.7,10.3,10.0,9.6,9.3,9.4,Good Responder,None,0.912,0.889,0.852,0.818,0.83,257,386,161,103,131,83
+P00981,45,Female,39.6,Control,None,0,Good,Good,Moderate,6.6,6.5,6.5,6.4,6.2,6.4,Minimal Responder,None,0.303,0.303,0.286,0.253,0.286,128,167,197,224,134,66
+P00982,58,Male,30.4,Control,None,0,Moderate,Moderate,Moderate,7.4,7.3,7.4,7.2,7.3,7.2,Minimal Responder,None,0.458,0.479,0.438,0.458,0.438,176,278,139,272,146,66
+P00983,30,Female,25.4,Control,None,0,Good,Moderate,Moderate,10.7,10.8,10.5,10.4,10.4,10.3,Minimal Responder,None,0.94,0.924,0.918,0.918,0.912,248,331,209,164,134,72
+P00984,60,Male,28.8,Treatment,Sitagliptin,100,Good,Good,Moderate,10.8,10.4,10.0,9.9,9.4,9.2,Partial Responder,None,0.918,0.889,0.881,0.83,0.805,250,332,138,105,137,88
+P00985,31,Female,23.5,Treatment,Sitagliptin,100,Moderate,Moderate,Sedentary,7.4,7.2,7.0,7.1,6.7,6.8,Minimal Responder,None,0.438,0.397,0.417,0.339,0.358,167,234,155,117,112,92
+P00986,52,Female,35.1,Control,None,0,Good,Moderate,Active,9.4,9.3,9.2,9.0,8.8,9.0,Minimal Responder,None,0.818,0.805,0.777,0.747,0.777,233,329,211,301,150,81
+P00987,40,Female,37.1,Control,None,0,Moderate,Poor,Sedentary,8.1,8.2,8.3,8.4,8.2,8.1,Non-Responder,None,0.642,0.661,0.679,0.642,0.622,206,281,202,180,146,83
+P00988,75,Male,29.4,Treatment,Metformin,1000,Good,Good,Sedentary,9.7,9.2,9.1,8.6,8.3,8.0,Good Responder,None,0.805,0.791,0.714,0.661,0.603,238,351,195,172,127,73
+P00989,53,Male,29.7,Treatment,Sitagliptin,100,Moderate,Poor,Moderate,9.5,9.5,9.3,9.0,9.1,9.2,Partial Responder,Mild,0.841,0.818,0.777,0.791,0.805,242,347,226,196,119,76
+P00990,52,Female,22.1,Treatment,Metformin,1000,Good,Poor,Active,10.1,9.9,9.6,9.7,9.4,9.4,Minimal Responder,GI Issues,0.881,0.852,0.862,0.83,0.83,231,303,125,146,122,84
+P00991,38,Female,35.5,Treatment,Metformin,500,Moderate,Moderate,Sedentary,7.4,7.2,7.2,7.1,7.0,6.9,Minimal Responder,None,0.438,0.438,0.417,0.397,0.378,187,261,190,164,116,95
+P00992,54,Female,30.3,Treatment,Metformin,1500,Moderate,Poor,Moderate,7.0,6.9,6.9,6.5,6.5,6.4,Partial Responder,None,0.378,0.378,0.303,0.303,0.286,136,210,163,218,153,75
+P00993,42,Male,25.7,Treatment,Metformin,2000,Moderate,Good,Sedentary,8.1,7.7,7.4,7.0,6.6,6.5,Good Responder,None,0.542,0.479,0.397,0.321,0.303,181,273,145,248,130,85
+P00994,79,Female,35.8,Control,None,0,Moderate,Good,Active,8.5,8.2,8.3,7.9,8.1,8.1,Partial Responder,None,0.642,0.661,0.583,0.622,0.622,203,308,199,183,136,100
+P00995,39,Female,32.7,Treatment,Sitagliptin,50,Moderate,Poor,Sedentary,7.1,7.1,7.0,7.0,6.9,7.0,Minimal Responder,None,0.417,0.397,0.397,0.378,0.397,141,213,222,149,99,82
+P00996,60,Male,29.7,Control,None,0,Good,Moderate,Sedentary,8.8,8.8,8.7,8.7,8.6,9.1,Minimal Responder,None,0.747,0.731,0.731,0.714,0.791,197,274,151,160,102,85
+P00997,72,Male,37.0,Treatment,Empagliflozin,25,Good,Moderate,Active,10.6,10.2,10.0,9.7,9.7,9.3,Partial Responder,None,0.905,0.889,0.862,0.862,0.818,247,328,169,186,117,58
+P00998,71,Female,28.8,Treatment,Metformin,1500,Moderate,Good,Active,10.7,10.1,9.5,9.1,8.7,8.6,Excellent Responder,None,0.897,0.841,0.791,0.731,0.714,257,355,193,206,131,69
+P00999,48,Male,39.9,Treatment,Sitagliptin,100,Poor,Moderate,Moderate,7.1,7.0,6.9,6.8,6.8,6.6,Minimal Responder,None,0.397,0.378,0.358,0.358,0.321,171,265,181,234,134,82
+P01000,75,Female,28.7,Treatment,Sitagliptin,50,Moderate,Good,Active,7.8,7.4,7.4,7.1,7.1,7.0,Partial Responder,None,0.479,0.479,0.417,0.417,0.397,177,282,191,220,95,73

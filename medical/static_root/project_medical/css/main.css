@@ -1,0 +1,208 @@
+﻿*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue", Arial, sans-serif;color:#233142;background:#f6f8fa;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:40px 20px}
+
+/* header */
+.site-header{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);position:sticky;top:0;z-index:20}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+.logo a{display:flex;align-items:center;text-decoration:none;color:#123049;font-weight:700}
+.logo img{margin-right:10px}
+.main-nav a{margin:0 10px;color:#6b7380;text-decoration:none}
+.auth-links a{margin-left:12px;text-decoration:none;padding:8px 14px;border-radius:8px}
+.auth-links .login{color:#123049}
+.auth-links .signup{background:#0066e6;color:#fff}
+
+/* hero */
+.hero{background-size:cover;background-position:center;min-height:380px;position:relative;display:flex;align-items:center}
+.hero-overlay{background:linear-gradient(rgba(18,48,73,0.6),rgba(18,48,73,0.6));width:100%;padding:80px 0}
+.hero-inner{color:#fff;text-align:center}
+.hero-inner h1{font-size:56px;line-height:1;margin-bottom:18px;font-weight:800;letter-spacing:-1px}
+.hero-inner p{max-width:820px;margin:0 auto 24px;color:rgba(255,255,255,0.95);font-size:18px}
+.hero-cta .btn{margin:0 8px}
+
+/* buttons */
+.btn{display:inline-block;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer;border:none}
+.btn.primary{background:#00b0d9;color:#fff}
+.btn.outline{background:#fff;color:#123049}
+
+/* features */
+.features-section{text-align:center;padding:60px 0}
+.features-section h2{font-size:36px;color:#123049;margin-bottom:8px}
+.features-section .lead{max-width:760px;margin:0 auto 34px;color:#6b7380}
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:30px}
+.card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 12px 30px rgba(19,36,73,0.06);text-align:left}
+.card-icon{width:56px;height:56px;background:#eef6fb;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card h3{color:#123049;margin-bottom:8px}
+.card p{color:#6b7380}
+
+/* about */
+.about-section{padding:70px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-image img{width:100%;border-radius:12px;box-shadow:0 20px 40px rgba(18,48,73,0.08);}
+
+/* contact */
+/* .contact-section{padding:70px 0;background:#f0f3f6}
+.contact-form-wrap{max-width:760px;margin:0 auto;text-align:left}
+.contact-form-wrap form label{display:block;margin:14px 0 6px;color:#2f3b48;font-weight:600}
+.contact-form-wrap input[type="text"],
+.contact-form-wrap input[type="email"],
+.contact-form-wrap textarea{width:100%;padding:16px;border-radius:8px;border:none;background:#2f3030;color:#fff}
+.contact-form-wrap button{display:block;width:100%;padding:14px;border-radius:10px;border:none;background:#004bd6;color:#fff;margin-top:18px;font-weight:700} */
+
+/* FULL-WIDTH SECTION */
+.contact-faq-section {
+    width: 100%;
+    background: #f0f3f6; /* same soft light blue background */
+    padding: 60px 0;
+}
+
+/* WRAPPER (centers content like screenshot) */
+.contact-faq-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* LEFT SIDE – CONTACT FORM */
+.contact-form-wrap {
+    flex: 1;
+}
+
+.contact-form-wrap h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #0b1e37;
+}
+
+.contact-form-wrap p {
+    margin-bottom: 25px;
+    color: #455a74;
+}
+
+/* INPUTS – KEEP BLACK AS YOU SAID */
+.contact-form-wrap input,
+.contact-form-wrap textarea {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #2f3030;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.contact-form-wrap button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background: #0067ff;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* RIGHT SIDE – FAQ */
+.faq-wrap {
+    flex: 1;
+}
+
+.faq-wrap h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0b1e37;
+}
+
+.faq-item {
+    background: transparent;
+    padding: 18px 0;
+    border-bottom: 1px solid #d2d8df;
+    cursor: pointer;
+    font-size: 18px;
+    color: #1c2a3b;
+}
+
+/* MOBILE RESPONSIVE — FAQ goes DOWN */
+@media (max-width: 900px) {
+    .contact-faq-container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+/* footer */
+.site-footer{padding:20px 0;background:#fff;text-align:center;color:#6b7380;border-top:1px solid rgba(0,0,0,0.04)}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-inner h1{font-size:36px}
+  .cards-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .main-nav{display:none}
+  .header-inner{flex-wrap:wrap}
+}
+/* fallback */
+.hero{background-color:#2b6ea3}
+
+
+/* Reactive/clickable card styles */
+.card {
+  cursor: pointer;                 /* show it's clickable */
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
+  will-change: transform;
+  position: relative;              /* for ripple */
+  overflow: hidden;                /* clip ripple */
+  user-select: none;
+  outline: none;
+}
+
+/* hover / focus lift */
+.card:hover,
+.card:focus {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 22px 40px rgba(19,36,73,0.10);
+}
+
+/* active (mouse press) — quick press-in */
+.card:active,
+.card[aria-pressed="true"] {
+  transform: translateY(-2px) scale(0.995);
+  box-shadow: 0 8px 20px rgba(19,36,73,0.12);
+}
+
+/* keyboard focus visible */
+.card:focus-visible {
+  box-shadow: 0 8px 30px rgba(0,123,255,0.18);
+  border-radius: 12px;
+}
+
+/* improve the card-icon spacing when clickable */
+.card-icon { transition: transform 220ms; }
+.card:hover .card-icon,
+.card:focus .card-icon { transform: translateY(-4px) scale(1.03); }
+
+/* Ripple element (inserted by JS) */
+.card .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0.35;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.85), rgba(255,255,255,0.30));
+  transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 400ms ease;
+  mix-blend-mode: overlay;
+}
+
+
+
+

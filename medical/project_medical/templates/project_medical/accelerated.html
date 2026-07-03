@@ -1,0 +1,821 @@
+{% extends "project_medical/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="container accelerated-page">
+    <div class="accelerated-hero">
+        <div>
+            <span class="feature-kicker">Virtual trial acceleration</span>
+            <h1>Accelerated Timelines</h1>
+            <p>Compare traditional trial timing with virtual simulation using generated patient data.</p>
+        </div>
+        <div class="hero-time-card">
+            <span>Projected Time Saved</span>
+            <strong>90%+</strong>
+            <small>early evaluation</small>
+        </div>
+    </div>
+
+    <div id="noDataState" class="empty-state" style="display:none;">
+        <h2>No generated patient data found</h2>
+        <p>Please generate patient data first, then open Accelerated Timelines again.</p>
+        <a class="btn primary" href="{% url 'project_medical:synthetic' %}">Go to Synthetic Patient Generator</a>
+    </div>
+
+    <div id="acceleratedContent" style="display:none;">
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span>Total Patients</span>
+                <strong id="totalPatients">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Treatment Group</span>
+                <strong id="treatmentPatients">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Control Group</span>
+                <strong id="controlPatients">0</strong>
+            </div>
+            <div class="summary-card highlight">
+                <span>Early Evaluation</span>
+                <strong>90%+ Faster</strong>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-heading">
+                <div>
+                    <span class="feature-kicker">Timeline comparison</span>
+                    <h2>Traditional Trial vs Virtual Simulation</h2>
+                    <p>Virtual simulation replaces long early-stage recruitment, follow-up, and manual analysis with generated patient data and automated calculations.</p>
+                </div>
+            </div>
+
+            <div class="timeline-compare">
+                <div class="timeline-card traditional">
+                    <div class="timeline-card-head">
+                        <span>Traditional Trial</span>
+                        <strong>22 months</strong>
+                    </div>
+                    <div class="phase-stack">
+                        <div style="width:27%;">Recruitment</div>
+                        <div style="width:9%;">Screening</div>
+                        <div style="width:55%;">Follow-up</div>
+                        <div style="width:9%;">Analysis</div>
+                    </div>
+                </div>
+
+                <div class="timeline-card virtual">
+                    <div class="timeline-card-head">
+                        <span>Virtual Simulation</span>
+                        <strong>Few minutes</strong>
+                    </div>
+                    <div class="phase-stack">
+                        <div style="width:28%;">Generated</div>
+                        <div style="width:22%;">Filtered</div>
+                        <div style="width:30%;">Simulated</div>
+                        <div style="width:20%;">Analyzed</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Traditional Trial</th>
+                            <th>Virtual Simulation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Patient Recruitment</td>
+                            <td>6 months</td>
+                            <td>Already generated</td>
+                        </tr>
+                        <tr>
+                            <td>Screening</td>
+                            <td>2 months</td>
+                            <td>Instant filtering</td>
+                        </tr>
+                        <tr>
+                            <td>Follow-up</td>
+                            <td>12 months</td>
+                            <td>Simulated from patient records</td>
+                        </tr>
+                        <tr>
+                            <td>Analysis</td>
+                            <td>2 months</td>
+                            <td>Automatic</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Time</td>
+                            <td>22 months</td>
+                            <td>Few minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-heading">
+                <div>
+                    <span class="feature-kicker">Patient response over time</span>
+                    <h2>Patient Improvement Timeline</h2>
+                    <p>Shows how many generated patients reach controlled diabetes levels over time.</p>
+                </div>
+            </div>
+
+            <div class="timeline-grid">
+                <div class="comparison-table-wrap">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>HbA1c &lt; 7.0%</th>
+                                <th>Fasting Glucose &lt; 126 mg/dL</th>
+                            </tr>
+                        </thead>
+                        <tbody id="timelineRows">
+                            <tr>
+                                <td colspan="3">Loading timeline...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-panel">
+                    <canvas id="improvementChart" height="260"></canvas>
+                    <div id="chartFallback" class="chart-fallback" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .accelerated-page {
+        max-width: 1180px;
+    }
+
+    .accelerated-page .btn.primary {
+        background: linear-gradient(135deg, #0066e6, #00b0d9);
+        box-shadow: 0 10px 18px rgba(0, 102, 230, 0.18);
+    }
+
+    .accelerated-hero {
+        background:
+            linear-gradient(135deg, rgba(0, 102, 230, 0.12), rgba(34, 160, 107, 0.16), rgba(245, 158, 11, 0.08)),
+            #fff;
+        border-radius: 14px;
+        padding: 30px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        box-shadow: 0 8px 24px rgba(18, 48, 73, 0.06);
+        border: 1px solid #e6eaf0;
+    }
+
+    .accelerated-hero h1 {
+        color: #123049;
+        font-size: 40px;
+        line-height: 1.1;
+        margin-bottom: 6px;
+    }
+
+    .accelerated-hero p,
+    .section-heading p,
+    .empty-state p {
+        color: #667085;
+    }
+
+    .feature-kicker {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: #0066e6;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .hero-time-card {
+        min-width: 180px;
+        padding: 18px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #123049, #22a06b);
+        color: #fff;
+        box-shadow: 0 18px 30px rgba(18, 48, 73, 0.18);
+        text-align: center;
+    }
+
+    .hero-time-card span,
+    .hero-time-card small {
+        display: block;
+        opacity: 0.86;
+    }
+
+    .hero-time-card strong {
+        display: block;
+        font-size: 42px;
+        line-height: 1;
+        margin: 8px 0;
+    }
+
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .summary-card,
+    .section-card,
+    .empty-state {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(18, 48, 73, 0.06);
+        border: 1px solid #e6eaf0;
+    }
+
+    .summary-card {
+        padding: 20px;
+        border-left: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .summary-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 5px;
+        background: linear-gradient(90deg, #0066e6, #00b0d9);
+    }
+
+    .summary-card span {
+        display: block;
+        color: #667085;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    .summary-card strong {
+        color: #123049;
+        font-size: 26px;
+    }
+
+    .summary-card.highlight {
+        color: #fff;
+        background: linear-gradient(135deg, #22a06b, #123049);
+        box-shadow: 0 14px 28px rgba(34, 160, 107, 0.18);
+    }
+
+    .summary-card.highlight::before {
+        background: linear-gradient(90deg, #43e97b, #fee140);
+    }
+
+    .summary-card.highlight span,
+    .summary-card.highlight strong {
+        color: #fff;
+    }
+
+    .section-card,
+    .empty-state {
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .section-heading {
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .section-heading h2,
+    .empty-state h2 {
+        color: #123049;
+        margin-bottom: 6px;
+    }
+
+    .comparison-table-wrap {
+        overflow-x: auto;
+    }
+
+    .timeline-compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 22px;
+    }
+
+    .timeline-card {
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid #e6eaf0;
+        background: #fbfcfe;
+    }
+
+    .timeline-card.traditional {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(250, 112, 154, 0.10));
+    }
+
+    .timeline-card.virtual {
+        background: linear-gradient(135deg, rgba(34, 160, 107, 0.14), rgba(0, 176, 217, 0.10));
+    }
+
+    .timeline-card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .timeline-card-head span {
+        color: #667085;
+        font-weight: 700;
+    }
+
+    .timeline-card-head strong {
+        color: #123049;
+        font-size: 24px;
+    }
+
+    .phase-stack {
+        display: flex;
+        height: 42px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #e6eaf0;
+    }
+
+    .phase-stack div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 68px;
+        padding: 0 8px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .timeline-card.traditional .phase-stack div:nth-child(1) { background: #f59e0b; }
+    .timeline-card.traditional .phase-stack div:nth-child(2) { background: #fa709a; }
+    .timeline-card.traditional .phase-stack div:nth-child(3) { background: #d95f39; }
+    .timeline-card.traditional .phase-stack div:nth-child(4) { background: #8a4b2f; }
+    .timeline-card.virtual .phase-stack div:nth-child(1) { background: #22a06b; }
+    .timeline-card.virtual .phase-stack div:nth-child(2) { background: #00b0d9; }
+    .timeline-card.virtual .phase-stack div:nth-child(3) { background: #0066e6; }
+    .timeline-card.virtual .phase-stack div:nth-child(4) { background: #123049; }
+
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 620px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 14px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e6eaf0;
+    }
+
+    .comparison-table th {
+        background: #123049;
+        color: #123049;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .comparison-table td {
+        color: #344054;
+    }
+
+    .comparison-table td:nth-child(3) {
+        color: #167b55;
+        font-weight: 600;
+    }
+
+    .total-row td {
+        background: #f1fbf6;
+        font-weight: 700;
+    }
+
+    .timeline-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .chart-panel {
+        min-height: 280px;
+        padding: 16px;
+        border: 1px solid #e6eaf0;
+        border-radius: 14px;
+        background:
+            linear-gradient(135deg, rgba(0, 102, 230, 0.06), rgba(34, 160, 107, 0.08)),
+            #fbfcfe;
+    }
+
+    .chart-fallback {
+        color: #667085;
+        padding: 16px;
+        line-height: 1.8;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 48px 24px;
+    }
+
+    .empty-state .btn {
+        margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+        .accelerated-hero,
+        .timeline-grid,
+        .timeline-compare {
+            grid-template-columns: 1fr;
+            display: grid;
+        }
+
+        .accelerated-hero {
+            justify-items: start;
+        }
+
+        .summary-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 560px) {
+        .summary-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .accelerated-hero h1 {
+            font-size: 28px;
+        }
+    }
+
+    .projected-row td {
+        background: #f1fbf6;
+        font-style: italic;
+    }
+</style>
+
+<script>
+const API_BASE_URL = 'http://127.0.0.1:5000';
+
+function loadFromIndexedDB(sessionId, callback) {
+    const request = indexedDB.open('TrialDataDB', 1);
+
+    request.onerror = function() {
+        callback(false, null);
+    };
+
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        if (!db.objectStoreNames.contains('patients')) {
+            db.close();
+            callback(false, null);
+            return;
+        }
+
+        const transaction = db.transaction(['patients'], 'readonly');
+        const store = transaction.objectStore('patients');
+        const getRequest = store.get(sessionId);
+
+        getRequest.onsuccess = function() {
+            const result = getRequest.result;
+            db.close();
+            callback(Boolean(result && result.data), result ? result.data : null);
+        };
+
+        getRequest.onerror = function() {
+            db.close();
+            callback(false, null);
+        };
+    };
+}
+
+async function fetchMarkovTimeline(patients) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/markov-projection`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ patients: patients, extra_steps: 2 })
+        });
+
+        if (!response.ok) throw new Error('Markov API request failed');
+
+        const data = await response.json();
+        if (!data.success) throw new Error(data.error || 'Markov API returned an error');
+
+        return data.projection;
+    } catch (error) {
+        console.warn('Markov projection unavailable, showing observed timeline only:', error);
+        return null;
+    }
+}
+
+function groupCounts(patients) {
+    const norm = function(patient) {
+        return String(getField(patient, ['treatment_group', 'group', 'treatment']) || '').toLowerCase();
+    };
+    return {
+        treatment: patients.filter(p => norm(p) === 'treatment').length,
+        control: patients.filter(p => norm(p) === 'control').length
+    };
+}
+
+function weightedControlledPercent(projection, counts, month) {
+    const total = counts.treatment + counts.control;
+    if (total === 0) return null;
+
+    const tRow = projection.Treatment.timeline.find(r => r.month === month);
+    const cRow = projection.Control.timeline.find(r => r.month === month);
+    if (!tRow || !cRow) return null;
+
+    const weighted = ((tRow.Controlled * counts.treatment) + (cRow.Controlled * counts.control)) / total;
+    return Math.round(weighted);
+}
+
+async function buildExtendedTimeline(patients, baseTimeline) {
+    const projection = await fetchMarkovTimeline(patients);
+    if (!projection) return baseTimeline;
+
+    const counts = groupCounts(patients);
+    const projectedMonths = [48, 60];
+
+    const extraRows = projectedMonths.map(function(month) {
+        const hba1c = weightedControlledPercent(projection, counts, month);
+        return {
+            month: month,
+            hba1c: hba1c === null ? null : hba1c,
+            glucose: null,
+            projected: true
+        };
+    }).filter(row => row.hba1c !== null);
+
+    return baseTimeline.concat(extraRows);
+}
+
+function getField(patient, names) {
+    for (const name of names) {
+        if (patient[name] !== undefined && patient[name] !== null && patient[name] !== '') {
+            return patient[name];
+        }
+    }
+    return null;
+}
+
+function toNumber(value) {
+    const parsed = parseFloat(value);
+    return Number.isFinite(parsed) ? parsed : null;
+}
+
+function percentage(count, total) {
+    return total > 0 ? Math.round((count / total) * 100) : 0;
+}
+
+function estimatedFastingGlucoseFromHba1c(hba1cValue) {
+    const hba1c = toNumber(hba1cValue);
+    if (hba1c === null) return null;
+    return (28.7 * hba1c) - 46.7;
+}
+
+function getHba1cAtMonth(patient, month) {
+    if (month === 0) {
+        return getField(patient, ['hba1c_baseline', 'baseline_hba1c', 'HbA1c']);
+    }
+    return getField(patient, [
+        `hba1c_${month}_months`,
+        `hba1c_${month}m`,
+        `hba1c_${month}_month`
+    ]);
+}
+
+function getFastingGlucoseAtMonth(patient, month) {
+    const directValue = getField(patient, [
+        `fasting_glucose_${month}_months`,
+        `fasting_glucose_${month}m`,
+        `glucose_${month}_months`,
+        `glucose_${month}m`
+    ]);
+
+    if (directValue !== null) return directValue;
+
+    if (month === 0) {
+        return getField(patient, ['fasting_glucose_mg_dl', 'baseline_glucose', 'glucose']);
+    }
+
+    return estimatedFastingGlucoseFromHba1c(getHba1cAtMonth(patient, month));
+}
+
+function calculateTimeline(patients) {
+    const months = [3, 6, 12, 24, 36];
+
+    return months.map(function(month) {
+        let hba1cAvailable = 0;
+        let hba1cControlled = 0;
+        let glucoseAvailable = 0;
+        let glucoseControlled = 0;
+
+        patients.forEach(function(patient) {
+            const hba1c = toNumber(getHba1cAtMonth(patient, month));
+            if (hba1c !== null) {
+                hba1cAvailable += 1;
+                if (hba1c < 7.0) hba1cControlled += 1;
+            }
+
+            const glucose = toNumber(getFastingGlucoseAtMonth(patient, month));
+            if (glucose !== null) {
+                glucoseAvailable += 1;
+                if (glucose < 126) glucoseControlled += 1;
+            }
+        });
+
+        return {
+            month: month,
+            hba1c: percentage(hba1cControlled, hba1cAvailable),
+            glucose: percentage(glucoseControlled, glucoseAvailable)
+        };
+    });
+}
+
+function updateSummary(patients) {
+    const treatmentCount = patients.filter(function(patient) {
+        const group = String(getField(patient, ['treatment_group', 'group', 'treatment']) || '').toLowerCase();
+        return group === 'treatment';
+    }).length;
+
+    const controlCount = patients.filter(function(patient) {
+        const group = String(getField(patient, ['treatment_group', 'group', 'treatment']) || '').toLowerCase();
+        return group === 'control';
+    }).length;
+
+    document.getElementById('totalPatients').textContent = patients.length.toLocaleString();
+    document.getElementById('treatmentPatients').textContent = treatmentCount.toLocaleString();
+    document.getElementById('controlPatients').textContent = controlCount.toLocaleString();
+}
+
+function updateTimelineTable(timeline) {
+    document.getElementById('timelineRows').innerHTML = timeline.map(function(row) {
+        return `
+            <tr${row.projected ? ' class="projected-row"' : ''}>
+                <td>${row.month} months${row.projected ? ' (Markov-projected)' : ''}</td>
+                <td>${row.hba1c}%</td>
+                <td>${row.glucose === null ? '—' : row.glucose + '%'}</td>
+            </tr>
+        `;
+    }).join('');
+}
+
+function renderChart(timeline) {
+    const canvas = document.getElementById('improvementChart');
+    const fallback = document.getElementById('chartFallback');
+
+    if (!window.Chart) {
+        canvas.style.display = 'none';
+        fallback.style.display = 'block';
+        fallback.innerHTML = timeline.map(function(row) {
+            return `${row.month} months: HbA1c ${row.hba1c}%, Fasting Glucose ${row.glucose}%`;
+        }).join('<br>');
+        return;
+    }
+
+    new Chart(canvas, {
+        type: 'line',
+        data: {
+            labels: timeline.map(row => `${row.month}m`),
+            datasets: [
+                {
+                    label: 'HbA1c < 7.0%',
+                    data: timeline.map(row => row.hba1c),
+                    borderColor: '#0077cc',
+                    backgroundColor: 'rgba(0, 119, 204, 0.12)',
+                    tension: 0.35,
+                    fill: true
+                },
+                {
+                    label: 'Fasting Glucose < 126 mg/dL',
+                    data: timeline.map(row => row.glucose),
+                    borderColor: '#22a06b',
+                    backgroundColor: 'rgba(34, 160, 107, 0.12)',
+                    tension: 0.35,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: value => `${value}%`
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+function showNoData() {
+    document.getElementById('noDataState').style.display = 'block';
+    document.getElementById('acceleratedContent').style.display = 'none';
+}
+
+async function showAcceleratedResults(patients) {
+    if (!patients || !patients.length) {
+        showNoData();
+        return;
+    }
+
+    updateSummary(patients);
+    const baseTimeline = calculateTimeline(patients);
+    const timeline = await buildExtendedTimeline(patients, baseTimeline);
+    updateTimelineTable(timeline);
+
+    document.getElementById('noDataState').style.display = 'none';
+    document.getElementById('acceleratedContent').style.display = 'block';
+    renderChart(timeline);
+}
+
+function loadAcceleratedPatients() {
+    const sessionId = sessionStorage.getItem('acceleratedDataSessionId') || sessionStorage.getItem('trialDataSessionId');
+    const source = sessionStorage.getItem('acceleratedDataSource') || sessionStorage.getItem('trialDataSource');
+
+    if (sessionId && source === 'indexeddb') {
+        loadFromIndexedDB(sessionId, function(success, patients) {
+            if (success && patients) {
+                showAcceleratedResults(patients);
+            } else {
+                loadFallbackPatients();
+            }
+        });
+        return;
+    }
+
+    loadFallbackPatients();
+}
+
+function loadFallbackPatients() {
+    const storageKeys = ['acceleratedPatients', 'generatedPatients'];
+
+    for (const key of storageKeys) {
+        const stored = localStorage.getItem(key);
+        if (!stored) continue;
+
+        try {
+            const patients = JSON.parse(stored);
+            if (Array.isArray(patients) && patients.length) {
+                showAcceleratedResults(patients);
+                return;
+            }
+        } catch (error) {
+            console.error(`Unable to parse ${key}:`, error);
+        }
+    }
+
+    const sessionData = sessionStorage.getItem('trialData');
+    if (sessionData) {
+        try {
+            const parsed = JSON.parse(sessionData);
+            const patients = parsed.data || parsed.patients || parsed;
+            if (Array.isArray(patients) && patients.length) {
+                showAcceleratedResults(patients);
+                return;
+            }
+        } catch (error) {
+            console.error('Unable to parse trialData:', error);
+        }
+    }
+
+    showNoData();
+}
+
+document.addEventListener('DOMContentLoaded', loadAcceleratedPatients);
+</script>
+
+{% endblock %}

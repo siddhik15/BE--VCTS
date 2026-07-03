@@ -1,0 +1,53 @@
+{% extends "project_medical/base.html" %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <div class="auth-card">
+        <h2>Create Account</h2>
+
+        {% if messages %}
+          {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username" required>
+
+            <input type="email" name="email" placeholder="Email" required>
+
+            <div class="password-field">
+                <input type="password" id="password1" name="password1" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword('password1', this)">👁</span>
+            </div>
+
+            <div class="password-field">
+                <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+                <span class="toggle-password" onclick="togglePassword('password2', this)">👁</span>
+            </div>
+
+            <button class="auth-btn" type="submit">Sign Up</button>
+
+        </form>
+
+        <div class="auth-footer">
+            Already have an account?
+            <a href="{% url 'project_medical:login' %}">Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+<!-- <h2>Sign Up</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form> -->

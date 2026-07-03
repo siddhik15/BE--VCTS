@@ -1,0 +1,970 @@
+{% extends "project_medical/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="container simulation-page">
+
+<h1 class="page-title">Dynamic Trial Simulation</h1>
+<p class="lead">Real-time analysis of your synthetic patient cohort</p>
+
+<!-- ================= LOADING OVERLAY ================= -->
+<div id="loadingOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.8); z-index:1000; text-align:center; padding-top:200px;">
+    <div style="background:white; padding:30px; border-radius:10px; display:inline-block; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+        <h3>Analyzing Trial Data...</h3>
+        <p>Generating insights from your patient cohort</p>
+        <div class="spinner"></div>
+    </div>
+</div>
+
+<!-- ================= COHORT SUMMARY ================= -->
+<div class="cohort-summary" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 20px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <span style="font-size: 1.1rem; opacity: 0.9;">Analyzing Cohort:</span>
+        <span style="font-size: 1.3rem; font-weight: bold; margin-left: 10px;" id="cohortSize">0 patients</span>
+    </div>
+    <div style="display: flex; gap: 30px;">
+        <div><span style="opacity: 0.9;">Treatment:</span> <span id="treatmentCount" style="font-weight: bold;">0</span></div>
+        <div><span style="opacity: 0.9;">Control:</span> <span id="controlCount" style="font-weight: bold;">0</span></div>
+    </div>
+</div>
+
+<!-- ================= METRICS CARDS ================= -->
+<div class="metrics-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px;">
+    
+    <div class="metric-card" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+        <div style="font-size: 0.9rem; opacity: 0.9;">Patients Simulated</div>
+        <div class="metric-value" id="patientsSimulated">0</div>
+    </div>
+    
+    <div class="metric-card" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+        <div style="font-size: 0.9rem; opacity: 0.9;">Treatment Success</div>
+        <div class="metric-value" id="treatmentSuccess">0%</div>
+        <div style="font-size: 0.8rem; opacity: 0.8;">(HbA1c < 7.0%)</div>
+    </div>
+    
+    <div class="metric-card" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+        <div style="font-size: 0.9rem; opacity: 0.9;">Avg HbA1c Reduction</div>
+        <div class="metric-value" id="avgHba1cReduction">0%</div>
+        <div style="font-size: 0.8rem; opacity: 0.8;">vs control</div>
+    </div>
+    
+    <div class="metric-card" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+        <div style="font-size: 0.9rem; opacity: 0.9;">Adverse Events</div>
+        <div class="metric-value" id="adverseEvents">0%</div>
+        <div style="font-size: 0.8rem; opacity: 0.8;">Overall rate</div>
+    </div>
+</div>
+
+<!-- ================= TOP ROW CHARTS ================= -->
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 25px;">
+    
+    <!-- HbA1c Change Over Time Chart -->
+    <div class="chart-card">
+        <h3>HbA1c Change Over Time</h3>
+        <div style="height: 250px; position: relative;">
+            <canvas id="hba1cTimeChart"></canvas>
+        </div>
+        <div class="legend-container" style="display: flex; justify-content: center; gap: 30px; margin-top: 15px;">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4299e1;"></div>
+                <span>Control (<span id="controlCount2">0</span>)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #48bb78;"></div>
+                <span>Treatment (<span id="treatmentCount2">0</span>)</span>
+            </div>
+        </div>
+        <div class="chart-annotation" id="hba1cAnnotation"></div>
+    </div>
+    
+    <!-- Dose Response Chart -->
+    <div class="chart-card">
+        <h3>Dose Response by Drug</h3>
+        <div style="height: 250px; position: relative;">
+            <canvas id="doseResponseChart"></canvas>
+        </div>
+        <div class="legend-container" style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap;" id="doseLegend">
+            <!-- Legend populated by JS -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= BOTTOM ROW CHARTS ================= -->
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 25px;">
+    
+    <!-- Adverse Events Chart -->
+    <div class="chart-card">
+        <h3>Adverse Events by Type</h3>
+        <div style="height: 200px; position: relative;">
+            <canvas id="adverseEventsChart"></canvas>
+        </div>
+        <div class="legend-grid" id="adverseLegend" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px;">
+            <!-- Legend populated by JS -->
+        </div>
+    </div>
+    
+    <!-- Responders Chart -->
+    <div class="chart-card">
+        <h3>Treatment Response Categories</h3>
+        <div style="height: 200px; position: relative;">
+            <canvas id="respondersChart"></canvas>
+        </div>
+        <div class="legend-container" style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;" id="responderLegend">
+            <!-- Legend populated by JS -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= STATISTICAL SUMMARY ================= -->
+<div class="stats-summary" style="background: #f8f9fa; border-radius: 10px; padding: 20px; margin-top: 25px;">
+    <h3 style="margin-bottom: 15px; color: #2c3e50;">Statistical Summary</h3>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" id="statsTable">
+        <!-- Populated by JS -->
+    </div>
+</div>
+
+<!-- ================= ACTIONS ================= -->
+<div style="margin-top: 30px; display: flex; gap: 15px; justify-content: flex-end;">
+    <button class="btn outline" onclick="window.location.href='/synthetic/'">← Back to Generator</button>
+</div>
+
+</section>
+
+<style>
+    .spinner { border:4px solid #f3f3f3; border-top:4px solid #3498db; border-radius:50%; width:40px; height:40px; animation:spin 1s linear infinite; margin:20px auto; }
+    @keyframes spin { 0%{transform:rotate(0);} 100%{transform:rotate(360deg);} }
+    
+    .metric-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .metric-value {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    
+    .chart-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .chart-card h3 {
+        margin: 0 0 15px 0;
+        color: #2c3e50;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+    }
+    
+    .chart-annotation {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #48bb78;
+        font-weight: 500;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    
+    .btn.primary {
+        background: #667eea;
+        color: white;
+    }
+    
+    .btn.primary:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn.outline {
+        background: transparent;
+        border: 2px solid #e2e8f0;
+        color: #4a5568;
+    }
+    
+    .btn.outline:hover {
+        background: #f7fafc;
+    }
+    
+    .simulation-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .page-title {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .lead {
+        color: #718096;
+        margin-bottom: 30px;
+    }
+</style>
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const API_BASE_URL = 'http://127.0.0.1:5000';
+let currentPatients = [];
+let dataSource = 'default';
+
+// Safe function to get element by ID
+function safeGetElement(id) {
+    const el = document.getElementById(id);
+    if (!el) console.warn(`Element with id '${id}' not found`);
+    return el;
+}
+
+// IndexedDB retrieval function
+function loadFromIndexedDB(sessionId, callback) {
+    const request = indexedDB.open('TrialDataDB', 1);
+    
+    request.onerror = function(event) {
+        console.error("IndexedDB error:", event);
+        callback(false, null);
+    };
+    
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        const transaction = db.transaction(['patients'], 'readonly');
+        const store = transaction.objectStore('patients');
+        const getRequest = store.get(sessionId);
+        
+        getRequest.onsuccess = function() {
+            if (getRequest.result) {
+                const patients = getRequest.result.data;
+                console.log(`✅ Loaded ALL ${patients.length} patients from IndexedDB`);
+                callback(true, patients);
+            } else {
+                console.error("Session not found in IndexedDB");
+                callback(false, null);
+            }
+            db.close();
+        };
+        
+        getRequest.onerror = function() {
+            console.error("Failed to retrieve from IndexedDB");
+            callback(false, null);
+            db.close();
+        };
+    };
+}
+
+// Initialize page
+function initializePage() {
+    console.log("=== INITIALIZING TRIAL SIMULATION PAGE ===");
+    console.log("URL:", window.location.href);
+    console.log("URL params:", window.location.search);
+    
+    // Check if this is an independent access (no source=generated in URL)
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('source');
+    
+    // If there's NO 'source' parameter, this is independent access
+    // Force clear any leftover flags to ensure default dataset loads
+    if (!source) {
+        console.log("🔵 INDEPENDENT ACCESS DETECTED - Loading default dataset");
+        // Clear any Feature 1 flags to prevent loading generated data
+        sessionStorage.removeItem('fromFeature1');
+        sessionStorage.removeItem('trialDataSessionId');
+        sessionStorage.removeItem('trialDataSource');
+        loadDefaultDataset();
+        return;
+    }
+    
+    // If source=generated, load from Feature 1 data
+    if (source === 'generated') {
+        console.log("📊 Loading data from Feature 1 (generated patients)");
+        
+        const sessionId = sessionStorage.getItem('trialDataSessionId');
+        const dataSourceType = sessionStorage.getItem('trialDataSource');
+        
+        if (sessionId && dataSourceType === 'indexeddb') {
+            console.log(`📊 Found IndexedDB session ID, loading full dataset...`);
+            
+            const overlay = safeGetElement('loadingOverlay');
+            if (overlay) overlay.style.display = 'block';
+            
+            loadFromIndexedDB(sessionId, function(success, patients) {
+                if (overlay) overlay.style.display = 'none';
+                
+                if (success && patients && patients.length > 0) {
+                    currentPatients = patients;
+                    dataSource = 'generated';
+                    console.log(`✅✅✅ USING ${currentPatients.length} PATIENTS FROM INDEXEDDB ✅✅✅`);
+                    startAnalysis();
+                } else {
+                    console.log("Failed to load from IndexedDB, falling back to other storage");
+                    loadGeneratedFromStorage();
+                }
+            });
+            return;
+        }
+        
+        loadGeneratedFromStorage();
+        return;
+    }
+    
+    function loadGeneratedFromStorage() {
+        // Check sessionStorage
+        const sessionData = sessionStorage.getItem('trialData');
+        if (sessionData) {
+            try {
+                const parsed = JSON.parse(sessionData);
+                const patients = parsed.data || parsed.patients || parsed;
+                if (patients && Array.isArray(patients) && patients.length > 0) {
+                    currentPatients = patients;
+                    dataSource = 'generated';
+                    console.log(`✅ USING ${currentPatients.length} PATIENTS FROM SESSIONSTORAGE`);
+                    startAnalysis();
+                    return;
+                }
+            } catch (e) {
+                console.error('Error parsing session data:', e);
+            }
+        }
+        
+        // Check localStorage
+        const localData = localStorage.getItem('generatedPatients');
+        if (localData) {
+            try {
+                const patients = JSON.parse(localData);
+                if (patients && Array.isArray(patients) && patients.length > 0) {
+                    currentPatients = patients;
+                    dataSource = 'generated';
+                    console.log(`✅ USING ${currentPatients.length} PATIENTS FROM LOCALSTORAGE`);
+                    startAnalysis();
+                    return;
+                }
+            } catch (e) {
+                console.error('Error parsing localStorage data:', e);
+            }
+        }
+        
+        // If no generated data found, load default
+        console.log("No generated data found, loading default dataset");
+        loadDefaultDataset();
+    }
+    
+    // If source is something else, load default
+    console.log("Unknown source, loading default dataset");
+    loadDefaultDataset();
+}
+
+function loadDefaultDataset() {
+    const overlay = safeGetElement('loadingOverlay');
+    if (overlay) overlay.style.display = 'block';
+    dataSource = 'default';
+    
+    console.log("📡 Fetching default dataset from backend endpoint: /api/default-patients");
+    
+    fetch(`${API_BASE_URL}/api/default-patients`)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+            }
+            return res.json();
+        })
+        .then(data => {
+            let patientsArray = null;
+            
+            if (data.success && data.patients && Array.isArray(data.patients)) {
+                patientsArray = data.patients;
+                console.log("✅ Response format: data.success + data.patients");
+            } else if (data.data && Array.isArray(data.data)) {
+                patientsArray = data.data;
+                console.log("✅ Response format: data.data");
+            } else if (Array.isArray(data)) {
+                patientsArray = data;
+                console.log("✅ Response format: direct array");
+            } else if (data.patients && Array.isArray(data.patients)) {
+                patientsArray = data.patients;
+                console.log("✅ Response format: data.patients");
+            }
+            
+            if (patientsArray && patientsArray.length > 0) {
+                currentPatients = patientsArray;
+                console.log(`✅✅✅ LOADED DEFAULT DATASET: ${currentPatients.length} patients from backend ✅✅✅`);
+                startAnalysis();
+            } else {
+                console.error("Failed to load default dataset - unexpected structure:", data);
+                generateFallbackData();
+            }
+            if (overlay) overlay.style.display = 'none';
+        })
+        .catch(error => {
+            console.error("❌ Error loading default dataset:", error);
+            generateFallbackData();
+            if (overlay) overlay.style.display = 'none';
+        });
+}
+
+function generateFallbackData() {
+    console.log("📊 Generating fallback sample data (1000 patients)...");
+    const samplePatients = [];
+    const drugs = ["Metformin", "Sitagliptin", "Empagliflozin"];
+    
+    for (let i = 0; i < 1000; i++) {
+        const isTreatment = i < 700;
+        const drug = isTreatment ? drugs[Math.floor(Math.random() * drugs.length)] : "None";
+        const dose = drug !== "None" ? [500, 850, 1000][Math.floor(Math.random() * 3)] : 0;
+        const baselineHbA1c = parseFloat((Math.random() * 5.5 + 6.5).toFixed(1));
+        const reduction = drug !== "None" ? parseFloat((Math.random() * 1.5 + 0.3).toFixed(1)) : parseFloat((Math.random() * 0.5 - 0.2).toFixed(1));
+        const followupHbA1c = parseFloat((baselineHbA1c - reduction).toFixed(1));
+        
+        // Map reduction to responder status with multiple categories
+        let responder_status;
+        if (reduction >= 1.5) {
+            responder_status = "Excellent Responder";
+        } else if (reduction >= 1.0) {
+            responder_status = "Good Responder";
+        } else if (reduction >= 0.3) {
+            responder_status = "Partial Responder";
+        } else if (reduction >= 0) {
+            responder_status = "Minimal Responder";
+        } else {
+            responder_status = "Non-Responder";
+        }
+        
+        samplePatients.push({
+            patient_id: `P${String(i+1).padStart(5, '0')}`,
+            age: Math.floor(Math.random() * 50) + 30,
+            bmi: parseFloat((Math.random() * 23 + 22).toFixed(1)),
+            treatment_group: isTreatment ? "Treatment" : "Control",
+            drug_name: drug,
+            dose_mg: dose,
+            hba1c_baseline: baselineHbA1c,
+            hba1c_12_months: followupHbA1c,
+            hba1c_3_months: parseFloat((baselineHbA1c - reduction * 0.6).toFixed(1)),
+            hba1c_6_months: parseFloat((baselineHbA1c - reduction * 0.85).toFixed(1)),
+            hba1c_24_months: parseFloat((followupHbA1c - 0.1).toFixed(1)),
+            hba1c_36_months: parseFloat((followupHbA1c - 0.15).toFixed(1)),
+            responder_status: responder_status,
+            adverse_event: drug !== "None" ? (Math.random() < 0.08 ? ["GI Issues", "Headache", "UTI"][Math.floor(Math.random() * 3)] : "None") : "None"
+        });
+    }
+    
+    currentPatients = samplePatients;
+    console.log(`✅ Generated ${currentPatients.length} fallback patients`);
+    startAnalysis();
+}
+
+function showErrorMessage() {
+    const cohortSummary = document.querySelector('.cohort-summary');
+    if (cohortSummary) {
+        cohortSummary.innerHTML = `
+            <div style="text-align: center; padding: 20px; width:100%;">
+                <h3 style="color:white;">Unable to load data</h3>
+                <p style="color:white; opacity:0.9;">Please check if backend is running on port 5000.</p>
+                <button class="btn primary" onclick="window.location.href='/synthetic/'">Go to Generator</button>
+            </div>
+        `;
+    }
+}
+
+// Main analysis function
+function startAnalysis() {
+    if (!currentPatients || currentPatients.length === 0) {
+        showErrorMessage();
+        return;
+    }
+    
+    console.log("Starting analysis with", currentPatients.length, "patients");
+    
+    // Define treatment and control groups
+    window.treatment = currentPatients.filter(p => 
+        p.treatment_group === 'Treatment' || p.treatment_group === 'treatment'
+    );
+    window.control = currentPatients.filter(p => 
+        p.treatment_group === 'Control' || p.treatment_group === 'control'
+    );
+    
+    // Debug: Print responder counts - FIXED to handle multiple responder types
+    const responderCounts = {
+        'Responder': 0,
+        'Partial': 0,
+        'Non-Responder': 0
+    };
+    
+    currentPatients.forEach(p => {
+        const status = p.responder_status;
+        
+        if (!status) {
+            return;
+        }
+        
+        // Map to 3 categories based on the status string
+        if (status === 'Responder' || 
+            status === 'Good Responder' || 
+            status === 'Excellent Responder') {
+            responderCounts.Responder++;
+        } 
+        else if (status === 'Partial Responder' || 
+                 status === 'Minimal Responder' || 
+                 status === 'Partial') {
+            responderCounts.Partial++;
+        }
+        else if (status === 'Non-Responder') {
+            responderCounts['Non-Responder']++;
+        }
+        else {
+            // Log unknown types for debugging
+            console.warn("Unknown responder_status:", status);
+        }
+    });
+    
+    console.log("Actual responder counts:", responderCounts);
+    console.log("Treatment patients:", window.treatment.length);
+    console.log("Control patients:", window.control.length);
+    
+    // Update UI elements
+    const cohortSize = safeGetElement('cohortSize');
+    const patientsSimulated = safeGetElement('patientsSimulated');
+    if (cohortSize) cohortSize.textContent = currentPatients.length.toLocaleString() + ' patients';
+    if (patientsSimulated) patientsSimulated.textContent = currentPatients.length.toLocaleString();
+
+    // Update counts in UI
+    const treatmentCount = safeGetElement('treatmentCount');
+    const controlCount = safeGetElement('controlCount');
+    const treatmentCount2 = safeGetElement('treatmentCount2');
+    const controlCount2 = safeGetElement('controlCount2');
+    
+    if (treatmentCount) treatmentCount.textContent = window.treatment.length;
+    if (controlCount) controlCount.textContent = window.control.length;
+    if (treatmentCount2) treatmentCount2.textContent = window.treatment.length;
+    if (controlCount2) controlCount2.textContent = window.control.length;
+
+    // Calculate and update metrics
+    const treatmentSuccess = window.treatment.filter(p => (p.hba1c_12_months || p.hba1c_12m) < 7.0).length;
+    const successRate = window.treatment.length > 0 ? Math.round((treatmentSuccess / window.treatment.length) * 100) : 0;
+    const treatmentSuccessElem = safeGetElement('treatmentSuccess');
+    if (treatmentSuccessElem) treatmentSuccessElem.textContent = successRate + '%';
+    
+    // Calculate net reduction - FIXED
+    const getHbA1c12m = (p) => {
+        if (p.hba1c_12_months !== undefined && p.hba1c_12_months !== null) return p.hba1c_12_months;
+        if (p.hba1c_12m !== undefined && p.hba1c_12m !== null) return p.hba1c_12m;
+        return p.hba1c_baseline;
+    };
+    
+    const getBaseline = (p) => p.hba1c_baseline || p.baseline_hba1c;
+    
+    const treatmentReduction = window.treatment.length > 0 ? 
+        window.treatment.reduce((sum, p) => sum + (getBaseline(p) - getHbA1c12m(p)), 0) / window.treatment.length : 0;
+    const controlChange = window.control.length > 0 ? 
+        window.control.reduce((sum, p) => sum + (getBaseline(p) - getHbA1c12m(p)), 0) / window.control.length : 0;
+    const netReductionValue = treatmentReduction - controlChange;
+    const netReduction = netReductionValue.toFixed(2);
+    
+    const avgReductionElem = safeGetElement('avgHba1cReduction');
+    if (avgReductionElem) avgReductionElem.textContent = netReduction + '%';
+    
+    const annotationElem = safeGetElement('hba1cAnnotation');
+    if (annotationElem) annotationElem.textContent = `Treatment Improvement: ${netReduction}% vs control`;
+    
+    // Calculate adverse event rate
+    const aeCount = currentPatients.filter(p => p.adverse_event && p.adverse_event !== 'None').length;
+    const aeRate = ((aeCount / currentPatients.length) * 100).toFixed(1);
+    const adverseEventsElem = safeGetElement('adverseEvents');
+    if (adverseEventsElem) adverseEventsElem.textContent = aeRate + '%';
+    
+    // Store responder counts for charts
+    window.responderCounts = responderCounts;
+    
+    // Render all charts with real data
+    renderHbA1cTimeChart();
+    renderDoseResponseChart();
+    renderAdverseEventsChart();
+    renderRespondersChart();
+    renderStats();
+}
+
+// Chart rendering functions
+function renderHbA1cTimeChart() {
+    const canvas = safeGetElement('hba1cTimeChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const timepoints = [0, 3, 6, 12, 24, 36];
+    
+    const getHbA1cValue = (p, months) => {
+        if (months === 0) return p.hba1c_baseline || p.baseline_hba1c;
+        if (months === 3) return p.hba1c_3_months || p.hba1c_3m;
+        if (months === 6) return p.hba1c_6_months || p.hba1c_6m;
+        if (months === 12) return p.hba1c_12_months || p.hba1c_12m;
+        if (months === 24) return p.hba1c_24_months || p.hba1c_24m;
+        if (months === 36) return p.hba1c_36_months || p.hba1c_36m;
+        return null;
+    };
+    
+    const treatmentData = timepoints.map(tp => {
+        const values = window.treatment.map(p => getHbA1cValue(p, tp)).filter(v => v !== null && !isNaN(v));
+        return values.length > 0 ? (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1) : 0;
+    });
+    
+    const controlData = timepoints.map(tp => {
+        const values = window.control.map(p => getHbA1cValue(p, tp)).filter(v => v !== null && !isNaN(v));
+        return values.length > 0 ? (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1) : 0;
+    });
+    
+    if (window.hba1cChart) window.hba1cChart.destroy();
+    
+    window.hba1cChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: timepoints,
+            datasets: [
+                {
+                    label: 'Control',
+                    data: controlData,
+                    borderColor: '#4299e1',
+                    backgroundColor: 'rgba(66, 153, 225, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true
+                },
+                {
+                    label: 'Treatment',
+                    data: treatmentData,
+                    borderColor: '#48bb78',
+                    backgroundColor: 'rgba(72, 187, 120, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.dataset.label}: ${context.raw}%`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    title: { display: true, text: 'HbA1c (%)' },
+                    min: 6,
+                    max: 9
+                },
+                x: {
+                    title: { display: true, text: 'Months' }
+                }
+            }
+        }
+    });
+}
+
+function renderDoseResponseChart() {
+    const canvas = safeGetElement('doseResponseChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const drugs = ['Metformin', 'Sitagliptin', 'Empagliflozin'];
+    const colors = {'Metformin': '#4299e1', 'Sitagliptin': '#f56565', 'Empagliflozin': '#48bb78'};
+    
+    const labels = [];
+    const values = [];
+    const bgColors = [];
+    
+    drugs.forEach(drug => {
+        const drugPatients = window.treatment.filter(p => 
+            p.drug_name && p.drug_name.toLowerCase().includes(drug.toLowerCase())
+        );
+        
+        const doses = [...new Set(drugPatients.map(p => p.dose_mg).filter(d => d > 0))].sort((a,b) => a-b);
+        
+        doses.forEach(dose => {
+            const group = drugPatients.filter(p => p.dose_mg === dose);
+            if (group.length > 0) {
+                const reductions = group.map(p => {
+                    const baseline = p.hba1c_baseline || p.baseline_hba1c;
+                    const followup = p.hba1c_12_months || p.hba1c_12m || baseline;
+                    return baseline - followup;
+                }).filter(r => !isNaN(r));
+                
+                const avgReduction = reductions.length > 0 ? 
+                    (reductions.reduce((a,b) => a+b, 0) / reductions.length).toFixed(2) : 0;
+                
+                labels.push(`${drug} ${dose}mg`);
+                values.push(avgReduction);
+                bgColors.push(colors[drug]);
+            }
+        });
+    });
+    
+    if (window.doseChart) window.doseChart.destroy();
+    
+    window.doseChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: bgColors,
+                borderRadius: 6,
+                label: 'HbA1c Reduction (%)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `Reduction: ${context.raw}%`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    title: { display: true, text: 'HbA1c Reduction (%)' },
+                    beginAtZero: true
+                },
+                x: {
+                    title: { display: true, text: 'Drug and Dose' }
+                }
+            }
+        }
+    });
+    
+    const legend = safeGetElement('doseLegend');
+    if (legend) {
+        legend.innerHTML = '';
+        drugs.forEach(drug => {
+            legend.innerHTML += `
+                <div class="legend-item">
+                    <div class="legend-color" style="background: ${colors[drug]};"></div>
+                    <span>${drug}</span>
+                </div>
+            `;
+        });
+    }
+}
+
+function renderAdverseEventsChart() {
+    const canvas = safeGetElement('adverseEventsChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    const aeCounts = {};
+    currentPatients.forEach(p => {
+        const ae = p.adverse_event;
+        if (ae && ae !== 'None') {
+            aeCounts[ae] = (aeCounts[ae] || 0) + 1;
+        }
+    });
+    
+    const total = currentPatients.length;
+    const aeData = {};
+    Object.keys(aeCounts).forEach(ae => {
+        aeData[ae] = ((aeCounts[ae] / total) * 100).toFixed(1);
+    });
+    
+    const chartData = Object.keys(aeData).length > 0 ? aeData : {
+        'GI Issues': 2.5,
+        'Headache': 1.2,
+        'UTI': 0.8
+    };
+    
+    const colors = ['#f56565', '#ed8936', '#ecc94b', '#9f7aea', '#4299e1', '#48bb78'];
+    
+    if (window.aeChart) window.aeChart.destroy();
+    
+    window.aeChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(chartData),
+            datasets: [{
+                data: Object.values(chartData),
+                backgroundColor: colors.slice(0, Object.keys(chartData).length),
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.raw}%`;
+                        }
+                    }
+                },
+                legend: { display: false }
+            },
+            cutout: '65%'
+        }
+    });
+    
+    const legend = safeGetElement('adverseLegend');
+    if (legend) {
+        legend.innerHTML = '';
+        Object.keys(chartData).forEach((ae, i) => {
+            legend.innerHTML += `
+                <div class="legend-item">
+                    <div class="legend-color" style="background: ${colors[i % colors.length]};"></div>
+                    <span>${ae} (${chartData[ae]}%)</span>
+                </div>
+            `;
+        });
+    }
+}
+
+function renderRespondersChart() {
+    const canvas = safeGetElement('respondersChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Use the stored responder counts from startAnalysis
+    const responderCounts = window.responderCounts || {
+        'Responder': 0,
+        'Partial': 0,
+        'Non-Responder': 0
+    };
+    
+    const total = currentPatients.length;
+    const responderPct = total > 0 ? ((responderCounts.Responder / total) * 100).toFixed(1) : 0;
+    const partialPct = total > 0 ? ((responderCounts.Partial / total) * 100).toFixed(1) : 0;
+    const nonResponderPct = total > 0 ? ((responderCounts['Non-Responder'] / total) * 100).toFixed(1) : 0;
+    
+    if (window.responderChart) window.responderChart.destroy();
+    
+    window.responderChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Responder', 'Partial', 'Non-Responder'],
+            datasets: [{
+                data: [responderPct, partialPct, nonResponderPct],
+                backgroundColor: ['#48bb78', '#ecc94b', '#f56565'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.raw}%`;
+                        }
+                    }
+                },
+                legend: { display: false }
+            },
+            cutout: '65%'
+        }
+    });
+    
+    const legend = safeGetElement('responderLegend');
+    if (legend) {
+        legend.innerHTML = `
+            <div class="legend-item"><div class="legend-color" style="background: #48bb78;"></div>Responder (${responderPct}%)</div>
+            <div class="legend-item"><div class="legend-color" style="background: #ecc94b;"></div>Partial (${partialPct}%)</div>
+            <div class="legend-item"><div class="legend-color" style="background: #f56565;"></div>Non-Responder (${nonResponderPct}%)</div>
+        `;
+    }
+}
+
+function renderStats() {
+    const table = safeGetElement('statsTable');
+    if (!table) return;
+    
+    const mean = (arr) => {
+        const valid = arr.filter(v => v !== null && v !== undefined && !isNaN(v));
+        return valid.length > 0 ? valid.reduce((a,b) => a+b, 0) / valid.length : 0;
+    };
+    
+    const ages = currentPatients.map(p => p.age);
+    const bmis = currentPatients.map(p => p.bmi);
+    const baselineHbA1c = currentPatients.map(p => p.hba1c_baseline || p.baseline_hba1c);
+    const tx12m = window.treatment.map(p => p.hba1c_12_months || p.hba1c_12m);
+    const ctrl12m = window.control.map(p => p.hba1c_12_months || p.hba1c_12m);
+    
+    const drugCounts = {};
+    window.treatment.forEach(p => {
+        const drug = p.drug_name;
+        if (drug && drug !== 'None') drugCounts[drug] = (drugCounts[drug] || 0) + 1;
+    });
+    const mostCommonDrug = Object.keys(drugCounts).length > 0 ? 
+        Object.keys(drugCounts).reduce((a,b) => drugCounts[a] > drugCounts[b] ? a : b) : 'Metformin';
+    
+    const doses = window.treatment.map(p => p.dose_mg).filter(d => d > 0);
+    const avgDose = doses.length > 0 ? (doses.reduce((a,b) => a+b, 0) / doses.length).toFixed(0) : 500;
+    
+    const stats = [
+        ['Total Patients', currentPatients.length],
+        ['Treatment Group', window.treatment.length],
+        ['Control Group', window.control.length],
+        ['Mean Age', mean(ages).toFixed(1) + ' years'],
+        ['Mean BMI', mean(bmis).toFixed(1)],
+        ['Mean Baseline HbA1c', mean(baselineHbA1c).toFixed(1) + '%'],
+        ['Mean 12-mo HbA1c (Tx)', mean(tx12m).toFixed(1) + '%'],
+        ['Mean 12-mo HbA1c (Ctrl)', mean(ctrl12m).toFixed(1) + '%'],
+        ['Most Common Drug', mostCommonDrug],
+        ['Average Dose', avgDose + ' mg']
+    ];
+    
+    let html = '';
+    stats.forEach(stat => {
+        html += `
+            <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <div style="font-size: 0.85rem; color: #718096; margin-bottom: 5px;">${stat[0]}</div>
+                <div style="font-size: 1.2rem; font-weight: bold; color: #2d3748;">${stat[1]}</div>
+            </div>
+        `;
+    });
+    table.innerHTML = html;
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePage);
+} else {
+    initializePage();
+}
+</script>
+
+{% endblock %}

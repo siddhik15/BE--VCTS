@@ -1,0 +1,23 @@
+============================================================
+SYNTHETIC DATASET SUMMARY
+============================================================
+
+Total patients: 10000
+Total columns: 29
+
+Treatment group distribution:
+  Treatment: 7222 (72.2%)
+  Control: 2778 (27.8%)
+
+Drug distribution:
+  Metformin: 3802 (38.0%)
+  None: 2743 (27.4%)
+  Sitagliptin: 2211 (22.1%)
+  Empagliflozin: 1244 (12.4%)
+
+Responder distribution:
+  Partial Responder: 4802 (48.0%)
+  Minimal Responder: 2672 (26.7%)
+  Good Responder: 1207 (12.1%)
+  Non-Responder: 858 (8.6%)
+  Excellent Responder: 461 (4.6%)

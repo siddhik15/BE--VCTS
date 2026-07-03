@@ -1,0 +1,10 @@
+{% extends "project_medical/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container section">
+  <h2>Thanks — message received</h2>
+  <p>We’ll get back to you shortly.</p>
+  <a href="{% url 'project_medical:index' %}">Back to home</a>
+</section>
+{% endblock %}

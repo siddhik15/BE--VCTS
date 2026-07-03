@@ -1,0 +1,60 @@
+{% extends "project_medical/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="container">
+    <h1>Backend Connection Test</h1>
+    
+    <div style="margin: 20px 0;">
+        <button class="btn primary" onclick="testHealth()">Test Health</button>
+        <button class="btn outline" onclick="testGenerate()">Test Generate (100 patients)</button>
+    </div>
+    
+    <div id="result" style="background: #f5f5f5; padding: 20px; border-radius: 5px; margin-top: 20px;">
+        <h3>Result:</h3>
+        <pre id="output" style="background: #333; color: #0f0; padding: 15px; border-radius: 5px; overflow: auto;">Click a button to test</pre>
+    </div>
+</section>
+
+<script>
+const API_BASE_URL = 'http://127.0.0.1:5000';
+
+async function testHealth() {
+    document.getElementById('output').textContent = 'Testing connection...';
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/health`);
+        const data = await response.json();
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+        document.getElementById('output').textContent = 'ERROR: ' + error.message + '\n\nMake sure Flask is running on port 5000';
+    }
+}
+
+async function testGenerate() {
+    document.getElementById('output').textContent = 'Generating 100 patients...';
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/generate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                dataset_type: 'readymade',
+                population_params: {
+                    num_patients: 100
+                }
+            })
+        });
+        
+        const data = await response.json();
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+        document.getElementById('output').textContent = 'ERROR: ' + error.message + '\n\nMake sure Flask is running on port 5000';
+    }
+}
+</script>
+
+{% endblock %}

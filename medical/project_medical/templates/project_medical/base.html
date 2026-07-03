@@ -1,0 +1,131 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MedSimTrials.org</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{% static 'project_medical/css/main.css' %}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <div class="logo">
+      <a href="{% url 'project_medical:index' %}">
+        <img src="{% static 'project_medical/images/data-science.png' %}" height="36">
+        <span class="brand">MedSimTrials.org</span>
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#" id="nav-features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="auth-links">
+    {% if user.is_authenticated %}
+        <span class="nav-user">Welcome, {{ user.username }}</span>
+        <a class="login" href="{% url 'project_medical:logout' %}">Logout</a>
+    {% else %}
+        <a class="login" href="{% url 'project_medical:login' %}">Log In</a>
+        <a class="signup" href="{% url 'project_medical:signup' %}">Sign Up</a>
+    {% endif %}
+    </div>
+
+  </div>
+</header>
+
+<!-- PAGE CONTENT -->
+{% block content %}{% endblock %}
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {% now "Y" %} MedSimTrials.org</p>
+  </div>
+</footer>
+
+<!-- Chart library (keep if you use graphs later) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- FEATURES MODAL SCRIPT -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const modal = document.getElementById("features-modal");
+  const openBtn = document.getElementById("nav-features");
+  const closeBtn = document.getElementById("features-close");
+
+  // Only add event listeners if elements exist
+  if (openBtn) {
+    openBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      // Check if modal exists before using it
+      if (modal) {
+        modal.classList.add("show");
+      }
+    });
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", function(){
+      modal.classList.remove("show");
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener("click", function(e){
+      if(e.target === modal){
+        modal.classList.remove("show");
+      }
+    });
+  }
+
+});
+
+</script>
+
+<!-- PASSWORD TOGGLE -->
+<script>
+
+function togglePassword(inputId, icon) {
+
+    const passwordInput = document.getElementById(inputId);
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.textContent = "🙈";
+    } else {
+        passwordInput.type = "password";
+        icon.textContent = "👁";
+    }
+
+}
+
+</script>
+
+<!-- FEATURE NAVIGATION -->
+<script>
+
+function openFeaturePage(page){
+
+    if(page === "synthetic"){
+        window.location.href = "/synthetic/";
+    }
+
+}
+
+</script>
+
+<!-- AUTHENTICATION FLAG FOR JAVASCRIPT -->
+<script>
+    // Global authentication flag for JavaScript
+    window.userIsAuthenticated = {% if user.is_authenticated %}true{% else %}false{% endif %};
+</script>
+
+</body>
+</html>
